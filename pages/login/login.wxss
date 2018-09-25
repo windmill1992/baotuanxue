@@ -1,0 +1,23 @@
+/* pages/login/login.wxss */
+
+.box {
+	overflow: hidden;
+}
+
+.box image{
+	width: 180rpx;
+	height: 180rpx;
+	margin-top: 200rpx;
+}
+
+.box .txt {
+	line-height: 1;
+	margin-top: 60rpx;
+	font-size: 30rpx;
+	color: #333;
+}
+
+.box .btns{
+	padding: 0 30rpx;
+	margin-top: 100rpx;
+}
