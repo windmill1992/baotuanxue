@@ -2,7 +2,7 @@
 <view class='container'>
 	<view class='title'>基本信息</view>
 	<view class='box'>
-		<view class='item flex spb'>
+		<view class='item1 flex spb'>
 			<view class='left'>
 				<view class='label'>商家LOGO</view>
 				<view class='txt'>建议尺寸１:１，小于３Ｍ</view>
@@ -19,11 +19,17 @@
 		</view>
 		<view class='item flex spb'>
 			<view class='label'>商家行业</view>
-			<picker mode='selector' range='{{[]}}'>点击选择经营行业</picker>
+			<picker mode='selector' range='{{[]}}' class='pick' bindchange='getValue' data-prop='industry'>
+				<text class='def' wx:if='{{!industry}}'>点击选择经营行业</text>
+				<text wx:else>{{industry}}</text>
+			</picker>
 		</view>
 		<view class='item flex spb'>
 			<view class='label'>所在城市</view>
-			<picker mode='region'>点击选择城市</picker>
+			<picker mode='region' class='pick' bindchange='getValue' data-prop='region'>
+				<text class='def' wx:if='{{!region}}'>点击选择城市</text>
+				<text wx:else>{{region}}</text>
+			</picker>
 		</view>
 		<view class='item flex spb'>
 			<view class='label'>商家地址</view>
@@ -47,6 +53,8 @@
 	</view>
 
 	<view class='btns'>
-		<button class='btn'>保存</button>
+		<button class='btn-green' bindtap='submit'>保存</button>
 	</view>
 </view>
+<view class='tips' wx:if='{{toast.show}}'>{{toast.title}}</view>
+<view class='error' wx:if='{{error.show}}'>{{error.title}}</view>

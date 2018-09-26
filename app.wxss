@@ -134,6 +134,18 @@ page {
 	z-index: 9999;
 }
 
+.error {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: 24rpx 30rpx;
+	font-size: 24rpx;
+	color: #fff;
+	background: #ff4c4c;
+	word-break: break-all;
+}
+
 .loadmore {
 	font-size: 26rpx;
 	color: #fc2441;
@@ -147,6 +159,10 @@ page {
 
 button::after {
 	border: none;
+}
+
+.input-placeholder, .textarea-placeholder{
+	color: #999;
 }
 
 .btn-green {
