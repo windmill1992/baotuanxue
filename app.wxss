@@ -1,11 +1,14 @@
 /**app.wxss**/
 
-input, select, textarea, label, form {
+page, view, scroll-view, swiper, text, button, picker, picker-view,
+navigator, input, select, textarea, label, form, image, checkbox, radio {
   font-family: "PingFangSC-Regular", "微软雅黑", "Arial";
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
 }
 
 page {
-  font-family: "PingFangSC-Regular", "微软雅黑", "Arial";
   height: 100%;
 	font-size: 28rpx;
 }
@@ -14,7 +17,6 @@ page {
   min-height: 100%;
   position: relative;
   width: 100%;
-  font-family: "PingFangSC-Regular", "微软雅黑", "Arial";
 }
 
 .flex {
@@ -172,7 +174,7 @@ button::after {
 	color: #fff;
 	font-size: 30rpx;
 	text-align: center;
-	font-family: 'PingFang-SC-Bold';
+	font-family: 'PingFangSC-Bold';
 	background: #00bf4a;
 	border-radius: 6rpx;
 }

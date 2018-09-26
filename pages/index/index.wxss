@@ -1,1 +1,77 @@
 /**index.wxss**/
+
+.top {
+  height: 490rpx;
+  width: 100%;
+  position: relative;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+}
+
+.top .bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+}
+
+.top .amount {
+  font-size: 120rpx;
+  font-family: 'AkzidenzGroteskBQ-XBold';
+  font-weight: 600;
+  line-height: 1;
+  margin-top: 90rpx;
+}
+
+.top .txt {
+  font-size: 24rpx;
+  margin-top: 30rpx;
+}
+
+.top .info {
+  margin-top: 70rpx;
+}
+
+.top .info .num {
+  font-family: 'AkzidenzGroteskBQ-XBold';
+  font-weight: 600;
+  font-size: 48rpx;
+}
+
+.top .info .txt1 {
+  font-size: 24rpx;
+}
+
+.mid {
+  margin: -40rpx 20rpx 0;
+  background: #fff;
+  border-radius: 14rpx;
+  box-shadow: 0 6rpx 24rpx #b2b2b2;
+  padding: 0 50rpx 80rpx;
+  overflow: hidden;
+}
+
+.mid .li {
+  width: 100rpx;
+  margin-top: 80rpx;
+  margin-right: 70rpx;
+}
+
+.mid .li:nth-child(4n) {
+  margin-right: 0;
+}
+
+.mid .li image {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.mid .li .txt {
+  font-size: 24rpx;
+  color: #333;
+  margin-top: 30rpx;
+  line-height: 1;
+}

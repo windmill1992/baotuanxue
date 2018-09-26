@@ -1,0 +1,11 @@
+<!--pages/helper/helper.wxml-->
+<view class='container'>
+	<view class='box txtC'>
+		<image src='../../img/suc.png'></image>
+		<view class='txt'>审核中，请耐心等待</view>
+		<view class='btns'>
+			<button class='btn-green' bindtap='cantact'>联系客服</button>
+		</view>
+		<view class='txt1'>预计3个工作日内审核完毕</view>
+	</view>
+</view>

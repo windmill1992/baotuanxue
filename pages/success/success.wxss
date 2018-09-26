@@ -1,0 +1,8 @@
+/* pages/success/success.wxss */
+@import '../login/login.wxss';
+
+.box image {
+  width: 222rpx;
+  height: 222rpx;
+  margin-top: 150rpx;
+}

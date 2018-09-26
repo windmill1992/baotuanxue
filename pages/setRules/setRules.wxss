@@ -1,0 +1,15 @@
+/* pages/setRules/setRules.wxss */
+@import '../../utils/input.wxss';
+
+.box{
+	padding: 20rpx 30rpx;
+	position: relative;
+	min-height: 100%;
+}
+
+.btns {
+	position: absolute;
+	width: 100%;
+	bottom: 100rpx;
+	padding: 0 30rpx;
+}

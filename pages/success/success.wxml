@@ -1,0 +1,10 @@
+<!--pages/success/success.wxml-->
+<view class='container'>
+	<view class='box txtC'>
+		<image src='../../img/suc.png'></image>
+		<view class='txt'>提交成功，请等待审核</view>
+		<view class='btns'>
+			<button class='btn-green' bindtap='know'>我知道了</button>
+		</view>
+	</view>
+</view>

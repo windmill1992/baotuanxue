@@ -1,0 +1,20 @@
+.inp-item {
+  height: 88rpx;
+  line-height: 88rpx;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 28rpx;
+}
+
+.inp-item .label, .inp-item .suffix {
+  color: #333;
+}
+
+.inp-item .inp-box {
+  max-width: 500rpx;
+  text-align: right;
+}
+
+.inp-item .inp {
+  padding-right: 20rpx;
+  flex: 1;
+}

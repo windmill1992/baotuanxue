@@ -1,72 +1,85 @@
 /* pages/perfectInfo/perfectInfo.wxss */
 
-.container{
-	background: #f0f0f0;
+.container {
+  background: #f0f0f0;
 }
-.title{
-	line-height: 80rpx;
-	color: #666;
-	font-size: 24rpx;
-	padding: 0 30rpx;
+
+.title {
+  line-height: 80rpx;
+  color: #666;
+  font-size: 24rpx;
+  padding: 0 30rpx;
 }
-.box{
-	background: #fff;
-	padding: 0 30rpx;
+
+.box {
+  background: #fff;
+  padding: 0 30rpx;
 }
-.box .item{
-	height: 88rpx;
-	line-height: 88rpx;
-	border-top: 1px solid #ccc;
+
+.box .item {
+  height: 88rpx;
+  line-height: 88rpx;
+  border-top: 1px solid #ccc;
 }
-.box .item:first-of-type{
-	border-top: 0;
+
+.box .item:first-of-type {
+  border-top: 0;
 }
-.box .item1{
-	padding: 30rpx 0;
+
+.box .item1 {
+  padding: 30rpx 0;
 }
-.box .label{
-	font-size: 28rpx;
-	color: #333;
-	font-family: 'PingFang-SC-Medium';
+
+.box .label {
+  font-size: 28rpx;
+  color: #333;
+  font-family: 'PingFang-SC-Medium';
 }
-.box .txt{
-	font-size: 24rpx;
-	color: #999;
-	margin-top: 20rpx;
+
+.box .txt {
+  font-size: 24rpx;
+  color: #999;
+  margin-top: 20rpx;
 }
-.box .upload{
-	position: relative;
-	width: 140rpx;
-	height: 140rpx;
-	border-radius: 18rpx;
-	background: #ccc;
-	overflow: hidden;
+
+.box .upload {
+  position: relative;
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 18rpx;
+  background: #ccc;
+  overflow: hidden;
 }
-.box .upload .txt1{
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-	height: 40rpx;
-	line-height: 40rpx;
-	color: #fff;
-	font-size: 24rpx;
-	text-align: center;
-	background: #000;
+
+.box .upload .txt1 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40rpx;
+  line-height: 40rpx;
+  color: #fff;
+  font-size: 24rpx;
+  text-align: center;
+  background: #000;
 }
-.box .inp{
-	height: 88rpx;
-	line-height: 88rpx;
-	min-height: auto;
-	text-align: right;
+
+.box .inp {
+  height: 88rpx;
+  line-height: 88rpx;
+  min-height: auto;
+  text-align: right;
 }
-.box .pick{
-	color: #333;
+
+.box .pick {
+  color: #333;
 }
-.box .def{
-	color: #999;
+
+.box .def {
+  color: #999;
 }
-.btns{
-	padding: 0 30rpx;
-	margin-top: 50rpx;
+
+.btns {
+  padding: 0 30rpx;
+  margin-top: 50rpx;
 }

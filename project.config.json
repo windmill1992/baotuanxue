@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 1,
+			"current": 5,
 			"list": [
 				{
 					"id": -1,
@@ -44,7 +44,31 @@
 				{
 					"id": -1,
 					"name": "perfectInfo",
-					"pathName": "pages/perfectInfo/perfectInfo"
+					"pathName": "pages/perfectInfo/perfectInfo",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "success",
+					"pathName": "pages/success/success",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "helper",
+					"pathName": "pages/helper/helper",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "create",
+					"pathName": "pages/create/create",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "setRules",
+					"pathName": "pages/setRules/setRules"
 				}
 			]
 		}

@@ -1,0 +1,40 @@
+<!--pages/create/create.wxml-->
+<view class='container'>
+	<view class='upload fcol fcen spc'>
+		<view class='txt'>点击上传封面图</view>
+	</view>
+	<view class='txt1'>商品标题</view>
+	<view class='inp-box flex spb fcen'>
+		<input class='inp' placeholder='请填写商品名称' bindinput='getName' maxlength='20'></input>
+		<view class='txt2'>0/20</view>
+	</view>
+	<view class='txt1'>拼团类型</view>
+	<radio-group class='inp-box flex'>
+		<view class='flex fcen flex1'>
+			<radio value='0' class='rad' id='rad0'></radio>
+			<label for='rad0' class='txt'>组团优惠</label>
+		</view>
+		<view class='rad-box flex fcen flex1'>
+			<radio value='1' class='rad' id='rad1' disabled></radio>
+			<label for='rad1' class='txt3'>转介绍（即将开放）</label>
+		</view>
+	</radio-group>
+	<view class='txt1'>商品库存</view>
+	<view class='inp-box flex spb fcen'>
+		<input class='inp' placeholder='请填写数量' bindinput='getNum'></input>
+		<view class='txt2'>个</view>
+	</view>
+	<view class='txt1'>更多信息（选填）</view>
+	<view class='upload up fcol fcen spc'>
+		<view class='txt'>点击上传工作室环境</view>
+	</view>
+	<view class='upload fcol fcen spc'>
+		<view class='txt'>点击上传师资介绍</view>
+	</view>
+	<view class='upload fcol fcen spc'>
+		<view class='txt'>点击上传学员风采</view>
+	</view>
+	<view class='btns'>
+		<button class='btn-green' bindtap='next'>下一步</button>
+	</view>
+</view>

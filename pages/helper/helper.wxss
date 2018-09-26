@@ -1,0 +1,8 @@
+/* pages/helper/helper.wxss */
+@import '../success/success.wxss';
+
+.box .txt1 {
+	font-size: 24rpx;
+	color: #333;
+	margin-top: 50rpx;
+}
