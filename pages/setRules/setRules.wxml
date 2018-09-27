@@ -18,14 +18,14 @@
 		<view class='inp-item flex spb fcen'>
 			<view class='label'>商品原价</view>
 			<view class='inp-box flex fcen'>
-				<input type='number' class='inp' bindinput='getValue' data-prop='oriPrice' placeholder='请填写价格'></input>
+				<input type='digit' class='inp' bindinput='getValue' data-prop='oriPrice' placeholder='请填写价格'></input>
 				<view class='suffix'>元</view>
 			</view>
 		</view>
 		<view class='inp-item flex spb fcen'>
 			<view class='label'>拼团价格</view>
 			<view class='inp-box flex fcen'>
-				<input type='number' class='inp' bindinput='getValue' data-prop='price' placeholder='请填写价格'></input>
+				<input type='digit' class='inp' bindinput='getValue' data-prop='price' placeholder='请填写价格'></input>
 				<view class='suffix'>元</view>
 			</view>
 		</view>

@@ -8,7 +8,10 @@
     "pages/helper/helper",
     "pages/ucenter/ucenter",
     "pages/create/create",
-    "pages/setRules/setRules"
+    "pages/setRules/setRules",
+    "pages/pubSuc/pubSuc",
+    "pages/detail/detail",
+    "pages/manage/manage"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -1,16 +1,16 @@
 /**app.wxss**/
 
-page, view, scroll-view, swiper, text, button, picker, picker-view,
-navigator, input, select, textarea, label, form, image, checkbox, radio {
+page, view, scroll-view, swiper, text, button, picker, picker-view, navigator,
+input, select, textarea, label, form, image, checkbox, radio {
   font-family: "PingFangSC-Regular", "微软雅黑", "Arial";
-	box-sizing: border-box;
-	padding: 0;
-	margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 page {
   height: 100%;
-	font-size: 28rpx;
+  font-size: 28rpx;
 }
 
 .container {
@@ -23,8 +23,8 @@ page {
   display: flex;
 }
 
-.flex1{
-	flex: 1;
+.flex1 {
+  flex: 1;
 }
 
 .spa {
@@ -43,8 +43,8 @@ page {
   align-items: center;
 }
 
-.fend{
-	justify-content: flex-end;
+.fend {
+  justify-content: flex-end;
 }
 
 .fcol {
@@ -52,28 +52,28 @@ page {
   flex-direction: column;
 }
 
-.fwrap{
-	flex-wrap: wrap;
+.fwrap {
+  flex-wrap: wrap;
 }
 
-.fnowrap{
-	flex-wrap: nowrap;
+.fnowrap {
+  flex-wrap: nowrap;
 }
 
-.fshrink0{
-	flex-shrink: 0;
+.fshrink0 {
+  flex-shrink: 0;
 }
 
-.txtL{
-	text-align: left!important;
+.txtL {
+  text-align: left !important;
 }
 
-.txtC{
-	text-align: center!important;
+.txtC {
+  text-align: center !important;
 }
 
-.txtR{
-	text-align: right!important;
+.txtR {
+  text-align: right !important;
 }
 
 .fl {
@@ -82,6 +82,10 @@ page {
 
 .fr {
   float: right;
+}
+
+.bold {
+  font-family: 'PingFang-SC-Bold';
 }
 
 .clear {
@@ -97,11 +101,11 @@ page {
 }
 
 .hide1 {
-  display: none!important;
+  display: none !important;
 }
 
 .show {
-  display: block!important;
+  display: block !important;
 }
 
 .back::before, .more::after {
@@ -121,6 +125,7 @@ page {
   border-left: 3rpx solid #fff;
   border-bottom: 3rpx solid #fff;
 }
+
 .tips {
   position: fixed;
   top: 50%;
@@ -133,48 +138,71 @@ page {
   line-height: 1.5;
   padding: 30rpx;
   border-radius: 10rpx;
-	z-index: 9999;
+  z-index: 9999;
 }
 
 .error {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	padding: 24rpx 30rpx;
-	font-size: 24rpx;
-	color: #fff;
-	background: #ff4c4c;
-	word-break: break-all;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 24rpx 30rpx;
+  font-size: 24rpx;
+  color: #fff;
+  background: #ff4c4c;
+  word-break: break-all;
 }
 
 .loadmore {
-	font-size: 26rpx;
-	color: #fc2441;
-	text-align: center;
-	line-height: 80rpx;
+  font-size: 26rpx;
+  color: #fc2441;
+  text-align: center;
+  line-height: 80rpx;
 }
 
 .loadmore.no {
-	color: #c9c9c9;
+  color: #c9c9c9;
+}
+
+button {
+  background: none;
+  border-radius: 0;
 }
 
 button::after {
-	border: none;
+  border: none;
 }
 
-.input-placeholder, .textarea-placeholder{
-	color: #999;
+.input-placeholder, .textarea-placeholder {
+  color: #999;
 }
 
-.btn-green {
-	width: 100%;
-	height: 88rpx;
-	line-height: 88rpx;
-	color: #fff;
-	font-size: 30rpx;
-	text-align: center;
-	font-family: 'PingFangSC-Bold';
-	background: #00bf4a;
-	border-radius: 6rpx;
+.btn {
+  width: 100%;
+  height: 88rpx;
+  line-height: 88rpx;
+  color: #fff;
+  font-size: 30rpx;
+  text-align: center;
+  font-family: 'PingFangSC-Bold';
+  border-radius: 6rpx;
+}
+
+.btn.green {
+  background: #00bf4a;
+}
+
+.btn.gray {
+  background: #999;
+}
+
+.no-data image {
+	width: 320rpx;
+	height: 270rpx;
+}
+
+.no-data .txt {
+  font-size: 30rpx;
+  color: #999;
+	margin-top: 50rpx;
 }

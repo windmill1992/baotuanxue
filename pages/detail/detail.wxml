@@ -1,0 +1,57 @@
+<!--pages/detail/detail.wxml-->
+<view class='container'>
+	<view class='cover'>
+		<image src='' mode='widthFix'></image>
+		<view class='time'>距离结束还有10小时12分</view>
+	</view>
+	<view class='info'>
+		<view class='title bold'>天津NB舞蹈工作室年卡</view>
+		<view class='txt'>已售：1234件</view>
+	</view>
+	<view class='box'>
+		<navigator url='' class='nav-a flex spb fcen'>
+			<view class='user flex fcen'>
+				<image src=''></image>
+				<view class='name'>天津NB舞蹈工作室</view>
+			</view>
+			<view class='more1'>
+				<image src='../../img/more.png'></image>
+			</view>
+		</navigator>
+		<view class='txt1'>拼团详情</view>
+		<view class='content'>
+			<image src='' mode='widthFix'></image>
+		</view>
+	</view>
+	<view class='bot flex'>
+		<view class='btn1 fcol spc fcen' bindtap='share'>
+			<image src='../../img/share.png' mode='aspectFit'></image>
+			<view class='txt1'>分享</view>
+		</view>
+		<view class='btn2 fcol spc fcen'>
+			<view class='num1'>¥1234.00</view>
+			<view class='txt2 bold'>单独购买</view>
+		</view>
+		<view class='btn3 flex1 fcol spc fcen'>
+			<view class='num2'>¥1234.00</view>
+			<view class='txt3 bold'>10人成团</view>
+		</view>
+	</view>
+
+	<view class='share-box {{showShare ? "show" : ""}}'>
+		<view class='mask'></view>
+		<view class='con'>
+			<view class='top-d flex'>
+				<button class='btn1 fcol fcen spc flex1' open-type='share'>
+					<image src='../../img/wx.png'></image>
+					<view class='txt'>微信好友</view>
+				</button>
+				<button class='btn1 fcol fcen spc flex1'>
+					<image src='../../img/pyq.png'></image>
+					<view class='txt'>朋友圈</view>
+				</button>
+			</view>
+			<view class='bot-d' bindtap='closeShare'>取消分享</view>
+		</view>
+	</view>
+</view>

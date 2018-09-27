@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 5,
+			"current": 8,
 			"list": [
 				{
 					"id": -1,
@@ -68,7 +68,26 @@
 				{
 					"id": -1,
 					"name": "setRules",
-					"pathName": "pages/setRules/setRules"
+					"pathName": "pages/setRules/setRules",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "pubSuc",
+					"pathName": "pages/pubSuc/pubSuc",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "detail",
+					"pathName": "pages/detail/detail",
+					"query": "id=1"
+				},
+				{
+					"id": -1,
+					"name": "manage",
+					"pathName": "pages/manage/manage",
+					"query": ""
 				}
 			]
 		}
