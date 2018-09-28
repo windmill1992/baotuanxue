@@ -1,0 +1,37 @@
+<!--pages/orders/orders.wxml-->
+<view class='container fcol'>
+	<view class='tabs flex spb bold'>
+		<view class='tab flex1 {{tab == 0 ? "on" : ""}}' bindtap='changeTab' data-tab='0'>进行中</view>
+		<view class='tab flex1 {{tab == 1 ? "on" : ""}}' bindtap='changeTab' data-tab='1'>已完成</view>
+		<view class='tab flex1 {{tab == 2 ? "on" : ""}}' bindtap='changeTab' data-tab='2'>已失败</view>
+		<view class='line r{{tab}}'></view>
+	</view>
+	<view class='list' wx:if='{{hasmore != 0}}'>
+		<navigator url='' class='item'>
+			<view class='top flex fcen spb'>
+				<view class='state'>还差3人成团（10人团）</view>
+				<view class='user flex fcen'>
+					<image src=''></image>
+					<view class='nick'>小魔鱼</view>
+				</view>
+			</view>
+			<view class='con flex fcen'>
+				<view class='pic fshrink0'></view>
+				<view class='info flex1 fcol spb'>
+					<view>
+						<view class='title bold'>天津NB舞蹈工作室年卡</view>
+						<view class='time'>2018-09-09  18:23:23</view>
+					</view>
+				</view>
+			</view>
+			<view class='bot'>
+				<view class='txt1'>距离结束还有10小时23分23秒</view>
+			</view>
+		</navigator>
+	</view>
+	<view class='no-data flex1 fcol fcen spc' wx:else>
+		<image src='../../img/no_collage.png' mode='widthFix'></image>
+		<view class='txt'>暂无拼团数据哦~</view>
+	</view>
+	<view class='loadmore no' wx:if='{{hasmore == 1}}'>没有更多数据了</view>
+</view>

@@ -1,4 +1,4 @@
-// pages/manage/manage.js
+// pages/orders/orders.js
 Page({
 	data: {
 		tab: 0,

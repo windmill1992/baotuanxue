@@ -1,0 +1,39 @@
+<!--pages/cashManage/cashManage.wxml-->
+<view class='container fcol'>
+	<view class='line-shadow'></view>
+	<view class='top'>
+		<view class='bg'>
+			<view class='box fcol fcen spc'>
+				<view class='txt bold'>可提现余额</view>
+				<view class='num'>1000.00</view>
+			</view>
+			<image src='../../img/info_bg.png'></image>
+		</view>
+	</view>
+	<view class='mid flex1'>
+		<navigator url='' class='nav'>
+			<view class='item flex spb fcen'>
+				<view class='txt1'>去提现</view>
+				<view class='arr'>
+					<image src='../../img/more.png'></image>
+				</view>
+			</view>
+		</navigator>
+		<navigator url='' class='nav'>
+			<view class='item flex spb fcen'>
+				<view class='txt1'>提现记录</view>
+				<view class='arr'>
+					<image src='../../img/more.png'></image>
+				</view>
+			</view>
+		</navigator>
+		<navigator url='' class='nav'>
+			<view class='item flex spb fcen'>
+				<view class='txt1'>提现规则</view>
+				<view class='arr'>
+					<image src='../../img/more.png'></image>
+				</view>
+			</view>
+		</navigator>
+	</view>
+</view>

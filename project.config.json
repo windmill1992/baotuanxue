@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 8,
+			"current": 11,
 			"list": [
 				{
 					"id": -1,
@@ -87,6 +87,24 @@
 					"id": -1,
 					"name": "manage",
 					"pathName": "pages/manage/manage",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "orders",
+					"pathName": "pages/orders/orders",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "orderDetail",
+					"pathName": "pages/orderDetail/orderDetail",
+					"query": "id=1"
+				},
+				{
+					"id": -1,
+					"name": "cashManage",
+					"pathName": "pages/cashManage/cashManage",
 					"query": ""
 				}
 			]

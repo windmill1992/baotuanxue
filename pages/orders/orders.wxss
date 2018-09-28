@@ -1,0 +1,67 @@
+/* pages/orders/orders.wxss */
+@import '../manage/manage.wxss';
+
+.tabs {
+  padding: 0 30rpx;
+}
+
+.tabs .line {
+  left: 14%;
+}
+
+.tabs .line.r1 {
+  left: 45%;
+}
+
+.tabs .line.r2 {
+  left: 76%;
+}
+
+.item {
+  padding: 0 20rpx 20rpx;
+  box-shadow: 0 6rpx 24rpx #e5e5e5;
+}
+
+.item .top {
+  border-bottom: 1px solid #f0f0f0;
+  margin-bottom: 16rpx;
+}
+
+.item .user image {
+  width: 44rpx;
+  height: 44rpx;
+  margin-right: 10rpx;
+}
+
+.item .user .nick {
+  font-size: 24rpx;
+  color: #666;
+}
+
+.item .pic {
+  width: 102rpx;
+  height: 102rpx;
+  border-radius: 4rpx;
+  background-color: #f3f3f3;
+}
+
+.item .info {
+  height: 102rpx;
+}
+
+.item .info .title {
+  -webkit-line-clamp: 1;
+}
+
+.item .info .time {
+  font-size: 24rpx;
+  color: #666;
+  margin-top: 20rpx;
+}
+
+.item .bot {
+  padding: 20rpx 0 0;
+  border-top: 1px solid #f0f0f0;
+  margin-top: 20rpx;
+  color: #666;
+}

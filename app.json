@@ -11,7 +11,10 @@
     "pages/setRules/setRules",
     "pages/pubSuc/pubSuc",
     "pages/detail/detail",
-    "pages/manage/manage"
+    "pages/manage/manage",
+    "pages/orders/orders",
+    "pages/orderDetail/orderDetail",
+    "pages/cashManage/cashManage"
   ],
   "window": {
     "backgroundTextStyle": "light",
