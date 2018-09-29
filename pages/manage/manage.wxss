@@ -1,94 +1,113 @@
 /* pages/manage/manage.wxss */
 
-.container{
-	background: #f0f0f0;
+.container {
+  background: #f0f0f0;
 }
-.tabs{
-	position: fixed;
-	background: #fff;
-	width: 100%;
-	height: 90rpx;
-	line-height: 90rpx;
-	padding: 0 120rpx;
-	box-shadow: 0 2rpx 4rpx rgba(0, 0, 0, 0.1);
+
+.tabs {
+  position: fixed;
+	top: 0;
+	left: 0;
+  background: #fff;
+  width: 100%;
+  height: 90rpx;
+  line-height: 90rpx;
+  padding: 0 120rpx;
+  box-shadow: 0 2rpx 4rpx rgba(0, 0, 0, 0.1);
 }
-.tabs .tab{
-	text-align: center;
-	color: #666;
-	font-size: 30rpx;
+
+.tabs .tab {
+  text-align: center;
+  color: #666;
+  font-size: 30rpx;
 }
-.tabs .tab.on{
-	color: #00bf4a;
+
+.tabs .tab.on {
+  color: #00bf4a;
 }
-.tabs .line{
-	width: 70rpx;
-	height: 1px;
-	border-radius: 1px;
-	background-image: linear-gradient(to right, rgb(47, 255, 127) 0%, rgb(0, 191, 74) 100%);
-	position: absolute;
-	bottom: 10rpx;
-	left: 28%;
-	transition: left .4s ease;
+
+.tabs .line {
+  width: 70rpx;
+  height: 1px;
+  border-radius: 1px;
+  background-image: linear-gradient(to right, rgb(47, 255, 127) 0%, rgb(0, 191, 74) 100%);
+  position: absolute;
+  bottom: 10rpx;
+  left: 28%;
+  transition: left 0.4s ease;
 }
-.tabs .line.r{
-	left: 62%;
+
+.tabs .line.r {
+  left: 62%;
 }
-.list{
-	padding: 120rpx 30rpx 30rpx;
+
+.list {
+  padding: 120rpx 30rpx 30rpx;
 }
-.item{
-	background: #fff;
-	border-radius: 6rpx;
-	background: #fbfbfb;
-	box-shadow: -4rpx 0 0 #00bf49;
-	margin-bottom: 30rpx;
+
+.item {
+  background: #fff;
+  border-radius: 6rpx;
+  background: #fbfbfb;
+  box-shadow: -4rpx 0 0 #00bf49;
+  margin-bottom: 30rpx;
 }
-.item .shadow{
-	padding: 0 20rpx 30rpx;
-	box-shadow: 0 6rpx 24rpx #e5e5e5;
-	border-radius: 6rpx;
+
+.item .shadow {
+  padding: 0 20rpx 30rpx;
+  box-shadow: 0 6rpx 24rpx #e5e5e5;
+  border-radius: 6rpx;
 }
-.item .top{
-	line-height: 40rpx;
-	padding: 20rpx 0;
+
+.item .top {
+  line-height: 40rpx;
+  padding: 20rpx 0;
 }
-.item .state{
-	font-size: 28rpx;
-	color: #00ab41;
+
+.item .state {
+  font-size: 28rpx;
+  color: #00ab41;
 }
-.item .time{
-	font-size: 24rpx;
-	color: #666;
+
+.item .time {
+  font-size: 24rpx;
+  color: #666;
 }
-.item .pic{
-	width: 202rpx;
-	height: 202rpx;
-	margin-right: 20rpx;
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center;
-	background-image: #f0f0f0;
+
+.item .pic {
+  width: 202rpx;
+  height: 202rpx;
+  margin-right: 20rpx;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-image: #f0f0f0;
 }
-.item .info{
-	height: 202rpx;
+
+.item .info {
+  height: 202rpx;
 }
-.item .title{
-	font-size: 36rpx;
-	color: #333;
-	display: -webkit-box;
-	-webkit-box-orient: vertical;
-	-webkit-line-clamp: 2;
-	overflow: hidden;
+
+.item .title {
+  font-size: 36rpx;
+  color: #333;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
 }
-.item .price{
-	font-size: 32rpx;
-	color: #f00;
-	margin-top: 30rpx;
+
+.item .price {
+  font-size: 32rpx;
+  color: #f00;
+  margin-top: 30rpx;
 }
-.item .price .rmb{
-	font-size: 24rpx;
+
+.item .price .rmb {
+  font-size: 24rpx;
 }
-.item .num{
-	font-size: 24rpx;
-	color: #666;
+
+.item .num {
+  font-size: 24rpx;
+  color: #666;
 }

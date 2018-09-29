@@ -1,0 +1,38 @@
+/* pages/cashDetail/cashDetail.wxss */
+
+.box {
+  padding: 50rpx 30rpx;
+}
+
+.b1 {
+  border-bottom: 1px solid #ccc;
+}
+
+.b2 {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 30rpx;
+}
+
+.item {
+  padding: 30rpx 20rpx;
+  line-height: 1;
+  font-size: 24rpx;
+}
+
+.item .txt {
+  color: #999;
+}
+
+.item .txt1 {
+  color: #333;
+}
+
+.item .num {
+  font-size: 60rpx;
+}
+
+.txt2 {
+  font-size: 24rpx;
+  color: #333;
+  text-align: center;
+}

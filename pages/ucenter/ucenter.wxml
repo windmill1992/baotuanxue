@@ -1,2 +1,34 @@
 <!--pages/ucenter/ucenter.wxml-->
-<text>pages/ucenter/ucenter.wxml</text>
+<view class='container'>
+	<view class='top'>
+		<image src='../../img/index_bg.png' class='bg'></image>
+		<view class='user'>
+			<view class='avatar'>
+				<image src='../../img/logo.png'></image>
+			</view>
+			<view class='nick'>厉害的超超</view>
+		</view>
+	</view>
+	<view class='mid'>
+		<view class='flex'>
+			<button class='item flex1' bindtap='showBox'>
+				<image src='../../img/contact.png' mode='aspectFit'></image>
+				<view class='txt'>联系我们</view>
+			</button>
+			<navigator url='/pages/about/about' class='item flex1'>
+				<image src='../../img/about.png' mode='aspectFit'></image>
+				<view class='txt'>关于我们</view>
+			</navigator>
+		</view>
+	</view>
+	<view class='tel-box {{showTel ? "show" : ""}}'>
+		<view class='mask'></view>
+		<view class='con'>
+			<view class='top-d'>
+				<view class='txt'>010-12345678</view>
+				<button class='txt' open-type=''>呼叫</button>
+			</view>
+			<view class='bot-d txt' bindtap='closeTel'>取消</view>
+		</view>
+	</view>
+</view>

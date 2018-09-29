@@ -1,51 +1,61 @@
 {
-  "pages": [
-    "pages/index/index",
-    "pages/logs/logs",
-    "pages/login/login",
-    "pages/perfectInfo/perfectInfo",
-    "pages/success/success",
-    "pages/helper/helper",
-    "pages/ucenter/ucenter",
-    "pages/create/create",
-    "pages/setRules/setRules",
-    "pages/pubSuc/pubSuc",
-    "pages/detail/detail",
-    "pages/manage/manage",
-    "pages/orders/orders",
-    "pages/orderDetail/orderDetail",
-    "pages/cashManage/cashManage"
-  ],
-  "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "",
-    "navigationBarTextStyle": "black"
-  },
-  "tabBar": {
-    "color": "#a9a9a9",
-    "selectedColor": "#000",
-    "backgroundColor": "#f2f2f2",
-    "borderStyle": "white",
-    "list": [
-      {
-        "pagePath": "pages/index/index",
-        "text": "管理",
-        "iconPath": "img/home.png",
-        "selectedIconPath": "img/home1.png"
-      },
-      {
-        "pagePath": "pages/create/create",
-        "text": "新建",
-        "iconPath": "img/create.png",
-        "selectedIconPath": "img/create1.png"
-      },
-      {
-        "pagePath": "pages/ucenter/ucenter",
-        "text": "我的",
-        "iconPath": "img/user.png",
-        "selectedIconPath": "img/user1.png"
-      }
-    ]
-  }
+	"pages": [
+		"pages/index/index",
+		"pages/logs/logs",
+		"pages/login/login",
+		"pages/perfectInfo/perfectInfo",
+		"pages/success/success",
+		"pages/helper/helper",
+		"pages/ucenter/ucenter",
+		"pages/create/create",
+		"pages/setRules/setRules",
+		"pages/pubSuc/pubSuc",
+		"pages/detail/detail",
+		"pages/manage/manage",
+		"pages/orders/orders",
+		"pages/orderDetail/orderDetail",
+		"pages/cashManage/cashManage",
+		"pages/cashRule/cashRule",
+		"pages/withdrawCash/withdrawCash",
+		"pages/cashRecord/cashRecord",
+		"pages/cashDetail/cashDetail",
+		"pages/storeInfo/storeInfo",
+		"pages/about/about",
+		"pages/hexiao/hexiao",
+		"pages/hexiaoSuc/hexiaoSuc",
+		"pages/hexiaoSure/hexiaoSure",
+		"pages/userInfo/userInfo"
+	],
+	"window": {
+		"backgroundTextStyle": "light",
+		"navigationBarBackgroundColor": "#fff",
+		"navigationBarTitleText": "",
+		"navigationBarTextStyle": "black"
+	},
+	"tabBar": {
+		"color": "#a9a9a9",
+		"selectedColor": "#000",
+		"backgroundColor": "#f2f2f2",
+		"borderStyle": "white",
+		"list": [
+			{
+				"pagePath": "pages/index/index",
+				"text": "管理",
+				"iconPath": "img/home.png",
+				"selectedIconPath": "img/home1.png"
+			},
+			{
+				"pagePath": "pages/create/create",
+				"text": "新建",
+				"iconPath": "img/create.png",
+				"selectedIconPath": "img/create1.png"
+			},
+			{
+				"pagePath": "pages/ucenter/ucenter",
+				"text": "我的",
+				"iconPath": "img/user.png",
+				"selectedIconPath": "img/user1.png"
+			}
+		]
+	}
 }

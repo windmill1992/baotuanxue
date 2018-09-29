@@ -1,1 +1,129 @@
 /* pages/ucenter/ucenter.wxss */
+
+.top {
+  width: 100%;
+  height: 410rpx;
+  position: relative;
+  overflow: hidden;
+}
+
+.top .bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.top .user .nick {
+  text-align: center;
+  font-size: 36rpx;
+  color: #fff;
+  margin-top: 30rpx;
+}
+
+.top .user .avatar {
+  margin: 40rpx auto 0;
+  width: 220rpx;
+  height: 220rpx;
+  border-radius: 100%;
+  border: 1px solid #fff;
+}
+
+.top .user .avatar image {
+  width: 200rpx;
+  height: 200rpx;
+  margin: 9rpx;
+  border-radius: 100%;
+  border: 1px solid #fff;
+}
+
+.mid {
+  height: 300rpx;
+  margin: -30rpx 30rpx 0;
+  background: #fff;
+  box-shadow: 0 4rpx 16rpx #ccc;
+  border-radius: 14rpx;
+  overflow: hidden;
+}
+
+.mid .item {
+  padding: 80rpx 0;
+  text-align: center;
+  background: transparent;
+  line-height: 1;
+}
+
+.mid .item image {
+  width: 78rpx;
+  height: 72rpx;
+}
+
+.mid .item .txt {
+  font-size: 24rpx;
+  color: #333;
+  margin-top: 40rpx;
+}
+
+.tel-box, .tel-box .mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.tel-box {
+  opacity: 0;
+  z-index: -11;
+}
+
+.tel-box.show {
+  opacity: 1;
+  z-index: 11;
+}
+
+.tel-box .con {
+  height: 278rpx;
+  transition: bottom 0.4s ease;
+  position: absolute;
+  bottom: -278rpx;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.tel-box.show .con {
+  bottom: 0;
+}
+
+.tel-box .mask {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.tel-box .top-d {
+  background: #fff;
+  position: absolute;
+  bottom: 98rpx;
+  left: 0;
+  width: 100%;
+  height: 178rpx;
+}
+
+.tel-box .txt {
+  font-size: 30rpx;
+  color: #333;
+  line-height: 88rpx;
+  text-align: center;
+  cursor: pointer;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+}
+
+.tel-box .bot-d {
+  background: #fff;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}

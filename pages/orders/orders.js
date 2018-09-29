@@ -4,6 +4,7 @@ Page({
 		tab: 0,
 		hasmore: -1,
 		list: [],
+		hasNet: false,
 	},
 	onLoad: function (options) {
 		this.page = 1;

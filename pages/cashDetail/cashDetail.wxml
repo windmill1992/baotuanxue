@@ -1,0 +1,41 @@
+<!--pages/cashDetail/cashDetail.wxml-->
+<view class='container'>
+	<view class='line-shadow'></view>
+	<view class='box'>
+		<view class='b1'>
+			<view class='item flex fcen spb'>
+				<view class='txt'>提现金额</view>
+				<view class='num bold'>44.98</view>
+			</view>
+			<view class='item flex fcen spb'>
+				<view class='txt'>到账金额</view>
+				<view class='txt1'>¥44.98（佣金15%）</view>
+			</view>
+		</view>
+		<view class='b2'>
+			<view class='item flex fcen spb'>
+				<view class='txt'>提现时间</view>
+				<view class='txt1'>2018-12-12 18:43:32</view>
+			</view>
+			<view class='item flex fcen spb'>
+				<view class='txt'>交易单号</view>
+				<view class='txt1'>12345678901234512</view>
+			</view>
+			<view class='item flex fcen spb'>
+				<view class='txt'>剩余金额</view>
+				<view class='txt1'>¥44.98</view>
+			</view>
+			<view class='item flex fcen spb'>
+				<view class='txt'>状态</view>
+				<view class='txt1'>已到账</view>
+				<!-- <view class='txt1'>进行中</view> -->
+				<!-- <view class='txt1'>已失败</view> -->
+			</view>
+			<view class='item flex fcen spb'>
+				<view class='txt'>到账时间</view>
+				<view class='txt1'>2018-12-12 18:43:32</view>
+			</view>
+		</view>
+	</view>
+	<view class='txt2 bold1'>请联系客服处理</view>
+</view>

@@ -4,7 +4,11 @@ Page({
 		
   },
   onLoad: function (options) {
-  
+		if (options.id) {
+			wx.setNavigationBarTitle({
+				title: '编辑门店信息',
+			})
+		}
   },
 	getValue: function (e) {
 		let p = e.currentTarget.dataset.prop;

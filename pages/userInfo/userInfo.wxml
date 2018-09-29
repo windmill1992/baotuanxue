@@ -1,0 +1,22 @@
+<!--pages/userInfo/userInfo.wxml-->
+<view class='container'>
+	<view class='line-shadow'></view>
+	<view class='box flex1'>
+		<view class='top flex fcen spb'>
+			<view class='txt'>拼团发起人</view>
+			<view class='user flex fcen'>
+				<image src='../../img/logo.png'></image>
+				<view class='txt1'>小魔鱼</view>
+			</view>
+		</view>
+		<view class='mid'>
+			<view class='item flex spb'>
+				<view class='txt'>联系电话</view>
+				<view class='txt1'>13344445555</view>
+			</view>
+		</view>
+	</view>
+	<view class='btns'>
+		<button class='btn green bold'>联系Ta</button>
+	</view>
+</view>

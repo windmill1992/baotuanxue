@@ -1,0 +1,2 @@
+/* pages/hexiaoSure/hexiaoSure.wxss */
+@import '../orderDetail/orderDetail.wxss';

@@ -1,0 +1,2 @@
+/* pages/hexiaoSuc/hexiaoSuc.wxss */
+@import '../success/success.wxss';

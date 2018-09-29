@@ -1,6 +1,10 @@
 /* pages/orders/orders.wxss */
 @import '../manage/manage.wxss';
 
+.container {
+  background: #fff;
+}
+
 .tabs {
   padding: 0 30rpx;
 }
@@ -64,4 +68,11 @@
   border-top: 1px solid #f0f0f0;
   margin-top: 20rpx;
   color: #666;
+}
+
+.no-data .btn {
+  width: 232rpx;
+  margin-top: 30rpx;
+  height: 68rpx;
+  line-height: 68rpx;
 }

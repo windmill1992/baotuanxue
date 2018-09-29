@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 11,
+			"current": 21,
 			"list": [
 				{
 					"id": -1,
@@ -106,6 +106,65 @@
 					"name": "cashManage",
 					"pathName": "pages/cashManage/cashManage",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "cashRule",
+					"pathName": "pages/cashRule/cashRule",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "withdrawCash",
+					"pathName": "pages/withdrawCash/withdrawCash",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "cashRecord",
+					"pathName": "pages/cashRecord/cashRecord",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "cashDetail",
+					"pathName": "pages/cashDetail/cashDetail",
+					"query": "id=1"
+				},
+				{
+					"id": -1,
+					"name": "storeInfo",
+					"pathName": "pages/storeInfo/storeInfo",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "ucenter",
+					"pathName": "pages/ucenter/ucenter",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "hexiao",
+					"pathName": "pages/hexiao/hexiao",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "hexiaoSuc",
+					"pathName": "pages/hexiaoSuc/hexiaoSuc",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "hexiaoSure",
+					"pathName": "pages/hexiaoSure/hexiaoSure",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "userInfo",
+					"pathName": "pages/userInfo/userInfo"
 				}
 			]
 		}

@@ -1,4 +1,4 @@
-// pages/cashManage/cashManage.js
+// pages/cashDetail/cashDetail.js
 Page({
   data: {
 

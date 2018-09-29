@@ -1,0 +1,74 @@
+/* pages/withdrawCash/withdrawCash.wxss */
+
+.container {
+  background: #f0f0f0;
+  padding-top: 50rpx;
+}
+
+.box {
+  padding: 30rpx;
+  background: #fff;
+}
+
+.box .txt {
+  font-size: 30rpx;
+  color: #333;
+}
+
+.box .item {
+  padding: 60rpx 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.box .item .unit {
+  font-size: 60rpx;
+  color: #333;
+}
+
+.box .item .inp {
+  font-size: 60rpx;
+  color: #333;
+  padding: 0 20rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+
+.box .item .input-placeholder {
+  color: #c9c8cc;
+}
+
+.box .item .err {
+  color: #ff4c4c;
+  font-size: 30rpx;
+  line-height: 100rpx;
+  white-space: nowrap;
+}
+
+.box .bot {
+  padding: 30rpx 0 0;
+  font-size: 30rpx;
+}
+
+.box .txt1 {
+  color: #ccc;
+}
+
+.box .txt2 {
+  color: #00ab41;
+}
+
+.btns {
+  margin-top: 50rpx;
+  padding: 0 30rpx;
+}
+
+.btns .btn.no {
+  background: #999;
+}
+
+.txt3 {
+  margin-top: 50rpx;
+  color: #999;
+  font-size: 30rpx;
+  text-align: center;
+}

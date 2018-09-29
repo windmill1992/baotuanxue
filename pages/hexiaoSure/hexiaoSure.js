@@ -1,4 +1,4 @@
-// pages/cashManage/cashManage.js
+// pages/hexiaoSure/hexiaoSure.js
 Page({
   data: {
 

@@ -1,0 +1,31 @@
+<!--pages/cashRecord/cashRecord.wxml-->
+<view class='container fcol'>
+	<view class='line-shadow'></view>
+	<view class='tabs flex spb bold'>
+		<view class='tab flex1 {{tab == 0 ? "on" : ""}}' bindtap='changeTab' data-tab='0'>全部</view>
+		<view class='tab flex1 {{tab == 1 ? "on" : ""}}' bindtap='changeTab' data-tab='1'>已完成</view>
+		<view class='tab flex1 {{tab == 2 ? "on" : ""}}' bindtap='changeTab' data-tab='2'>进行中</view>
+		<view class='tab flex1 {{tab == 3 ? "on" : ""}}' bindtap='changeTab' data-tab='3'>已失败</view>
+		<view class='line r{{tab}}'></view>
+	</view>
+	<view class='list' wx:if='{{hasmore > 0}}'>
+		<view class='item'>
+			<view class='flex spb fcen'>
+				<view class='txt'>发起提现200.00元</view>
+				<view class='state ed'>已完成</view>
+			</view>
+			<view class='time'>2018-12-12 18:43:32</view>
+		</view>
+		<view class='item'>
+			<view class='flex spb fcen'>
+				<view class='txt'>发起提现200.00元</view>
+				<view class='state ed'>已完成</view>
+			</view>
+			<view class='time'>2018-12-12 18:43:32</view>
+		</view>
+	</view>
+	<view class='no-data flex1 fcol fcen spc' wx:else>
+		<image src='../../img/no_collage.png' mode='widthFix'></image>
+		<view class='txt'>暂无提现数据哦~</view>
+	</view>
+</view>

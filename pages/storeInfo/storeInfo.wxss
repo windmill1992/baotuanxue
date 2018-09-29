@@ -1,0 +1,107 @@
+/* pages/storeInfo/storeInfo.wxss */
+
+.container {
+  padding-bottom: 30rpx;
+}
+
+.top {
+  height: 300rpx;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.top .bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.top .user {
+  margin-top: 170rpx;
+  padding: 0 30rpx;
+}
+
+.top .user image {
+  width: 100rpx;
+  height: 100rpx;
+  margin-right: 30rpx;
+  border-radius: 100%;
+}
+
+.top .user .nick {
+  font-size: 36rpx;
+  color: #fff;
+  line-height: 1.5;
+  max-width: 530rpx;
+  padding-right: 30rpx;
+}
+
+.mid {
+  padding: 32rpx 30rpx;
+}
+
+.mid .item {
+  padding: 34rpx 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.mid .item:last-child {
+  border-bottom: 0;
+}
+
+.mid .item image {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.mid .item .txt {
+  font-size: 24rpx;
+  color: #999;
+  padding: 0 60rpx 0 40rpx;
+  width: 180rpx;
+}
+
+.mid .item .txt1 {
+  font-size: 30rpx;
+  color: #333;
+}
+
+.btns {
+  padding: 30rpx;
+}
+
+.container.bg {
+  background: #fff;
+}
+
+.box-1 {
+  overflow: hidden;
+}
+
+.box-1 image {
+  width: 180rpx;
+  height: 180rpx;
+  margin-top: 200rpx;
+}
+
+.box-1 .txt-1 {
+  line-height: 1;
+  margin-top: 60rpx;
+  font-size: 30rpx;
+  color: #333;
+}
+
+.box-1 .txt1-1 {
+  font-size: 24rpx;
+  color: #333;
+  margin-top: 50rpx;
+}
+
+.box-1 .btns-1 {
+  padding: 0 30rpx;
+  margin-top: 100rpx;
+}

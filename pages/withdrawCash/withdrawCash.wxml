@@ -1,0 +1,20 @@
+<!--pages/withdrawCash/withdrawCash.wxml-->
+<view class='container'>
+	<view class='line-shadow'></view>
+	<view class='box'>
+		<view class='txt'>提现金额</view>
+		<view class='item flex'>
+			<view class='unit bold'>¥</view>
+			<input type='digit' bindinput='getMoney' class='inp bold' placeholder='请填写金额'></input>
+			<view class='err' wx:if='{{over}}'>提现金额超限</view>
+		</view>
+		<view class='bot flex spb bold1'>
+			<view class='txt1'>账户余额:¥100.00</view>
+			<view class='txt2' bindtap='all'>全部提现</view>
+		</view>
+	</view>
+	<view class='btns'>
+		<button class='btn green bold {{over ? "no" : ""}}'>提现</button>
+	</view>
+	<view class='txt3'>预计3天内到您绑定的微信中</view>
+</view>

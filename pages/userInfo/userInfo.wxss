@@ -1,0 +1,14 @@
+/* pages/userInfo/userInfo.wxss */
+@import '../orderDetail/orderDetail.wxss';
+
+.mid {
+  padding-bottom: 0;
+}
+
+.mid .item {
+  padding: 32rpx 0;
+}
+
+.btns {
+  margin-top: 60rpx;
+}
