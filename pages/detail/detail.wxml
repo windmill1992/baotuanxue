@@ -1,18 +1,20 @@
 <!--pages/detail/detail.wxml-->
 <view class='container'>
 	<view class='cover'>
-		<image src='' mode='widthFix'></image>
-		<view class='time'>距离结束还有10小时12分</view>
+		<image src='{{info.cover}}' mode='widthFix'></image>
+		<view class='time' wx:if='{{info.groupBuyingStatus == 1}}'>距离结束还有{{info.time}}</view>
+		<view class='time' wx:elif='{{info.groupBuyingStatus == 2}}'>已完成</view>
+		<view class='time' wx:elif='{{info.groupBuyingStatus == 3}}'>超时未成团</view>
 	</view>
 	<view class='info'>
-		<view class='title bold'>天津NB舞蹈工作室年卡</view>
-		<view class='txt'>已售：1234件</view>
+		<view class='title bold'>{{info.proName}}</view>
+		<view class='txt'>已售：{{info.soldQuantity}}件</view>
 	</view>
 	<view class='box'>
-		<navigator url='' class='nav-a flex spb fcen'>
+		<navigator url='/pages/storeInfo/storeInfo' class='nav-a flex spb fcen'>
 			<view class='user flex fcen'>
-				<image src=''></image>
-				<view class='name'>天津NB舞蹈工作室</view>
+				<image src='{{user.avatarUrl}}'></image>
+				<view class='name'>{{user.nickName}}</view>
 			</view>
 			<view class='more1'>
 				<image src='../../img/more.png'></image>
@@ -20,38 +22,39 @@
 		</navigator>
 		<view class='txt1'>拼团详情</view>
 		<view class='content'>
-			<image src='' mode='widthFix'></image>
+			<view class='pic' wx:for='{{info.groupBuyingExtendInfoVOList}}' wx:key='introType'>
+				<image src='{{item.url}}' mode='widthFix'></image>
+				<view class='txt'>{{item.text}}</view>
+			</view>
 		</view>
 	</view>
 	<view class='bot flex'>
-		<view class='btn1 fcol spc fcen' bindtap='share'>
-			<image src='../../img/share.png' mode='aspectFit'></image>
-			<view class='txt1'>分享</view>
-		</view>
-		<view class='btn2 fcol spc fcen'>
-			<view class='num1'>¥1234.00</view>
-			<view class='txt2 bold'>单独购买</view>
-		</view>
-		<view class='btn3 flex1 fcol spc fcen'>
-			<view class='num2'>¥1234.00</view>
-			<view class='txt3 bold'>10人成团</view>
-		</view>
+		<button class='btn green bold' bindtap='share'>分享购买</button>
 	</view>
 
-	<view class='share-box {{showShare ? "show" : ""}}'>
+	<view class='dialog share-box {{showShare ? "show" : ""}}'>
 		<view class='mask'></view>
-		<view class='con'>
-			<view class='top-d flex'>
-				<button class='btn1 fcol fcen spc flex1' open-type='share'>
-					<image src='../../img/wx.png'></image>
-					<view class='txt'>微信好友</view>
-				</button>
-				<button class='btn1 fcol fcen spc flex1'>
-					<image src='../../img/pyq.png'></image>
-					<view class='txt'>朋友圈</view>
-				</button>
+		<view class='dialog_inner'>
+			<view class='top flex fcen'>
+				<image src='{{user.avatarUrl}}'></image>
+				<view class='nick'>{{user.nickName}}发起了一个拼团</view>
 			</view>
-			<view class='bot-d' bindtap='closeShare'>取消分享</view>
+			<view class='cover'>
+				<image src='{{info.cover}}' mode='widthFix'></image>
+			</view>
+			<view class='name bold'>{{info.proName}}</view>
+			<view class='infos flex spb'>
+				<view class='txtL'>拼团价：{{info.groupBuyingPrice}}</view>
+				<view class='txtC'>原价：{{info.proPrice}}</view>
+				<view class='txtR'>{{info.groupBuyingNumber}}人成团</view>
+			</view>
+			<view class='qr flex spc'>
+				<image src='{{info.shareCodeUrl}}'></image>
+			</view>
+			<view class='txt'>扫码参与拼团</view>
+			<view class='close' bindtap='closeShare'>
+				<image src='../../img/close.png'></image>
+			</view>
 		</view>
 	</view>
 </view>

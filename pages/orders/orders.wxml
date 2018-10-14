@@ -8,31 +8,35 @@
 	</view>
 	<block wx:if='{{hasNet}}'>
 		<view class='list' wx:if='{{hasmore != 0}}'>
-			<navigator url='' class='item'>
+			<navigator url='/pages/orderDetail/orderDetail?id={{item.groupId}}&state={{item.groupBuyingStatus}}' class='item' wx:for='{{list}}' wx:key='id'>
 				<view class='top flex fcen spb'>
-					<view class='state'>还差3人成团（10人团）</view>
+					<view class='state' wx:if='{{item.groupBuyingStatus == 1}}'>还差{{item.groupBuyingNumber - item.soldQuantity}}人成团（{{item.groupBuyingNumber}}人团）</view>
+					<view class='state' wx:elif='{{item.groupBuyingStatus == 2}}'>已成团（{{item.groupBuyingNumber}}人团）</view>
+					<view class='state' wx:elif='{{item.groupBuyingStatus == 3}}'>已失败（{{item.groupBuyingNumber}}人团）</view>
 					<view class='user flex fcen'>
-						<image src=''></image>
-						<view class='nick'>小魔鱼</view>
+						<image src='{{item.originator.avatar}}'></image>
+						<view class='nick'>{{item.originator.userName}}</view>
 					</view>
 				</view>
 				<view class='con flex fcen'>
-					<view class='pic fshrink0'></view>
+					<view class='pic fshrink0' style='background-image: url({{item.cover}})'></view>
 					<view class='info flex1 fcol spb'>
 						<view>
-							<view class='title bold'>天津NB舞蹈工作室年卡</view>
-							<view class='time'>2018-09-09  18:23:23</view>
+							<view class='title bold'>{{item.proName}}</view>
+							<view class='time'>{{item.bussinessShowTime}}</view>
 						</view>
 					</view>
 				</view>
 				<view class='bot'>
-					<view class='txt1'>距离结束还有10小时23分23秒</view>
+					<view class='txt1' wx:if='{{item.groupBuyingStatus == 1}}'>距离结束还有{{item.time}}</view>
+					<view class='txt1' wx:elif='{{item.groupBuyingStatus == 2}}'>{{item.buyerList.length}}人已支付</view>
+					<view class='txt1' wx:elif='{{item.groupBuyingStatus == 3}}'>拼团超时</view>
 				</view>
 			</navigator>
 		</view>
 		<view class='no-data flex1 fcol fcen spc' wx:else>
 			<image src='../../img/no_collage.png' mode='widthFix'></image>
-			<view class='txt'>暂无拼团数据哦~</view>
+			<view class='txt'>暂无订单数据哦~</view>
 		</view>
 		<view class='loadmore no' wx:if='{{hasmore == 1}}'>没有更多数据了</view>
 	</block>

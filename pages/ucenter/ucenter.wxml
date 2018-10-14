@@ -4,9 +4,9 @@
 		<image src='../../img/index_bg.png' class='bg'></image>
 		<view class='user'>
 			<view class='avatar'>
-				<image src='../../img/logo.png'></image>
+				<image src='{{userInfo.avatarUrl}}'></image>
 			</view>
-			<view class='nick'>厉害的超超</view>
+			<view class='nick'>{{userInfo.nickName}}</view>
 		</view>
 	</view>
 	<view class='mid'>
@@ -22,7 +22,7 @@
 		</view>
 	</view>
 	<view class='tel-box {{showTel ? "show" : ""}}'>
-		<view class='mask'></view>
+		<view class='mask' bindtap='closeTel'></view>
 		<view class='con'>
 			<view class='top-d'>
 				<view class='txt'>010-12345678</view>

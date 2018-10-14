@@ -6,22 +6,25 @@
 		<view class='line {{tab == 1 ? "r" : ""}}'></view>
 	</view>
 	<view class='list' wx:if='{{hasmore != 0}}'>
-		<navigator url='' class='item'>
+		<navigator url='/pages/detail/detail?id={{item.groupBuyingId}}' class='item' wx:for='{{list}}' wx:key='orderId'>
 			<view class='shadow'>
-				<view class='top flex fcen spb'>
+				<view class='top flex fcen spb' wx:if='{{item.groupBuyingStatus == 1}}'>
 					<view class='state'>进行中</view>
-					<view class='time'>10小时后结束</view>
+					<view class='time'>{{item.time}}后结束</view>
+				</view>
+				<view class='top flex fcen spb' wx:else>
+					<view class='state'>已结束</view>
 				</view>
 				<view class='con flex fcen'>
-					<view class='pic fshrink0'></view>
+					<view class='pic fshrink0' style='background-image: url({{item.cover}})'></view>
 					<view class='info flex1 fcol spb'>
 						<view>
-							<view class='title bold'>天津NB舞蹈工作室年卡</view>
-							<view class='price'><text class='rmb'>¥</text>1234.00</view>
+							<view class='title bold'>{{item.proName}}</view>
+							<view class='price'><text class='rmb'>¥</text>{{item.groupBuyingPrice}}</view>
 						</view>
 						<view class='num flex spb'>
-							<view>已售:1234件</view>
-							<view>库存:1234件</view>
+							<view>已售: {{item.soldQuantity}}件</view>
+							<view>库存: {{item.proCount}}件</view>
 						</view>
 					</view>
 				</view>

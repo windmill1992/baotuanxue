@@ -6,4 +6,9 @@ Page({
   onLoad: function(options) {
 
   },
+	know: function () {
+		wx.switchTab({
+			url: '/pages/index/index',
+		})
+	}
 })

@@ -5,57 +5,56 @@
 		<view class='top flex fcen spb'>
 			<view class='txt'>拼团发起人</view>
 			<view class='user flex fcen'>
-				<image src='../../img/logo.png'></image>
-				<view class='txt1'>小魔鱼</view>
+				<image src='{{info.buyerList[0].avatar}}'></image>
+				<view class='txt1'>{{info.buyerList[0].userName}}</view>
 			</view>
 		</view>
 		<view class='mid'>
 			<view class='item flex spb'>
 				<view class='txt'>发起时间</view>
-				<view class='txt1'>2018-09-09 19:20:23</view>
+				<view class='txt1'>{{info.createTime}}</view>
 			</view>
 			<view class='item flex spb'>
 				<view class='txt'>直接购买</view>
-				<view class='txt1'>1234.00元</view>
+				<view class='txt1'>{{info.proPrice}}元</view>
 			</view>
 			<view class='item flex spb'>
 				<view class='txt'>拼团价格</view>
-				<view class='txt1'>1234.00元</view>
+				<view class='txt1'>{{info.groupBuyingPrice}}元</view>
 			</view>
 			<view class='item flex spb'>
 				<view class='txt'>每组人数</view>
-				<view class='txt1'>10人</view>
+				<view class='txt1'>{{info.groupBuyingNumber}}人</view>
 			</view>
 			<view class='item flex spb'>
 				<view class='txt'>拼团人数</view>
-				<view class='txt1'>3人</view>
+				<view class='txt1'>{{info.buyerList.length}}人</view>
 			</view>
 			<view class='item flex spb'>
 				<view class='txt'>订单号</view>
-				<view class='txt1'>012345678987654</view>
+				<view class='txt1'>{{info.orderNo}}</view>
 			</view>
 			<view class='item flex spb'>
 				<view class='txt'>订单状态</view>
-				<view class='txt1'>待成团</view>
-				<!-- <view class='txt1'>已完成</view> -->
+				<view class='txt1' wx:if='{{state == 1}}'>待成团</view>
+				<view class='txt1' wx:elif='{{state == 2}}'>已完成</view>
+				<view class='txt1' wx:elif='{{state == 3}}'>已失败</view>
 			</view>
-			<!-- <view class='item flex spb'>
+			<view class='item flex spb' wx:if='{{state == 2}}'>
 				<view class='txt'>合计收入</view>
-				<view class='txt1'>3702.00元</view>
-			</view> -->
+				<view class='txt1'>{{info.income}}元</view>
+			</view>
 		</view>
 		<view class='bot'>
 			<view class='txt'>付款人员</view>
 			<view class='user-list flex'>
-				<image src='../../img/logo.png'></image>
-				<image src='../../img/logo.png'></image>
-				<image src='../../img/logo.png'></image>	
+				<image src='{{item.avatar}}' wx:for='{{info.buyerList}}' wx:key='userId'></image>
 			</view>
 		</view>
 	</view>
 	<view class='btns'>
-		<button class='btn green'>距结束还有10小时23分34秒</button>
-		<!-- <button class='btn green'>已完成</button> -->
-		<!-- <button class='btn green'>超时未成团</button> -->
+		<button class='btn green bold' wx:if='{{state == 1}}'>距结束还有{{info.time}}</button>
+		<button class='btn green bold' wx:elif='{{state == 2}}'>已完成</button>
+		<button class='btn green bold' wx:elif='{{state == 3}}'>超时未成团</button>
 	</view>
 </view>

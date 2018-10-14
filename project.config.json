@@ -11,7 +11,7 @@
 		"newFeature": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "1.6.8",
+	"libVersion": "2.0.9",
 	"appid": "wxf53853fc0d818bff",
 	"projectname": "1baotuanxue",
 	"isGameTourist": false,
@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 21,
+			"current": 24,
 			"list": [
 				{
 					"id": -1,
@@ -72,16 +72,16 @@
 					"query": ""
 				},
 				{
-					"id": -1,
+					"id": 6,
 					"name": "pubSuc",
 					"pathName": "pages/pubSuc/pubSuc",
-					"query": ""
+					"query": "id=1"
 				},
 				{
-					"id": -1,
+					"id": 7,
 					"name": "detail",
 					"pathName": "pages/detail/detail",
-					"query": "id=1"
+					"query": "id=5"
 				},
 				{
 					"id": -1,
@@ -164,7 +164,26 @@
 				{
 					"id": -1,
 					"name": "userInfo",
-					"pathName": "pages/userInfo/userInfo"
+					"pathName": "pages/userInfo/userInfo",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "avatar",
+					"pathName": "pages/avatarUpload/avatarUpload",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "avatar",
+					"pathName": "pages/index2/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "upload",
+					"pathName": "pages/upload/upload",
+					"query": "src=http://tmp/wxf53853fc0d818bff.o6zAJsxT8vO2U8GcIa4HD4VXBv98.puNMEqMwsDC5665c79d48e492d2260ddcd7f3c06078c.jpg"
 				}
 			]
 		}

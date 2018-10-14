@@ -1,5 +1,5 @@
 <!--pages/storeInfo/storeInfo.wxml-->
-<view class='container' wx:if='{{show}}'>
+<view class='container' wx:if='{{states == 2}}'>
   <view class='top'>
     <image class='bg' src='../../img/info_bg.png'></image>
     <view class='user flex fcen'>
@@ -11,41 +11,41 @@
     <view class='item flex fcen'>
       <image src='../../img/industry.png' mode='aspectFit'></image>
       <view class='txt'>行业</view>
-      <view class='txt1'>街舞教学</view>
+      <view class='txt1'>{{info.companyIndustry}}</view>
     </view>
     <view class='item flex fcen'>
       <image src='../../img/city.png' mode='aspectFit'></image>
       <view class='txt'>城市</view>
-      <view class='txt1'>北京·朝阳</view>
+      <view class='txt1'>{{info.city}}</view>
     </view>
     <view class='item flex fcen'>
       <image src='../../img/addr.png' mode='aspectFit'></image>
       <view class='txt'>地址</view>
-      <view class='txt1'>北京市朝阳区广顺北大街12号</view>
+      <view class='txt1'>{{info.address}}</view>
     </view>
     <view class='item flex fcen'>
       <image src='../../img/linkman.png' mode='aspectFit'></image>
       <view class='txt'>联系人</view>
-      <view class='txt1'>武岳</view>
+      <view class='txt1'>{{info.linkMan}}</view>
     </view>
     <view class='item flex fcen'>
       <image src='../../img/mobile.png' mode='aspectFit'></image>
       <view class='txt'>手机号</view>
-      <view class='txt1'>12345678999</view>
+      <view class='txt1'>{{info.linkMobile}}</view>
     </view>
     <view class='item flex fcen'>
       <image src='../../img/wxid.png' mode='aspectFit'></image>
       <view class='txt'>微信号</view>
-      <view class='txt1'>12345678999</view>
+      <view class='txt1'>{{info.linkWechat}}</view>
     </view>
   </view>
   <view class='btns'>
-    <button class='btn green bold'>编辑门店信息</button>
+    <button class='btn green bold' bindtap='edit'>编辑门店信息</button>
   </view>
 </view>
-<view class='container bg' wx:else>
+<view class='container bg' wx:elif='{{states == 1}}'>
 	<view class='box-1 txtC'>
-		<image src='../../img/suc.png'></image>
+		<image src='../../img/review.png'></image>
 		<view class='txt-1'>审核中，请耐心等待</view>
 		<view class='btns-1'>
 			<button class='btn green bold' bindtap='cantact'>联系客服</button>

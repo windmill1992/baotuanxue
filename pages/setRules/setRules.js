@@ -1,4 +1,9 @@
 // pages/setRules/setRules.js
+const app = getApp().globalData;
+const api = {
+	saveOrder: app.baseUrl + '/btx/btx-rest/save-group-buying',			//保存拼团
+}
+const util = require('../../utils/util.js');
 Page({
   data: {
 
@@ -11,6 +16,61 @@ Page({
 		this.setData({ [p]: e.detail.value });
 	},
 	submit: function () {
-
+		let obj = wx.getStorageSync('saveObj');
+		let dd = this.data;
+		let t = util.formatTime(new Date(Date.now() + dd.time * 60 * 60 * 1000), '-');
+		let data = Object.assign({
+			groupBuyingNumber: dd.groupBuyingNumber,
+			groupBuyingEndTime: t,
+			groupBuyingEndTimeShow: dd.time,
+			proPrice: dd.proPrice,
+			groupBuyingPrice : dd.groupBuyingPrice,
+			groupBuyingId: 0,
+			groupBuyingStatus: 1,
+			userId: app.header.userId,
+		}, obj);
+		console.log(data);
+		wx.showLoading({
+			title: '正在提交...',
+		});
+		wx.request({
+			url: api.saveOrder,
+			method: 'POST',
+			header: app.header,
+			data: data,
+			success: res => {
+				if (res.data.resultCode == 200 && res.data.resultData) {
+					wx.showToast({
+						title: '提交成功！',
+					});
+					wx.removeStorageSync('saveObj');
+					wx.navigateTo({
+						url: '/pages/pubSuc/pubSuc?id='+ res.data.resultData,
+					})
+				} else {
+					if (res.data.resultMsg) {
+						wx.showToast({
+							title: res.data.resultMsg,
+							icon: 'none',
+						})
+					} else {
+						wx.showToast({
+							title: '服务器开了小差，请稍后再试！',
+							icon: 'none',
+						})
+					}
+				}
+			},
+			fail: err => {
+				wx.showToast({
+					title: '未知异常！',
+					icon: 'none',
+				});
+				console.log(err);
+			},
+			complete: () => {
+				wx.hideLoading();
+			}
+		})
 	},
 })

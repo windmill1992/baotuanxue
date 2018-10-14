@@ -4,7 +4,7 @@
 		<view class='inp-item flex spb fcen'>
 			<view class='label'>组团人数</view>
 			<view class='inp-box flex fcen'>
-				<input type='number' class='inp' bindinput='getValue' data-prop='num' placeholder='请输入人数'></input>
+				<input type='number' class='inp' bindinput='getValue' data-prop='groupBuyingNumber' placeholder='请输入人数'></input>
 				<view class='suffix'>人</view>
 			</view>
 		</view>
@@ -18,19 +18,19 @@
 		<view class='inp-item flex spb fcen'>
 			<view class='label'>商品原价</view>
 			<view class='inp-box flex fcen'>
-				<input type='digit' class='inp' bindinput='getValue' data-prop='oriPrice' placeholder='请填写价格'></input>
+				<input type='digit' class='inp' bindinput='getValue' data-prop='proPrice' placeholder='请填写价格'></input>
 				<view class='suffix'>元</view>
 			</view>
 		</view>
 		<view class='inp-item flex spb fcen'>
 			<view class='label'>拼团价格</view>
 			<view class='inp-box flex fcen'>
-				<input type='digit' class='inp' bindinput='getValue' data-prop='price' placeholder='请填写价格'></input>
+				<input type='digit' class='inp' bindinput='getValue' data-prop='groupBuyingPrice' placeholder='请填写价格'></input>
 				<view class='suffix'>元</view>
 			</view>
 		</view>
 	</view>
 	<view class='btns'>
-		<button class='btn-green' bindtap='submit'>立即提交</button>
+		<button class='btn green bold' bindtap='submit'>立即提交</button>
 	</view>
 </view>

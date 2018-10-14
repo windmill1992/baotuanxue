@@ -1,51 +1,51 @@
 <!--index.wxml-->
-<view class='container'>
+<view class='container' wx:if='{{states == 2}}'>
   <view class='top'>
 		<image src='../../img/index_bg.png' class='bg'></image>
-    <view class='amount'>1000.00</view>
+    <view class='amount'>{{info.balance ? info.balance : 0}}</view>
     <view class='txt'>账户余额（单位：元）</view>
     <view class='info flex'>
       <view class='item flex1'>
-        <view class='num'>12</view>
+        <view class='num'>{{info.viewCount ? info.viewCount : 0}}</view>
         <view class='txt1'>浏览人数</view>
       </view>
       <view class='item flex1'>
-        <view class='num'>12</view>
+        <view class='num'>{{info.orderCount ? info.orderCount : 0}}</view>
         <view class='txt1'>付款订单</view>
       </view>
       <view class='item flex1'>
-        <view class='num'>12</view>
+        <view class='num'>{{info.buyOrder ? info.buyOrder : 0}}</view>
         <view class='txt1'>付款件数</view>
       </view>
     </view>
   </view>
 	<view class='mid'>
 		<view class='ul flex fwrap'>
-			<navigator url='' class='li' hover-class='none'>
+			<navigator url='/pages/create/create' class='li' hover-class='none'>
 				<image src='../../img/new_collage.png'></image>
 				<view class='txt'>新建拼团</view>
 			</navigator>
-			<view class='li'>
+			<navigator url='/pages/manage/manage' class='li'>
 				<image src='../../img/collage_mng.png'></image>
 				<view class='txt'>拼团管理</view>
-			</view>
-			<navigator url='' class='li' hover-class='none'>
+			</navigator>
+			<navigator url='/pages/orders/orders' class='li' hover-class='none'>
 				<image src='../../img/order_mng.png'></image>
 				<view class='txt'>订单管理</view>
 			</navigator>
-			<navigator url='' class='li' hover-class='none'>
+			<navigator url='/pages/cashManage/cashManage' class='li' hover-class='none'>
 				<image src='../../img/tixian_mng.png'></image>
 				<view class='txt'>提现管理</view>
 			</navigator>
-			<navigator url='' class='li' hover-class='none'>
+			<navigator url='/pages/perfectInfo/perfectInfo?edit=1' class='li' hover-class='none'>
 				<image src='../../img/setting.png'></image>
 				<view class='txt'>门店设置</view>
 			</navigator>
-			<navigator url='' class='li' hover-class='none'>
+			<navigator url='/pages/hexiao/hexiao' class='li' hover-class='none'>
 				<image src='../../img/order_hx.png'></image>
 				<view class='txt'>订单核销</view>
 			</navigator>
-			<navigator url='' class='li' hover-class='none'>
+			<navigator url='/pages/index/index' open-type='switchTab' class='li' hover-class='none'>
 				<image src='../../img/rule.png'></image>
 				<view class='txt'>使用规则</view>
 			</navigator>

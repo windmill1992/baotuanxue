@@ -11,7 +11,7 @@
 		</view>
 	</view>
 	<view class='mid flex1'>
-		<navigator url='' class='nav'>
+		<navigator url='/pages/withdrawCash/withdrawCash' class='nav'>
 			<view class='item flex spb fcen'>
 				<view class='txt1'>去提现</view>
 				<view class='arr'>
@@ -19,7 +19,7 @@
 				</view>
 			</view>
 		</navigator>
-		<navigator url='' class='nav'>
+		<navigator url='/pages/cashRecord/cashRecord' class='nav'>
 			<view class='item flex spb fcen'>
 				<view class='txt1'>提现记录</view>
 				<view class='arr'>
@@ -27,7 +27,7 @@
 				</view>
 			</view>
 		</navigator>
-		<navigator url='' class='nav'>
+		<navigator url='/pages/cashRule/cashRule' class='nav'>
 			<view class='item flex spb fcen'>
 				<view class='txt1'>提现规则</view>
 				<view class='arr'>

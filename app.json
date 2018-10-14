@@ -24,10 +24,11 @@
 		"pages/hexiao/hexiao",
 		"pages/hexiaoSuc/hexiaoSuc",
 		"pages/hexiaoSure/hexiaoSure",
-		"pages/userInfo/userInfo"
+		"pages/userInfo/userInfo",
+		"pages/upload/upload"
 	],
 	"window": {
-		"backgroundTextStyle": "light",
+		"backgroundTextStyle": "dark",
 		"navigationBarBackgroundColor": "#fff",
 		"navigationBarTitleText": "",
 		"navigationBarTextStyle": "black"
@@ -43,12 +44,6 @@
 				"text": "管理",
 				"iconPath": "img/home.png",
 				"selectedIconPath": "img/home1.png"
-			},
-			{
-				"pagePath": "pages/create/create",
-				"text": "新建",
-				"iconPath": "img/create.png",
-				"selectedIconPath": "img/create1.png"
 			},
 			{
 				"pagePath": "pages/ucenter/ucenter",

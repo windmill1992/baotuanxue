@@ -1,10 +1,11 @@
 /* pages/pubSuc/pubSuc.wxss */
+@import '../../utils/dialog.wxss';
 
 .container {
   background: #fbfbfb;
 }
 
-.top {
+.tops {
   background: #fff;
   padding-bottom: 50rpx;
 }
@@ -33,8 +34,9 @@
 .btns {
   padding: 10rpx 30rpx 0;
   overflow: hidden;
+	margin-top: 30rpx;
 }
 
 .btns .btn {
-  margin-top: 20rpx;
+  margin-top: 30rpx;
 }
