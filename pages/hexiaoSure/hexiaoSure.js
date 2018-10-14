@@ -1,14 +1,14 @@
 // pages/hexiaoSure/hexiaoSure.js
 const app = getApp().globalData;
 const api = {
-	orderInfo: app.baseUrl + '/btx/btx-rest/order-info',		//订单详情
+	orderInfo: app.baseUrl + '/btx/btx-rest/writeOff-order-info',		//核销订单详情
 }
 Page({
   data: {
 
   },
   onLoad: function (options) {
-		if (options.id && options.gid) {
+		if (options.id && options.gid && options.uid) {
 			this.setData({ id: options.id, gid: options.gid, uid: options.uid });
 			this.getData();
 		}
@@ -17,13 +17,12 @@ Page({
 		wx.showLoading({
 			title: '加载中...',
 		});
+		let dd = this.data;
 		wx.request({
-			url: api.orderInfo,
-			method: 'GET',
+			url: api.orderInfo + '?groupBuyingId=' + dd.id + '&groupId=' + dd.gid + '&buyUserId=' + dd.uid,
+			method: 'POST',
 			header: app.header,
-			data: {
-				groupId: this.data.gid,
-			},
+			data: {},
 			success: res => {
 				if (res.data.resultCode == 200 && res.data.resultData) {
 					this.setData({ info: res.data.resultData });
@@ -57,7 +56,7 @@ Page({
 			title: '正在提交...',
 		});
 		wx.request({
-			url: api.hexiao + '?groupBuyingId=' + this.data.id + '&groupId=' + this.data.gid + '&userId=' + this.data.uid,
+			url: api.hexiao + '?groupBuyingId=' + this.data.id + '&groupId=' + this.data.gid + '&buyUserId=' + this.data.uid,
 			method: 'POST',
 			header: app.header,
 			data: {},

@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 24,
+			"current": 20,
 			"list": [
 				{
 					"id": -1,
@@ -156,27 +156,15 @@
 					"query": ""
 				},
 				{
-					"id": -1,
+					"id": 20,
 					"name": "hexiaoSure",
 					"pathName": "pages/hexiaoSure/hexiaoSure",
-					"query": ""
+					"query": "id=1&gid=8&uid=1"
 				},
 				{
 					"id": -1,
 					"name": "userInfo",
 					"pathName": "pages/userInfo/userInfo",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "avatar",
-					"pathName": "pages/avatarUpload/avatarUpload",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "avatar",
-					"pathName": "pages/index2/index",
 					"query": ""
 				},
 				{

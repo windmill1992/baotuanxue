@@ -1,7 +1,7 @@
 //index.js
 const app = getApp().globalData;
 const api = {
-	// indexData: app.baseUrl + '/btx/btx-rest/index-data',		//用户信息
+	indexData: app.baseUrl + '/btx/btx-rest/index-data',			//用户信息
 	state: app.baseUrl + '/btx/btx-rest/merchant-stauts',			//获取门店审核状态
 }
 Page({
