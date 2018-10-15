@@ -2,6 +2,7 @@
 const app = getApp().globalData;
 const api = {
 	orderInfo: app.baseUrl + '/btx/btx-rest/writeOff-order-info',		//核销订单详情
+	hexiao: app.baseUrl + '/btx/btx-rest/writeOff-order',						//核销订单
 }
 Page({
   data: {
@@ -52,18 +53,19 @@ Page({
 		})
 	},
 	submit: function () {
+		let dd = this.data;
 		wx.showLoading({
 			title: '正在提交...',
 		});
 		wx.request({
-			url: api.hexiao + '?groupBuyingId=' + this.data.id + '&groupId=' + this.data.gid + '&buyUserId=' + this.data.uid,
+			url: api.hexiao + '?groupBuyingId=' + dd.id + '&groupId=' + dd.gid + '&buyUserId=' + dd.uid,
 			method: 'POST',
 			header: app.header,
 			data: {},
 			success: res => {
 				if (res.data.resultCode == 200 && res.data.resultData) {
 					wx.navigateTo({
-						url: '/pages/hexiaoSuc/hexiaoSuc',
+						url: `/pages/hexiaoSuc/hexiaoSuc`,
 					})
 				} else {
 					if (res.data.resultMsg) {

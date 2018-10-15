@@ -8,7 +8,7 @@
 	</view>
 	<block wx:if='{{hasNet}}'>
 		<view class='list' wx:if='{{hasmore != 0}}'>
-			<navigator url='/pages/orderDetail/orderDetail?id={{item.groupId}}&state={{item.groupBuyingStatus}}' class='item' wx:for='{{list}}' wx:key='id'>
+			<navigator url='/pages/orderDetail/orderDetail?id={{item.groupId}}' class='item' wx:for='{{list}}' wx:key='id'>
 				<view class='top flex fcen spb'>
 					<view class='state' wx:if='{{item.groupBuyingStatus == 1}}'>还差{{item.groupBuyingNumber - item.soldQuantity}}人成团（{{item.groupBuyingNumber}}人团）</view>
 					<view class='state' wx:elif='{{item.groupBuyingStatus == 2}}'>已成团（{{item.groupBuyingNumber}}人团）</view>

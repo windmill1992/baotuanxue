@@ -6,8 +6,8 @@
 		<view class='top flex fcen spb'>
 			<view class='txt'>购买用户</view>
 			<view class='user flex fcen'>
-				<image src='{{buyUser.avatar}}'></image>
-				<view class='txt1'>{{buyUser.nickName}}</view>
+				<image src='{{info.userBaseVO.avatar}}'></image>
+				<view class='txt1'>{{info.userBaseVO.userName}}</view>
 			</view>
 		</view>
 		<view class='mid'>

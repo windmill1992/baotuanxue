@@ -10,7 +10,7 @@ Page({
   },
   onLoad: function (options) {
 		if (options.id) {
-			this.setData({ id: options.id, state: options.state });
+			this.setData({ id: options.id });
 			this.getData();
 		} else {
 			wx.redirectTo({
@@ -34,7 +34,7 @@ Page({
 					let r = res.data.resultData;
 					r.income = Number.parseFloat(r.groupBuyingPrice * r.groupBuyingNumber).toFixed(2);
 					this.setData({ info: r });
-					if (this.data.state == 1) {
+					if (r.orderStatus == 1) {
 						this.countdown();
 					}
 				} else {

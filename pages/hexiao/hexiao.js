@@ -1,7 +1,7 @@
 // pages/hexiao/hexiao.js
 const app = getApp().globalData;
 const api = {
-	hexiao: app.baseUrl + '/btx/btx-rest/writeOff-order',		//核销订单
+	
 }
 Page({
   data: {
