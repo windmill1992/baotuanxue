@@ -1,7 +1,7 @@
 // pages/userInfo/userInfo.js
 const app = getApp().globalData;
 const api = {
-	userInfo: app.baseUrl + '',				//用户信息
+	userInfo: app.baseUrl + '/btx/btx-rest/user-info',				//用户信息
 }
 Page({
   data: {
@@ -9,7 +9,7 @@ Page({
   },
   onLoad: function (options) {
 		if (options.id) {
-			this.setData({ id: id });
+			this.setData({ id: options.id });
 			this.getData();
 		}
   },
@@ -18,11 +18,11 @@ Page({
 			title: '加载中...',
 		});
 		wx.request({
-			url: api.orderInfo,
+			url: api.userInfo,
 			method: 'GET',
 			header: app.header,
 			data: {
-				userId: this.data.id,
+				searchUserId: this.data.id,
 			},
 			success: res => {
 				if (res.data.resultCode == 200 && res.data.resultData) {

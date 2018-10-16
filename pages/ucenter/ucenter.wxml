@@ -3,7 +3,7 @@
 	<view class='top'>
 		<image src='../../img/index_bg.png' class='bg'></image>
 		<view class='user'>
-			<view class='avatar'>
+			<view class='avatar flex spc fcen'>
 				<image src='{{userInfo.avatarUrl}}'></image>
 			</view>
 			<view class='nick'>{{userInfo.nickName}}</view>

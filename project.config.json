@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 10,
+			"current": 21,
 			"list": [
 				{
 					"id": -1,
@@ -162,10 +162,10 @@
 					"query": "id=1&gid=8&uid=1"
 				},
 				{
-					"id": -1,
+					"id": 21,
 					"name": "userInfo",
 					"pathName": "pages/userInfo/userInfo",
-					"query": ""
+					"query": "id=1"
 				},
 				{
 					"id": -1,

@@ -34,3 +34,4 @@
 		<button class='btn green bold' bindtap='submit'>立即提交</button>
 	</view>
 </view>
+<view class='error' wx:if='{{error.show}}'>{{error.title}}</view>

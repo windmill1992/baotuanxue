@@ -16,8 +16,16 @@ Page({
 		this.setData({ [p]: e.detail.value });
 	},
 	submit: function () {
-		let obj = wx.getStorageSync('saveObj');
 		let dd = this.data;
+		if (!dd.groupBuyingNumber || !dd.time || !dd.proPrice || !dd.groupBuyingPrice){
+			this.showError('请填写完整信息！');
+			return;
+		}
+		if (dd.groupBuyingNumber <= 1) {
+			this.showError('拼团人数至少为2人！');
+			return;
+		}
+		let obj = wx.getStorageSync('saveObj');
 		let t = util.formatTime(new Date(Date.now() + dd.time * 60 * 60 * 1000), '-');
 		let data = Object.assign({
 			groupBuyingNumber: dd.groupBuyingNumber,
@@ -73,4 +81,16 @@ Page({
 			}
 		})
 	},
+	showError: function (txt) {
+		const that = this;
+		let obj = {};
+		obj.show = true;
+		obj.title = txt;
+		this.setData({ error: obj });
+		setTimeout(function () {
+			obj.show = false;
+			obj.title = '';
+			that.setData({ error: obj });
+		}, 2000);
+	}
 })

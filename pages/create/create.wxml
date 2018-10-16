@@ -54,3 +54,4 @@
 		<button class='btn green bold' bindtap='next'>下一步</button>
 	</view>
 </view>
+<view class='error' wx:if='{{error.show}}'>{{error.title}}</view>

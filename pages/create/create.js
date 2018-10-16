@@ -159,30 +159,36 @@ Page({
 	},
 	next: function () {
 		let dd = this.data;
+		if (!dd.cover || !dd.proName || !dd.proCount || !dd.imgs[0] || !dd.imgs[1] || !dd.imgs[2]) {
+			this.showError('请填写完整信息！');
+			return;
+		}
 		let obj = {
 			cover: dd.cover,
 			proName: dd.proName,
 			proCount: dd.proCount,
 			groupBuyingType: dd.groupBuyingType,
 			groupBuyingExtendInfoVOList: [
-				{ introType: 1, text: '', url: dd.imgs[0]},
-				{ introType: 2, text: '', url: dd.imgs[1]},
-				{ introType: 3, text: '', url: dd.imgs[2]},
+				{ introType: 1, text: '工作室环境', url: dd.imgs[0]},
+				{ introType: 2, text: '师资介绍', url: dd.imgs[1]},
+				{ introType: 3, text: '学院风采', url: dd.imgs[2]},
 			]
 		}
 		wx.setStorageSync('saveObj', obj);
 		wx.navigateTo({
 			url: '/pages/setRules/setRules',
 		})
-	}, 
-	touchStart(e) {
-		this.wecropper.touchStart(e)
 	},
-	touchMove(e) {
-		this.wecropper.touchMove(e)
-	},
-	touchEnd(e) {
-		this.wecropper.touchEnd(e)
+	showError: function (txt) {
+		const that = this;
+		let obj = {};
+		obj.show = true;
+		obj.title = txt;
+		this.setData({ error: obj });
+		setTimeout(function () {
+			obj.show = false;
+			obj.title = '';
+			that.setData({ error: obj });
+		}, 2000);
 	}
-
 })

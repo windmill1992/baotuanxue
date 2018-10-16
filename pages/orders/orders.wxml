@@ -9,10 +9,18 @@
 	<block wx:if='{{hasNet}}'>
 		<view class='list' wx:if='{{hasmore != 0}}'>
 			<navigator url='/pages/orderDetail/orderDetail?id={{item.groupId}}' class='item' wx:for='{{list}}' wx:key='id'>
-				<view class='top flex fcen spb'>
+				<view class='top flex fcen spb' wx:if='{{item.payType == 1}}'>
 					<view class='state' wx:if='{{item.groupBuyingStatus == 1}}'>还差{{item.groupBuyingNumber - item.soldQuantity}}人成团（{{item.groupBuyingNumber}}人团）</view>
 					<view class='state' wx:elif='{{item.groupBuyingStatus == 2}}'>已成团（{{item.groupBuyingNumber}}人团）</view>
 					<view class='state' wx:elif='{{item.groupBuyingStatus == 3}}'>已失败（{{item.groupBuyingNumber}}人团）</view>
+					<view class='user flex fcen'>
+						<image src='{{item.originator.avatar}}'></image>
+						<view class='nick'>{{item.originator.userName}}</view>
+					</view>
+				</view>
+				<view class='top flex fcen spb' wx:else>
+					<view class='state' wx:if='{{item.groupBuyingStatus == 1}}'>直接购买</view>
+					<view class='state' wx:elif='{{item.groupBuyingStatus == 3}}'>直接购买已失败</view>
 					<view class='user flex fcen'>
 						<image src='{{item.originator.avatar}}'></image>
 						<view class='nick'>{{item.originator.userName}}</view>
@@ -27,10 +35,13 @@
 						</view>
 					</view>
 				</view>
-				<view class='bot'>
+				<view class='bot' wx:if='{{item.payType == 1}}'>
 					<view class='txt1' wx:if='{{item.groupBuyingStatus == 1}}'>距离结束还有{{item.time}}</view>
 					<view class='txt1' wx:elif='{{item.groupBuyingStatus == 2}}'>{{item.buyerList.length}}人已支付</view>
 					<view class='txt1' wx:elif='{{item.groupBuyingStatus == 3}}'>拼团超时</view>
+				</view>
+				<view class='bot' wx:else>
+					<view class='txt1'>1人已支付</view>
 				</view>
 			</navigator>
 		</view>

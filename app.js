@@ -1,11 +1,11 @@
 //app.js
 App({
   onLaunch: function () {
-    // let prod = wx.getStorageSync('prod001');
-		// if (prod != 1) {
-		// 	wx.clearStorageSync();
-		// 	wx.setStorageSync('prod001', 1);
-		// }
+    let prod = wx.getStorageSync('prod001');
+		if (prod != 1) {
+			wx.clearStorageSync();
+			wx.setStorageSync('prod001', 1);
+		}
 		if (wx.getUpdateManager) {
 			const updateManager = wx.getUpdateManager();
 			updateManager.onCheckForUpdate(res => {
@@ -41,6 +41,7 @@ App({
 			'content-type': 'application/json',
 			'applicationId': 2,
 			'userId': 1,
+			'buildVersion': '1.0.1',
 		},
 		serviceMobile: '13312345678',
   }
