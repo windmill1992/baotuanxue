@@ -23,7 +23,7 @@
   font-family: 'AkzidenzGroteskBQ-XBold';
   font-weight: 600;
   line-height: 1;
-  margin-top: 90rpx;
+  margin-top: 80rpx;
 }
 
 .top .txt {
@@ -32,7 +32,7 @@
 }
 
 .top .info {
-  margin-top: 70rpx;
+  margin-top: 50rpx;
 }
 
 .top .info .num {

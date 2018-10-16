@@ -81,7 +81,12 @@
 .content image {
   width: 100%;
   height: 400rpx;
-  margin-top: 30rpx;
+  margin: 30rpx 0;
+}
+
+.content .txt {
+	text-align: center;
+	font-size: 28rpx;
 }
 
 .bot {

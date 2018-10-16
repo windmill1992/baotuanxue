@@ -11,7 +11,7 @@
       </view>
       <view class='item flex1'>
         <view class='num'>{{info.orderCount ? info.orderCount : 0}}</view>
-        <view class='txt1'>付款订单</view>
+        <view class='txt1'>拼团数量</view>
       </view>
       <view class='item flex1'>
         <view class='num'>{{info.buyOrder ? info.buyOrder : 0}}</view>

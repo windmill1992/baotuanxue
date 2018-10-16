@@ -64,9 +64,9 @@ Page({
 	},
 	countdown: function () {
 		let f = this.setTime();
-		let timer = setInterval(() => {
+		this.timer = setInterval(() => {
 			f = this.setTime();
-			if (!f) clearInterval(timer);
+			if (!f) clearInterval(this.timer);
 		}, 60000);
 	},
 	setTime: function () {
@@ -77,12 +77,17 @@ Page({
 		let d = t - n;
 		if (d > 1000) {
 			f = true;
+			let hh = Number.parseInt(d / 1000 / 60 / 60);
+			let mm = Number.parseInt(d / 1000 / 60 % 60);
+			v.time = [hh, '小时', mm, '分'].join('');
+			v.groupBuyingEndTime -= 60000;
+		} else {
+			v.orderStatus = 3;
 		}
-		let hh = Number.parseInt(d / 1000 / 60 / 60);
-		let mm = Number.parseInt(d / 1000 / 60 % 60);
-		v.time = [hh, '小时', mm, '分'].join('');
-		v.groupBuyingEndTime -= 60000;
 		this.setData({ info: v });
 		return f;
+	},
+	onUnload: function () {
+		clearInterval(this.timer);
 	},
 })

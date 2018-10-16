@@ -31,6 +31,10 @@
   margin-bottom: 16rpx;
 }
 
+.item .top .state {
+	color: #666;
+}
+
 .item .user image {
   width: 44rpx;
   height: 44rpx;

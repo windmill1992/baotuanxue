@@ -3,7 +3,7 @@ const app = getApp().globalData;
 const api = {
 	upload: app.baseUrl + '/btx/btx-rest/upload',								//上传图片
 	save: app.baseUrl + '/btx/btx-rest/save-user-extend-info',	//保存门店信息
-	storeInfo: app.baseUrl + '/btx/btx-rest/user-extend-info',	//获取门店信息
+	storeInfo: app.baseUrl + '/btx/btx-rest/merchant-info',			//获取门店信息
 }
 Page({
   data: {
@@ -30,7 +30,7 @@ Page({
 			title: '加载中...',
 		});
 		wx.request({
-			url: api.storeInfo + '?businessUserId='+ this.data.id,
+			url: api.storeInfo + '?businessUserId='+ app.header.userId,
 			method: 'POST',
 			header: app.header,
 			data: {},
@@ -39,15 +39,14 @@ Page({
 					let r = res.data.resultData;
 					this.setData({
 						logoUrl: r.logo,
-						name: r.companyName,
-						industry: r.companyIndustry,
+						name: r.merchantName,
+						industry: r.merchantIndustry,
 						region: r.city,
 						detailAddr: r.address,
 						linkman: r.linkMan,
 						mobile: r.linkMobile,
 						wxId: r.linkWechat,
 					})
-					
 				} else {
 					if (res.data.resultMsg) {
 						wx.showToast({

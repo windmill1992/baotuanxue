@@ -41,7 +41,7 @@ App({
 			'content-type': 'application/json',
 			'applicationId': 2,
 			'userId': 1,
-			'buildVersion': '1.0.1',
+			'buildVersion': '100',
 		},
 		serviceMobile: '13312345678',
   }
