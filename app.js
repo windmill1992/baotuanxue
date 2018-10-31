@@ -35,7 +35,7 @@ App({
 		}
   },
   globalData: {
-    baseUrl: 'http://btx.yupfashion.cn',
+		baseUrl: 'http://api.baotuanxue.com',
 		header: {
 			// 'content-type': 'application/x-www-form-urlencoded',
 			'content-type': 'application/json',
