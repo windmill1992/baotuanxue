@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 21,
+			"current": 6,
 			"list": [
 				{
 					"id": -1,
@@ -75,7 +75,7 @@
 					"id": 6,
 					"name": "pubSuc",
 					"pathName": "pages/pubSuc/pubSuc",
-					"query": "id=1"
+					"query": "id=4"
 				},
 				{
 					"id": 7,

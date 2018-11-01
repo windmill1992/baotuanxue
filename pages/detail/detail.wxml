@@ -22,10 +22,11 @@
 		</navigator>
 		<view class='txt1'>拼团详情</view>
 		<view class='content'>
-			<view class='pic' wx:for='{{info.groupBuyingExtendInfoVOList}}' wx:key='introType'>
+			<view class='pic' wx:for='{{info.groupBuyingExtendInfoVOList}}' wx:key='introType' wx:if='{{item.url}}'>
 				<image src='{{item.url}}' mode='widthFix'></image>
 				<view class='txt'>{{item.text}}</view>
 			</view>
+			<view class='no' wx:if='{{!haspic}}'>暂无详情信息哦~</view>
 		</view>
 	</view>
 	<view class='bot flex'>

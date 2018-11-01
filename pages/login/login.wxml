@@ -2,7 +2,7 @@
 <view class='container'>
 	<view class='box txtC'>
 		<image src='../../img/logo.png'></image>
-		<view class='txt'>拼团神器申请获取微信登录授权</view>
+		<view class='txt'>趣抢课商家版申请获取微信登录授权</view>
 		<view class='btns'>
 			<button class='btn green bold' open-type='getUserInfo' bindgetuserinfo='getUserInfo'>微信授权</button>
 		</view>

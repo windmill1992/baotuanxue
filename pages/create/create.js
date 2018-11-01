@@ -1,7 +1,7 @@
 // pages/create/create.js
 const app = getApp().globalData;
 const api = {
-	upload: app.baseUrl + '/btx/btx-rest/upload',
+	upload: app.baseUrl + '/btx/btx-rest/upload',						//上传
 	orderInfo: app.baseUrl + '/btx/btx-rest/order-info', 		//拼团信息
 };
 Page({
@@ -24,6 +24,11 @@ Page({
 		if (src) {
 			this.upload(src);
 			wx.removeStorageSync('uploadSrc');
+		} else {
+			if (wx.getStorageSync('upload') == 1) {
+				this.setData({ tempImg: null });
+				wx.removeStorageSync('upload');
+			}
 		}
 	},
 	getData: function () {
@@ -90,6 +95,10 @@ Page({
 		this.setData({ proCount: e.detail.value });
 	},
 	uploadImg: function (e) {
+		if (this.data.tempImg && this.data.tempImg != null) {
+			this.showError('请等待图片上传...');
+			return;
+		}
 		let n = e.currentTarget.dataset.name;
 		let it = e.currentTarget.dataset.it;
 		this.setData({ tempImg: {
@@ -99,6 +108,7 @@ Page({
 			count: 1,
 			success: res => {
 				let url = res.tempFilePaths[0];
+				wx.setStorageSync('upload', 1);
 				wx.navigateTo({
 					url: '/pages/upload/upload?src='+ url,
 				})
@@ -128,7 +138,9 @@ Page({
 					} else if (tmp.it) {
 						this.setData({ ['imgs[' + (tmp.it - 1) + ']']: dt.resultData });
 					}
+					this.setData({ tempImg: null });
 				} else {
+					this.setData({ tempImg: null });
 					if (dt.resultMsg) {
 						wx.showToast({
 							title: dt.resultMsg,
@@ -143,10 +155,11 @@ Page({
 				}
 			},
 			fail: err => {
+				this.setData({ tempImg: null });
 				wx.showToast({
 					title: '未知异常！',
 					icon: 'none',
-				})
+				});
 				console.log(err);
 			}
 		})
@@ -159,7 +172,7 @@ Page({
 	},
 	next: function () {
 		let dd = this.data;
-		if (!dd.cover || !dd.proName || !dd.proCount || !dd.imgs[0] || !dd.imgs[1] || !dd.imgs[2]) {
+		if (!dd.cover || !dd.proName || !dd.proCount) {
 			this.showError('请填写完整信息！');
 			return;
 		}

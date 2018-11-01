@@ -35,7 +35,14 @@ Page({
 			success: res => {
 				if (res.data.resultCode == 200 && res.data.resultData) {
 					let r = res.data.resultData;
-					this.setData({ info: r });
+					let d = false;
+					for (let v of r.groupBuyingExtendInfoVOList) {
+						if (v.url) {
+							d = true;
+							break;
+						}
+					}
+					this.setData({ info: r, haspic: d });
 					if (r.groupBuyingStatus == 1) {
 						this.countdown();
 					}

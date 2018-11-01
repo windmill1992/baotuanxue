@@ -141,10 +141,10 @@ Page({
 	},
 	submit: function () {
 		let dd = this.data;
-		// if (!dd.logoUrl || !dd.name || !dd.industry || !dd.region || !dd.detailAddr || !dd.linkman || !dd.mobile || !dd.wxId) {
-		// 	this.showError('信息还没有填写完成哦，不能保存~');
-		// 	return;
-		// }
+		if (!dd.logoUrl || !dd.name || !dd.industry || !dd.region || !dd.detailAddr || !dd.linkman || !dd.mobile || !dd.wxId) {
+			this.showError('信息还没有填写完成哦，不能保存~');
+			return;
+		}
 		if (!/^(13[0-9]|14[579]|15[0-3,5-9]|166|17[0135678]|18[0-9]|19[89])\d{8}$/.test(dd.mobile)) {
 			this.showError('手机号格式不正确!');
 			return;
@@ -178,7 +178,7 @@ Page({
 						title: '提交成功！',
 					});
 					setTimeout(() => {
-						wx.navigateTo({
+						wx.relaunch({
 							url: '/pages/success/success',
 						})
 					}, 1000);

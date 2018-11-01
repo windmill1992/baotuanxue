@@ -50,14 +50,15 @@
   background: #fff;
   border-radius: 14rpx;
   box-shadow: 0 6rpx 24rpx #b2b2b2;
-  padding: 0 50rpx 80rpx;
+  padding: 20rpx 30rpx 80rpx;
   overflow: hidden;
 }
 
 .mid .li {
-  width: 100rpx;
-  margin-top: 80rpx;
-  margin-right: 70rpx;
+  width: 140rpx;
+  margin-top: 40rpx;
+  margin-right: 30rpx;
+	padding: 20rpx 0;
 }
 
 .mid .li:nth-child(4n) {
