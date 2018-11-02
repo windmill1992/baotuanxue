@@ -178,7 +178,7 @@ Page({
 						title: '提交成功！',
 					});
 					setTimeout(() => {
-						wx.relaunch({
+						wx.reLaunch({
 							url: '/pages/success/success',
 						})
 					}, 1000);
