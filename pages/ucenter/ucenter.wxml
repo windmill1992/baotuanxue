@@ -25,8 +25,8 @@
 		<view class='mask' bindtap='closeTel'></view>
 		<view class='con'>
 			<view class='top-d'>
-				<view class='txt'>010-12345678</view>
-				<button class='txt' open-type=''>呼叫</button>
+				<view class='txt'>{{serviceMobile}}</view>
+				<button class='txt' bindtap='call'>呼叫</button>
 			</view>
 			<view class='bot-d txt' bindtap='closeTel'>取消</view>
 		</view>

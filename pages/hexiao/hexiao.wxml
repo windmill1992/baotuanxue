@@ -1,6 +1,0 @@
-<!--pages/hexiao/hexiao.wxml-->
-<view class='container fcol spc'>
-	<view class='btns'>
-		<button class='btn green bold' bindtap='scan'>扫码核销</button>
-	</view>
-</view>

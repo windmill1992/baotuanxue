@@ -106,4 +106,30 @@ Page({
 			}
 		})
 	},
+	scan: function () {
+		wx.scanCode({
+			onlyFromCamera: true,
+			scanType: ['qrCode'],
+			success: res => {
+				console.log(res);
+				if (res && typeof res.result == 'string') {
+					try {
+						let r = JSON.parse(res.result);
+						wx.navigateTo({
+							url: `/pages/hexiaoSure/hexiaoSure?id=${r.groupBuyingId}&gid=${r.groupId}&uid=${r.userId}`,
+						})
+					} catch (err) {
+						console.log(err);
+						wx.showModal({
+							title: '错误提示',
+							content: '请确认扫描正确的核销码！',
+						})
+					}
+				}
+			},
+			fail: () => {
+				// wx.navigateBack();
+			}
+		})
+	}
 })

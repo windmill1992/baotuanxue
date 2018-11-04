@@ -32,7 +32,11 @@ Page({
 			success: res => {
 				if (res.data.resultCode == 200 && res.data.resultData) {
 					let r = res.data.resultData;
-					r.income = Number.parseFloat(r.groupBuyingPrice * r.groupBuyingNumber).toFixed(2);
+					if (r.payType == 1) {
+						r.income = Number.parseFloat(r.groupBuyingPrice * r.groupBuyingNumber).toFixed(2);
+					} else {
+						r.income = Number.parseFloat(r.proPrice).toFixed(2);
+					}
 					this.setData({ info: r });
 					if (r.orderStatus == 1) {
 						this.countdown();

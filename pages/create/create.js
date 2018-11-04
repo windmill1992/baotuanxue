@@ -20,6 +20,11 @@ Page({
 		}
   },
 	onShow: function () {
+		if (wx.getStorageSync('saveSuc') == 1) {
+			wx.removeStorageSync('saveSuc');
+			wx.navigateBack();
+			return;
+		}
 		let src = wx.getStorageSync('uploadSrc');
 		if (src) {
 			this.upload(src);
@@ -101,12 +106,12 @@ Page({
 		}
 		let n = e.currentTarget.dataset.name;
 		let it = e.currentTarget.dataset.it;
-		this.setData({ tempImg: {
-			n: n, it: it,
-		} });
 		wx.chooseImage({
 			count: 1,
 			success: res => {
+				this.setData({ tempImg: {
+					n: n, it: it,
+				} });
 				let url = res.tempFilePaths[0];
 				wx.setStorageSync('upload', 1);
 				wx.navigateTo({

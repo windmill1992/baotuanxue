@@ -23,7 +23,8 @@
 		</view>
 		<view class='item flex spb'>
 			<view class='label'>商家行业</view>
-			<picker mode='selector' range='{{indust}}' class='pick' bindchange='getValue' data-prop='industry'>
+			<picker mode='multiSelector' range='{{indust}}' class='pick' 
+				bindcolumnchange='getIndustryCol' bindchange='getIndustry' value='{{industValue}}'>
 				<text class='def' wx:if='{{!industry}}'>点击选择经营行业</text>
 				<text wx:else>{{industry}}</text>
 			</picker>

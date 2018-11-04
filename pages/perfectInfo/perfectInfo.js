@@ -8,15 +8,28 @@ const api = {
 Page({
   data: {
 		info: {},
-		indust: ['行业1'],
+		indust: [
+			['艺术·兴趣', '技能', '语言', '资格证书', '学业辅导'],
+			[],
+		],
+		industArr: [
+			['舞蹈', '声乐', '器乐', '瑜伽', '跆拳道', '空手道', '泰拳', '其他'],
+			['IT', '设计', '后期', '会计', '其他'],
+			['英语', '小语种', '托福', '雅思', '其他'],
+			['教师资格证', '人力资源', '其他'],
+			['小学', '初中', '高中', '成考', '其他'],
+		],
+		industValue: [0, 0],
   },
   onLoad: function (options) {
 		if (options.edit) {
 			wx.setNavigationBarTitle({
 				title: '编辑门店信息',
 			});
+			this.setData({ edit: 1 });
 			this.getData();
 		}
+		this.setData({ ['indust[1]']: this.data.industArr[0] });
   },
 	onShow: function () {
 		let src = wx.getStorageSync('uploadSrc');
@@ -139,6 +152,18 @@ Page({
 			this.setData({ [p]: e.detail.value });
 		}
 	},
+	getIndustryCol: function (e) {
+		let i = e.detail.column;
+		if (i == 0) {
+			let j = e.detail.value;
+			this.setData({ ['indust[1]']: this.data.industArr[j], industValue: [j, 0] });
+		}
+	},
+	getIndustry: function (e) {
+		let v = e.detail.value;
+		let s = this.data.indust[0][v[0]] + ' ' + this.data.indust[1][v[1]];
+		this.setData({ industry: s });
+	},
 	submit: function () {
 		let dd = this.data;
 		if (!dd.logoUrl || !dd.name || !dd.industry || !dd.region || !dd.detailAddr || !dd.linkman || !dd.mobile || !dd.wxId) {
@@ -153,6 +178,22 @@ Page({
 			this.showError('微信号格式不正确!');
 			return;
 		}
+		if (dd.edit == 1) {
+			wx.showModal({
+				title: '提示',
+				content: '修改门店信息需要重新审核，是否确认修改？',
+				success: result => {
+					if (result.confirm) {
+						this.submit2();
+					}
+				}
+			})
+		} else {
+			this.submit2();
+		}
+	},
+	submit2: function () {
+		let dd = this.data;
 		let data = {
 			logo: dd.logoUrl,
 			merchantName: dd.name,
@@ -231,5 +272,5 @@ Page({
 			obj.title = '';
 			that.setData({ error: obj });
 		}, 2000);
-	}
+	},
 })

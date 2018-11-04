@@ -36,10 +36,16 @@ Page({
 					let m = r.hasNextPage ? 2 : 1;
 					if (r.total == 0) {
 						m = 0;
+					} else if (r.total <= this.page * 10) {
+						m = 1;
+					} else {
+						m = 2;
 					}
 					r.list = r.list == null ? [] : r.list;
 					this.setData({ list: [...dd.list, ...r.list], hasmore: m });
-					this.countdown();
+					if (dd.tab == 0) {
+						this.countdown();
+					}
 				} else {
 					if (res.data.resultMsg) {
 						wx.showToast({

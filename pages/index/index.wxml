@@ -41,10 +41,10 @@
 				<image src='../../img/setting.png'></image>
 				<view class='txt'>门店设置</view>
 			</navigator>
-			<navigator url='/pages/hexiao/hexiao' class='li fcol spc fcen'>
+			<view class='li fcol spc fcen v' bindtap='scan'>
 				<image src='../../img/order_hx.png'></image>
 				<view class='txt'>订单核销</view>
-			</navigator>
+			</view>
 			<navigator url='/pages/index/index' open-type='switchTab' class='li fcol spc fcen'>
 				<image src='../../img/rule.png'></image>
 				<view class='txt'>使用规则</view>

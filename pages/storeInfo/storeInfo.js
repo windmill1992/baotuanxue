@@ -97,7 +97,7 @@ Page({
 	},
 	edit: function () {
 		wx.navigateTo({
-			url: '/pages/perfectInfo/perfectInfo?id='+ this.data.id,
+			url: '/pages/perfectInfo/perfectInfo?edit=1',
 		})
 	},
 	contact: function () {

@@ -52,7 +52,8 @@ Page({
 						title: '提交成功！',
 					});
 					wx.removeStorageSync('saveObj');
-					wx.navigateTo({
+					wx.setStorageSync('saveSuc', 1);
+					wx.redirectTo({
 						url: '/pages/pubSuc/pubSuc?id='+ res.data.resultData,
 					})
 				} else {

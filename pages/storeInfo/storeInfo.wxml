@@ -3,15 +3,15 @@
   <view class='top'>
     <image class='bg' src='../../img/info_bg.png'></image>
     <view class='user flex fcen'>
-      <image src='../../img/logo.png'></image>
-      <view class='nick'>天津NB舞蹈工作室</view>
+      <image src='{{info.logo}}'></image>
+      <view class='nick'>{{info.merchantName}}</view>
     </view>
   </view>
   <view class='mid'>
     <view class='item flex fcen'>
       <image src='../../img/industry.png' mode='aspectFit'></image>
       <view class='txt'>行业</view>
-      <view class='txt1'>{{info.companyIndustry}}</view>
+      <view class='txt1'>{{info.merchantIndustry}}</view>
     </view>
     <view class='item flex fcen'>
       <image src='../../img/city.png' mode='aspectFit'></image>
