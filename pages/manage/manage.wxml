@@ -24,7 +24,7 @@
 						</view>
 						<view class='num flex spb'>
 							<view>已售: {{item.soldQuantity}}件</view>
-							<view>库存: {{item.proCount}}件</view>
+							<view>库存: {{item.proCount - item.soldQuantity}}件</view>
 						</view>
 					</view>
 				</view>

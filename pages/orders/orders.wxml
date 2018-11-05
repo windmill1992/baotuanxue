@@ -20,7 +20,8 @@
 				</view>
 				<view class='top flex fcen spb' wx:else>
 					<view class='state' wx:if='{{tab == 0}}'>直接购买</view>
-					<view class='state' wx:elif='{{tab == 2}}'>直接购买已失败</view>
+					<view class='state' wx:elif='{{tab == 1}}'>直接购买</view>
+					<view class='state' wx:elif='{{tab == 2}}'>直接购买</view>
 					<view class='user flex fcen'>
 						<image src='{{item.originator.avatar}}'></image>
 						<view class='nick'>{{item.originator.userName}}</view>
@@ -38,7 +39,10 @@
 				<view class='bot' wx:if='{{item.payType == 1}}'>
 					<view class='txt1' wx:if='{{tab == 0}}'>距离结束还有{{item.time}}</view>
 					<view class='txt1' wx:elif='{{tab == 1}}'>{{item.soldQuantity}}人已支付</view>
-					<view class='txt1' wx:elif='{{tab == 2}}'>拼团超时</view>
+					<view class='txt1' wx:elif='{{tab == 2}}'>
+						<block wx:if='{{item.payType == 1}}'>拼团超时</block>
+						<block wx:elif='{{item.payType == 2}}'>购买失败</block>
+					</view>
 				</view>
 				<view class='bot' wx:else>
 					<view class='txt1'>1人已支付</view>

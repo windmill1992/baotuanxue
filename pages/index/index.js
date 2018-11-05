@@ -71,7 +71,7 @@ Page({
 					this.setData({ states: r });
 					if (r == 2) {
 						this.getData();
-					} else if (r == 1) {
+					} else if (r == 1 || r == 3) {
 						wx.reLaunch({
 							url: '/pages/helper/helper',
 						})

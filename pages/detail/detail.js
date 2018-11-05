@@ -30,7 +30,7 @@ Page({
 			data: {
 				groupBuyingId: this.data.id,
 				needGroupBuyingExtendInfo: true,
-				needSaleRecordInfo: false,
+				needSaleRecordInfo: true,
 			},
 			success: res => {
 				if (res.data.resultCode == 200 && res.data.resultData) {

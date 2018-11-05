@@ -13,8 +13,8 @@
 	<view class='box'>
 		<navigator url='/pages/storeInfo/storeInfo' class='nav-a flex spb fcen'>
 			<view class='user flex fcen'>
-				<image src='{{user.avatarUrl}}'></image>
-				<view class='name'>{{user.nickName}}</view>
+				<image src='{{info.merchantAvatar}}'></image>
+				<view class='name'>{{info.merchantName}}</view>
 			</view>
 			<view class='more1'>
 				<image src='../../img/more.png'></image>

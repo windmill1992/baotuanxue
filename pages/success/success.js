@@ -37,6 +37,10 @@ Page({
 						wx.reLaunch({
 							url: '/pages/index/index',
 						})
+					} else if (r == 1 || r == 3) {
+						wx.reLaunch({
+							url: '/pages/helper/helper',
+						})
 					}
 				} else {
 					if (res.data.resultMsg) {

@@ -100,7 +100,7 @@
 .item .price {
   font-size: 32rpx;
   color: #f00;
-  margin-top: 30rpx;
+  margin-top: 26rpx;
 }
 
 .item .price .rmb {

@@ -1,11 +1,18 @@
 <!--pages/helper/helper.wxml-->
 <view class='container'>
-	<view class='box txtC'>
+	<view class='box txtC' wx:if='{{states == 1}}'>
 		<image src='../../img/review.png'></image>
 		<view class='txt'>审核中，请耐心等待</view>
 		<view class='btns'>
 			<button class='btn green bold' bindtap='cantact'>联系客服</button>
 		</view>
 		<view class='txt1'>预计3个工作日内审核完毕</view>
+	</view>
+	<view class='box txtC' wx:elif='{{states == 3}}'>
+		<image src='../../img/error.png'></image>
+		<view class='txt'>审核未通过</view>
+		<view class='btns'>
+			<navigator url='/pages/perfectInfo/perfectInfo?edit=1' open-type='reLaunch' class='btn green bold'>重新创建</navigator>
+		</view>
 	</view>
 </view>
