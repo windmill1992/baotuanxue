@@ -1,9 +1,12 @@
 // pages/withdrawCash/withdrawCash.js
 Page({
   data: {
-		over: false,
+		over: true,
   },
   onLoad: function (options) {
 
   },
+	getMoney: function (e) {
+		this.setData({ money: e.detail.value });
+	},
 })

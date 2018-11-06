@@ -1,0 +1,15 @@
+/* pages/rules/rules.wxss */
+
+.txt{
+	font-size: 32rpx;
+	padding: 30rpx;
+	color: #000;
+	border-top: 1px solid #f6f6f6;
+}
+.txt1{
+	font-size: 28rpx;
+	color: #666;
+	padding: 0 30rpx;
+	margin-bottom: 30rpx;
+	line-height: 1.6;
+}

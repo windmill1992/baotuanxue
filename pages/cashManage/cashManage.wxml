@@ -5,20 +5,28 @@
 		<view class='bg'>
 			<view class='box fcol fcen spc'>
 				<view class='txt bold'>可提现余额</view>
-				<view class='num'>1000.00</view>
+				<view class='num'>0</view>
 			</view>
 			<image src='../../img/info_bg.png'></image>
 		</view>
 	</view>
 	<view class='mid flex1'>
-		<navigator url='/pages/withdrawCash/withdrawCash' class='nav'>
+		<!-- <navigator url='/pages/withdrawCash/withdrawCash' class='nav'>
 			<view class='item flex spb fcen'>
 				<view class='txt1'>去提现</view>
 				<view class='arr'>
 					<image src='../../img/more.png'></image>
 				</view>
 			</view>
-		</navigator>
+		</navigator> -->
+		<view class='nav' bindtap='noopen'>
+			<view class='item flex spb fcen'>
+				<view class='txt1'>去提现</view>
+				<view class='arr'>
+					<image src='../../img/more.png'></image>
+				</view>
+			</view>
+		</view>
 		<navigator url='/pages/cashRecord/cashRecord' class='nav'>
 			<view class='item flex spb fcen'>
 				<view class='txt1'>提现记录</view>
