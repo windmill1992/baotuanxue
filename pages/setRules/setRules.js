@@ -30,7 +30,7 @@ Page({
 		let data = Object.assign({
 			groupBuyingNumber: dd.groupBuyingNumber,
 			groupBuyingEndTime: t,
-			groupBuyingEndTimeShow: dd.time,
+			groupBuyingEndTimeShow: new Date(t),
 			proPrice: dd.proPrice,
 			groupBuyingPrice : dd.groupBuyingPrice,
 			groupBuyingId: 0,
