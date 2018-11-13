@@ -1,15 +1,11 @@
 /* pages/cashRule/cashRule.wxss */
+@import '../rules/rules.wxss';
 
 .container {
-  background: #f0f0f0;
+  background: #f8f8f8;
 }
 
 .con {
   padding: 30rpx;
-  text-align: justify;
 }
 
-.txt {
-  font-size: 36rpx;
-  color: #333;
-}

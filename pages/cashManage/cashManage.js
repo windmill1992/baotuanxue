@@ -9,7 +9,7 @@ Page({
 	noopen: function () {
 		wx.showModal({
 			title: '提示',
-			content: '暂未开放',
+			content: '请联系客服提现',
 			showCancel: false,
 		})
 	},

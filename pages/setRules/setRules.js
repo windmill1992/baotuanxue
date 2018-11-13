@@ -9,7 +9,7 @@ Page({
 
   },
   onLoad: function (options) {
-
+		
   },
 	getValue: function (e) {
 		let p = e.currentTarget.dataset.prop;
