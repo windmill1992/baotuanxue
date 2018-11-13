@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 6,
+			"current": 23,
 			"list": [
 				{
 					"id": -1,
@@ -126,7 +126,7 @@
 					"query": ""
 				},
 				{
-					"id": -1,
+					"id": 15,
 					"name": "cashDetail",
 					"pathName": "pages/cashDetail/cashDetail",
 					"query": "id=1"
@@ -171,6 +171,12 @@
 					"id": -1,
 					"name": "rules",
 					"pathName": "pages/rules/rules",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "funds",
+					"pathName": "pages/funds/funds",
 					"query": ""
 				}
 			]

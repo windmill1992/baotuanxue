@@ -45,6 +45,10 @@
 				<image src='../../img/order_hx.png'></image>
 				<view class='txt'>订单核销</view>
 			</view>
+			<navigator url='/pages/funds/funds' class='li fcol spc fcen'>
+				<image src='../../img/funds.png'></image>
+				<view class='txt'>资金流水</view>
+			</navigator>
 			<navigator url='/pages/rules/rules' open-type='switchTab' class='li fcol spc fcen'>
 				<image src='../../img/rule.png'></image>
 				<view class='txt'>使用规则</view>

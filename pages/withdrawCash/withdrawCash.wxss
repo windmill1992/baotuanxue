@@ -2,7 +2,8 @@
 
 .container {
   background: #f0f0f0;
-  padding-top: 50rpx;
+  padding-top: 20rpx;
+  padding-bottom: 50rpx;
 }
 
 .box {
@@ -16,7 +17,7 @@
 }
 
 .box .item {
-  padding: 60rpx 0;
+  padding: 40rpx 0;
   border-bottom: 1px solid #ccc;
 }
 
@@ -40,13 +41,29 @@
 .box .item .err {
   color: #ff4c4c;
   font-size: 30rpx;
-  line-height: 100rpx;
+  line-height: 60rpx;
   white-space: nowrap;
 }
 
+.box .item1 {
+  margin-top: 30rpx;
+}
+
+.box .item1 .label {
+  font-size: 28rpx;
+  color: #000;
+}
+
+.box .item1 .inp {
+  border-bottom: 1px solid #f3f3f3;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+
 .box .bot {
-  padding: 30rpx 0 0;
+  padding: 30rpx 0;
   font-size: 30rpx;
+  border-bottom: 1px solid #f3f3f3;
 }
 
 .box .txt1 {

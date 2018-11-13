@@ -1,5 +1,4 @@
 <!--pages/hexiaoSure/hexiaoSure.wxml-->
-<!--pages/orderDetail/orderDetail.wxml-->
 <view class='container fcol'>
 	<view class='line-shadow'></view>
 	<view class='box flex1'>

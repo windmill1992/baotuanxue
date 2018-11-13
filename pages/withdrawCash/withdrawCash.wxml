@@ -5,16 +5,33 @@
 		<view class='txt'>提现金额</view>
 		<view class='item flex'>
 			<view class='unit bold'>¥</view>
-			<input type='digit' bindinput='getMoney' class='inp bold' placeholder='请填写金额'></input>
+			<input type='digit' value='{{money}}' bindinput='getMoney' class='inp bold' placeholder='请填写金额'></input>
 			<view class='err' wx:if='{{over}}'>提现金额超限</view>
 		</view>
 		<view class='bot flex spb bold1'>
-			<view class='txt1'>账户余额:¥0</view>
+			<view class='txt1'>账户余额:¥{{balance ? balance : 0}}</view>
 			<view class='txt2' bindtap='all'>全部提现</view>
+		</view>
+		<view class='item1'>
+			<view class='label'>姓名</view>
+			<input class='inp' value='{{name}}' bindinput='getValue' data-prop='name' placeholder='请务必填写真实姓名'></input>
+		</view>
+		<view class='item1'>
+			<view class='label'>手机号</view>
+			<input type='number' class='inp' value='{{mobile}}' bindinput='getValue' data-prop='mobile' placeholder='请务必填写真实手机号'></input>
+		</view>
+		<view class='item1'>
+			<view class='label'>银行卡号</view>
+			<input type='number' class='inp' value='{{bankNo}}' bindinput='getValue' data-prop='bankNo' placeholder='请务必填写真实卡号'></input>
+		</view>
+		<view class='item1'>
+			<view class='label'>所属支行</view>
+			<input class='inp' value='{{bankInfo}}' bindinput='getValue' data-prop='bankInfo' placeholder='请填写支行信息(选填)'></input>
 		</view>
 	</view>
 	<view class='btns'>
-		<button class='btn green bold {{over ? "no" : ""}}'>提现</button>
+		<button class='btn green bold {{over ? "no" : ""}}' bindtap='submit'>提现</button>
 	</view>
-	<view class='txt3'>预计3天内到您绑定的微信中</view>
+	<view class='txt3'>预计3天内到您填写的银行卡中</view>
 </view>
+<view class='error' wx:if='{{error.show}}'>{{error.title}}</view>

@@ -51,7 +51,7 @@ Page({
 						})
 					} else {
 						wx.showToast({
-							title: '服务器开了小差，请稍后再试！',
+							title: '服务器错误！',
 							icon: 'none',
 						})
 					}

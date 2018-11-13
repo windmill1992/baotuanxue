@@ -40,20 +40,16 @@
   background-image: linear-gradient(to right, rgb(47, 255, 127) 0%, rgb(0, 191, 74) 100%);
   position: absolute;
   bottom: 10rpx;
-  left: 8%;
+  left: 12%;
   transition: left 0.4s ease;
 }
 
 .tabs .line.r1 {
-  left: 33%;
+  left: 45%;
 }
 
 .tabs .line.r2 {
-  left: 57%;
-}
-
-.tabs .line.r3 {
-  left: 83%;
+  left: 78%;
 }
 
 .list {

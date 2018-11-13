@@ -25,7 +25,8 @@
 		"pages/hexiaoSure/hexiaoSure",
 		"pages/userInfo/userInfo",
 		"pages/upload/upload",
-		"pages/rules/rules"
+		"pages/rules/rules",
+		"pages/funds/funds"
 	],
 	"window": {
 		"backgroundTextStyle": "dark",

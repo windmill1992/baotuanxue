@@ -1,32 +1,26 @@
-// pages/cashRecord/cashRecord.js
+// pages/funds/funds.js
 const app = getApp().globalData;
 const api = {
-	cashList: app.baseUrl + '/btx/btx-rest/withdraw-list',			//提现记录
+	waterList: app.baseUrl + '/btx/btx-rest/capital-water-list',			//资金流水
 };
 const util = require('../../utils/util.js');
 Page({
-  data: {
-		tab: 0,
-		list: 0,
+	data: {
 		hasmore: -1,
-  },
-  onLoad: function (options) {
+		list: [],
+	},
+	onLoad: function (options) {
 		this.page = 1;
 		this.getData();
-  },
+	},
 	getData: function () {
-		wx.showLoading({
-			title: '加载中...',
-		});
-		let dd = this.data;
 		wx.request({
-			url: api.cashList,
+			url: api.waterList,
 			method: 'GET',
 			header: app.header,
 			data: {
 				pageIndex: this.page,
-				pageSize: 10,
-				status: dd.tab,
+				pageSize: 20,
 			},
 			success: res => {
 				if (res.data.resultCode == 200 && res.data.resultData) {
@@ -34,15 +28,19 @@ Page({
 					if (this.page == 1) {
 						this.setData({ list: [] });
 					}
-					let m = r.hasNextPage ? 2 : 1;
-					r.list = r.list == null ? [] : r.list;
+					let m = 0;
 					if (r.total == 0) {
 						m = 0;
+					} else if (r.total <= this.page * 20) {
+						m = 1;
+					} else {
+						m = 2;
 					}
+					r.list = r.list == null ? [] : r.list;
 					for (let v of r.list) {
-						v.applyTime = util.formatTime(new Date(v.applyTime), '-');
+						v.createTime = util.formatTime(new Date(v.createTime), '-');
 					}
-					this.setData({ list: [...dd.list, ...r.list], hasmore: m });
+					this.setData({ list: [...this.data.list, ...r.list], hasmore: m });
 				} else {
 					if (res.data.resultMsg) {
 						wx.showToast({
@@ -68,20 +66,14 @@ Page({
 			}
 		})
 	},
-	changeTab: function (e) {
-		let t = e.currentTarget.dataset.tab;
-		this.setData({ tab: t });
-		this.page = 1;
-		this.getData();
-	},
-  onPullDownRefresh: function () {
+	onPullDownRefresh: function () {
 		wx.stopPullDownRefresh();
 		this.page = 1;
 		this.getData();
-  },
-  onReachBottom: function () {
+	},
+	onReachBottom: function () {
 		if (this.data.hasmore != 2) return;
 		this.page++;
 		this.getData();
-  },
+	},
 })

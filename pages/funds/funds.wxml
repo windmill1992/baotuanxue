@@ -1,0 +1,20 @@
+<!--pages/funds/funds.wxml-->
+<view class='container fcol'>
+	<view class='list' wx:if='{{hasmore > 0}}'>
+		<view class='item' wx:for='{{list}}' wx:key='orderNo'>
+			<view class='flex spb'>
+				<view>{{item.capitalDesc}}</view>
+				<view>{{item.capital > 0 ? '+' : ''}}{{item.capital}}</view>
+			</view>
+			<view class='txts flex spb'>
+				<view>{{item.createTime}}</view>
+				<view>拼团成功</view>
+			</view>
+		</view>
+	</view>
+	<view class='no-data flex1 fcol fcen spc' wx:else>
+		<image src='../../img/no_collage.png' mode='widthFix'></image>
+		<view class='txt'>暂无资金流水数据哦~</view>
+	</view>
+	<view class='no-more' wx:if='{{hasmore == 1}}'>没有更多数据了~</view>
+</view>

@@ -5,37 +5,44 @@
 		<view class='b1'>
 			<view class='item flex fcen spb'>
 				<view class='txt'>提现金额</view>
-				<view class='num bold'>44.98</view>
+				<view class='num bold'>{{info.capital}}</view>
 			</view>
-			<view class='item flex fcen spb'>
+			<!-- <view class='item flex fcen spb'>
 				<view class='txt'>到账金额</view>
-				<view class='txt1'>¥44.98（佣金15%）</view>
-			</view>
+				<view class='txt1'>¥{{info.money}}</view>
+			</view> -->
 		</view>
 		<view class='b2'>
 			<view class='item flex fcen spb'>
 				<view class='txt'>提现时间</view>
-				<view class='txt1'>2018-12-12 18:43:32</view>
+				<view class='txt1'>{{info.applyTime}}</view>
 			</view>
 			<view class='item flex fcen spb'>
-				<view class='txt'>交易单号</view>
-				<view class='txt1'>12345678901234512</view>
+				<view class='txt'>提现人姓名</view>
+				<view class='txt1'>{{info.userName}}</view>
 			</view>
 			<view class='item flex fcen spb'>
-				<view class='txt'>剩余金额</view>
-				<view class='txt1'>¥44.98</view>
+				<view class='txt'>联系电话</view>
+				<view class='txt1'>{{info.mobile}}</view>
+			</view>
+			<view class='item flex fcen spb'>
+				<view class='txt'>提现卡号</view>
+				<view class='txt1'>{{info.cardNo}}</view>
+			</view>
+			<view class='item flex fcen spb' wx:if='{{info.bank}}'>
+				<view class='txt'>开户行</view>
+				<view class='txt1'>{{info.bank}}</view>
 			</view>
 			<view class='item flex fcen spb'>
 				<view class='txt'>状态</view>
-				<view class='txt1'>已到账</view>
-				<!-- <view class='txt1'>进行中</view> -->
-				<!-- <view class='txt1'>已失败</view> -->
+				<view class='txt1' wx:if='{{info.status == 2}}'>已到账</view>
+				<view class='txt1' wx:elif='{{info.status == 1}}'>审核中</view>
 			</view>
-			<view class='item flex fcen spb'>
+			<view class='item flex fcen spb' wx:if='{{info.status == 2}}'>
 				<view class='txt'>到账时间</view>
-				<view class='txt1'>2018-12-12 18:43:32</view>
+				<view class='txt1'>{{info.payTime}}</view>
 			</view>
 		</view>
 	</view>
-	<view class='txt2 bold1'>请联系客服处理</view>
+	<view class='txt2 bold1' wx:if='{{info.status == 1}}'>请联系客服处理</view>
 </view>

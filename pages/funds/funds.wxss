@@ -1,0 +1,18 @@
+/* pages/funds/funds.wxss */
+
+.list {
+  padding: 0 30rpx;
+}
+
+.item {
+  padding: 30rpx 0;
+  border-bottom: 1px solid #f3f3f3;
+  font-size: 32rpx;
+  color: #000;
+}
+
+.item .txts {
+  font-size: 28rpx;
+  color: #9c9c9c;
+  margin-top: 20rpx;
+}

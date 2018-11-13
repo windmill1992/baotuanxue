@@ -1,3 +1,4 @@
 {
-	"navigationBarTitleText": "趣抢课商家助手"
+	"navigationBarTitleText": "趣抢课商家助手",
+	"enablePullDownRefresh": true
 }

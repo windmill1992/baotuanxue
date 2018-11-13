@@ -31,10 +31,10 @@
 				<view class='txt1' wx:if='{{info.payType == 1}}'>{{info.buyerList.length}}人</view>
 				<view class='txt1' wx:else>0人</view>
 			</view>
-			<view class='item flex spb'>
+			<!-- <view class='item flex spb'>
 				<view class='txt'>订单号</view>
 				<view class='txt1'>{{info.orderNo}}</view>
-			</view>
+			</view> -->
 			<view class='item flex spb'>
 				<view class='txt'>订单状态</view>
 				<view class='txt1' wx:if='{{info.orderStatus == 1}}'>待成团</view>
