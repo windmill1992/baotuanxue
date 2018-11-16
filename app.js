@@ -1,10 +1,10 @@
 //app.js
 App({
   onLaunch: function () {
-    let prod = wx.getStorageSync('prod0021');
+    let prod = wx.getStorageSync('prod01');
 		if (prod != 1) {
 			wx.clearStorageSync();
-			wx.setStorageSync('prod0021', 1);
+			wx.setStorageSync('prod01', 1);
 		}
 		if (wx.getUpdateManager) {
 			const updateManager = wx.getUpdateManager();

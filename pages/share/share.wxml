@@ -1,0 +1,20 @@
+<!--pages/share/share.wxml-->
+<view class='container'>
+	<view class='top flex fcen'>
+		<image src='{{info.merchantAvatar}}'></image>
+		<view class='nick'>{{info.merchantName}}发起了一个拼团</view>
+	</view>
+	<view class='cover'>
+		<image src='{{info.cover}}' mode='widthFix'></image>
+	</view>
+	<view class='name bold'>{{info.proName}}</view>
+	<view class='infos flex spb'>
+		<view class='txtL'>拼团价：{{info.groupBuyingPrice}}</view>
+		<view class='txtC'>原价：{{info.proPrice}}</view>
+		<view class='txtR'>{{info.groupBuyingNumber}}人成团</view>
+	</view>
+	<view class='qr flex spc'>
+		<image src='{{info.shareCodeUrl}}'></image>
+	</view>
+	<view class='txt'>扫码参与拼团</view>
+</view>

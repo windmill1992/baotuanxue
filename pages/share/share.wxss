@@ -1,0 +1,62 @@
+/* pages/share/share.wxss */
+
+.container{
+	padding: 30rpx;
+}
+.top image {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 6rpx;
+  margin-right: 20rpx;
+}
+
+.top .nick {
+  font-size: 28rpx;
+  color: #333;
+}
+
+.cover {
+  margin-top: 30rpx;
+  overflow: hidden;
+}
+
+.cover image {
+  width: 100%;
+  height: 420rpx;
+  max-height: 420rpx;
+}
+
+.name {
+  font-size: 36rpx;
+  text-align: left;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  margin-top: 30rpx;
+}
+
+.infos {
+  width: 100%;
+  font-size: 24rpx;
+  color: #666;
+  margin-top: 30rpx;
+  white-space: nowrap;
+}
+
+.qr {
+  margin-top: 60rpx;
+}
+
+.qr image {
+  width: 300rpx;
+  height: 300rpx;
+  vertical-align: top;
+}
+
+.txt {
+  font-size: 28rpx;
+  color: #333;
+  margin-top: 30rpx;
+	text-align: center;
+}

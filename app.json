@@ -26,7 +26,8 @@
 		"pages/userInfo/userInfo",
 		"pages/upload/upload",
 		"pages/rules/rules",
-		"pages/funds/funds"
+		"pages/funds/funds",
+		"pages/share/share"
 	],
 	"window": {
 		"backgroundTextStyle": "dark",

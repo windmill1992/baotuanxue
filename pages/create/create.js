@@ -29,8 +29,9 @@ Page({
 		if (src) {
 			this.upload(src);
 			wx.removeStorageSync('uploadSrc');
+			wx.removeStorageSync('choose');
 		} else {
-			if (wx.getStorageSync('upload') == 1) {
+			if (wx.getStorageSync('upload') == 1 && wx.getStorageSync('choose') != 1) {
 				this.setData({ tempImg: null });
 				wx.removeStorageSync('upload');
 			}
@@ -114,6 +115,7 @@ Page({
 				} });
 				let url = res.tempFilePaths[0];
 				wx.setStorageSync('upload', 1);
+				wx.setStorageSync('choose', 1);
 				wx.navigateTo({
 					url: '/pages/upload/upload?src='+ url,
 				})

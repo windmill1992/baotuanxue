@@ -89,7 +89,7 @@ Page({
 			let hh = Number.parseInt(d / 1000 / 60 / 60);
 			let mm = Number.parseInt(d / 1000 / 60 % 60);
 			v.time = [hh, '小时', mm, '分'].join('');
-			v.groupBuyingEndTimeShow -= 600000;
+			// v.groupBuyingEndTimeShow -= 60000;
 		} else {
 			v.groupBuyingStatus = 3;
 		}
