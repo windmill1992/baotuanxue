@@ -2,7 +2,7 @@
 const app = getApp().globalData;
 const api = {
 	balance: app.baseUrl + '/btx/btx-rest/user-balance',			//用户信息
-	withdraw: app.baseUrl + '/btx/btx-rest/withdraw',						//提现申请
+	withdraw: app.baseUrl + '/btx/btx-rest/withdraw',					//提现申请
 };
 Page({
   data: {
@@ -24,7 +24,7 @@ Page({
 			header: app.header,
 			data: {},
 			success: res => {
-				if (res.data.resultCode == 200 && res.data.resultData) {
+				if (res.data.resultCode == 200) {
 					this.setData({ balance: res.data.resultData });
 				} else {
 					if (res.data.resultMsg) {

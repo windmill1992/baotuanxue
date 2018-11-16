@@ -34,9 +34,41 @@
 .btns {
   padding: 10rpx 30rpx 0;
   overflow: hidden;
-	margin-top: 30rpx;
+  margin-top: 30rpx;
 }
 
 .btns .btn {
   margin-top: 30rpx;
+}
+
+.share-box .bottom {
+  position: absolute;
+  bottom: -120rpx;
+  left: 0;
+  padding: 30rpx 0;
+  width: 100%;
+}
+
+.share-box .bottom .btn {
+  width: 200rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+
+.share-box .close1 {
+  width: 70rpx;
+  height: 70rpx;
+}
+
+.share-box .close1 image {
+  width: 100%;
+  height: 100%;
+}
+
+.canvas {
+  width: 1500rpx;
+  height: 2668rpx;
+  position: fixed;
+  top: 0;
+  left: -10000px;
 }

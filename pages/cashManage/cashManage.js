@@ -23,7 +23,7 @@ Page({
 			header: app.header,
 			data: {},
 			success: res => {
-				if (res.data.resultCode == 200 && res.data.resultData) {
+				if (res.data.resultCode == 200) {
 					this.setData({ balance: res.data.resultData });
 				} else {
 					if (res.data.resultMsg) {

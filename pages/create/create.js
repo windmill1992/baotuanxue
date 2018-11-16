@@ -7,7 +7,7 @@ const api = {
 Page({
   data: {
 		groupBuyingType: 1,
-		imgs: ['', '', ''],
+		imgs: [['', '', ''], ['', '', ''], ['', '', '']],
 		nameLen: 0,
   },
   onLoad: function (options) {
@@ -107,11 +107,12 @@ Page({
 		}
 		let n = e.currentTarget.dataset.name;
 		let it = e.currentTarget.dataset.it;
+		let its = e.currentTarget.dataset.its;
 		wx.chooseImage({
 			count: 1,
 			success: res => {
 				this.setData({ tempImg: {
-					n: n, it: it,
+					n: n, it: it, its: its,
 				} });
 				let url = res.tempFilePaths[0];
 				wx.setStorageSync('upload', 1);
@@ -120,6 +121,10 @@ Page({
 					url: '/pages/upload/upload?src='+ url,
 				})
 			},
+			fail: () => {
+				console.log('cancel');
+				this.setData({ tempImg: null });
+			}
 		})
 	},
 	upload: function (url) {
@@ -143,7 +148,7 @@ Page({
 					if (tmp.n) {
 						this.setData({ [tmp.n]: dt.resultData });
 					} else if (tmp.it) {
-						this.setData({ ['imgs[' + (tmp.it - 1) + ']']: dt.resultData });
+						this.setData({ ['imgs[' + (tmp.it - 1) + '][' + tmp.its + ']']: dt.resultData });
 					}
 					this.setData({ tempImg: null });
 				} else {
@@ -189,9 +194,15 @@ Page({
 			proCount: dd.proCount,
 			groupBuyingType: dd.groupBuyingType,
 			groupBuyingExtendInfoVOList: [
-				{ introType: 1, text: '工作室环境', url: dd.imgs[0]},
-				{ introType: 2, text: '师资介绍', url: dd.imgs[1]},
-				{ introType: 3, text: '学院风采', url: dd.imgs[2]},
+				{ introType: 1, text: '', url: dd.imgs[0][0]},
+				{ introType: 1, text: '', url: dd.imgs[0][1]},
+				{ introType: 1, text: '', url: dd.imgs[0][2]},
+				{ introType: 2, text: '', url: dd.imgs[1][0]},
+				{ introType: 2, text: '', url: dd.imgs[1][1]},
+				{ introType: 2, text: '', url: dd.imgs[1][2]},
+				{ introType: 3, text: '', url: dd.imgs[2][0]},
+				{ introType: 3, text: '', url: dd.imgs[2][1]},
+				{ introType: 3, text: '', url: dd.imgs[2][2]},
 			]
 		}
 		wx.setStorageSync('saveObj', obj);

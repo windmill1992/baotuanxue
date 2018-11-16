@@ -30,6 +30,7 @@ Page({
 				withdrawId: this.data.id,
 			},
 			success: res => {
+				console.log(res.data);
 				if (res.data.resultCode == 200 && res.data.resultData) {
 					let r = res.data.resultData;
 					r.money = parseFloat(r.capital * 0.95).toFixed(2);

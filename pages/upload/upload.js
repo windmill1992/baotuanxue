@@ -90,5 +90,8 @@ Page({
         })
         .updateCanvas()
     }
-  }
+  },
+	onShow: function () {
+		wx.removeStorageSync('choose');
+	},
 })

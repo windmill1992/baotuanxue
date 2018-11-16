@@ -3,8 +3,8 @@
 	<view class='con'>
 		<view class='txt bold'>提现规则说明</view>
 		<view class='txt1'>1.每笔成交订单，用户使用二维码到店核销订单后，趣抢课将扣除佣金</view>
-		<view class='txt1'>2.趣抢课的佣金价格为每笔订单成交价格的15%</view>
-		<view class='txt1'>3.提现时，另外用户还需支付微信提现手续费，手续费为0.6%</view>
-		<view class='txt1'>4.用户如参与趣抢课发起任何活动，佣金价格将在佣金全款的基础上计算折扣</view>
+		<view class='txt1'>2.趣抢课的佣金价格为每笔订单成交价格的{{fee}}%</view>
+		<!-- <view class='txt1'>3.提现时，另外用户还需支付微信提现手续费，手续费为0.6%</view> -->
+		<view class='txt1'>3.用户如参与趣抢课发起任何活动，佣金价格将在佣金全款的基础上计算折扣</view>
 	</view>
 </view>

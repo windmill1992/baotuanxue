@@ -2,7 +2,7 @@
 <view class='container'>
 	<view class='tops'>
 		<view class='cover'>
-			<image src='{{info.cover}}' mode='widthFix'></image>
+			<image src='{{info.cover}}' mode='widthFix' bindload='getProp'></image>
 		</view>
 		<view class='title bold'>{{info.proName}}</view>
 		<view class='info flex spb'>
@@ -12,9 +12,8 @@
 		</view>
 	</view>
 	<view class='btns'>
-		<button class='btn green' bindtap='share'>扫码购买</button>
-		<navigator url='/pages/share/share?id={{id}}' class='btn green'>分享购买</navigator>
-		<button class='btn gray' bindtap='toDetail'>查看详情</button>
+		<button class='btn green' bindtap='share'>分享购买</button>
+		<button class='btn green' bindtap='toDetail'>查看详情</button>
 	</view>
 	<view class='dialog share-box {{showShare ? "show" : ""}}'>
 		<view class='mask'></view>
@@ -36,9 +35,15 @@
 				<image src='{{info.shareCodeUrl}}'></image>
 			</view>
 			<view class='txt'>扫码参与拼团</view>
-			<view class='close' bindtap='closeShare'>
-				<image src='../../img/close.png'></image>
+			<view class='bottom flex fcen spb'>
+				<button class='btn green' open-type='openSetting' bindopensetting='openSetting' wx:if='{{canIUse && refuseAuth}}'>保存海报</button>
+				<button class='btn green' bindtap='makeShareImg' wx:else>保存海报</button>
+				<view class='close1' bindtap='closeShare'>
+					<image src='../../img/close.png'></image>
+				</view>
 			</view>
 		</view>
 	</view>
 </view>
+<view class='tips' wx:if='{{toast.show}}'>{{toast.title}}</view>
+<canvas canvas-id='cv' class='canvas'></canvas>

@@ -15,6 +15,37 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
+const changeLine = (str, ctx, initX, initY, lineHeight, canvasWidth) => {
+	let arrText = str.split('');
+	let line = '';
+	let lineCount = 0;
+	let isThreeLine = false;
+	for (let n = 0; n < arrText.length; n++) {
+		let testLine = line + arrText[n];
+		let testWidth = ctx.measureText(testLine).width;
+		if (testWidth > canvasWidth) {
+			if (lineCount == 2) {
+				isThreeLine = true
+				let length = line.length - 2;
+				line = line.substring(0, length) + '...';
+				ctx.fillText(line, initX, initY);
+				return false;
+			}
+			lineCount++;
+
+			ctx.fillText(line, initX, initY);
+			line = arrText[n];
+			initY += lineHeight;
+		} else {
+			line = testLine;
+		}
+	}
+	if (!isThreeLine) {
+		ctx.fillText(line, initX, initY);
+	}
+}
+
 module.exports = {
-  formatTime: formatTime
+  formatTime: formatTime,
+	changeLine: changeLine,
 }
