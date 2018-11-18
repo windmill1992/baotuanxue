@@ -1,10 +1,10 @@
 //app.js
 App({
   onLaunch: function () {
-    let prod = wx.getStorageSync('prod101');
+    let prod = wx.getStorageSync('prod102');
 		if (prod != 1) {
 			wx.clearStorageSync();
-			wx.setStorageSync('prod101', 1);
+			wx.setStorageSync('prod102', 1);
 		}
 		if (wx.getUpdateManager) {
 			const updateManager = wx.getUpdateManager();
@@ -41,7 +41,7 @@ App({
 			'content-type': 'application/json',
 			'applicationId': 2,
 			'userId': -1,
-			'buildVersion': '200',
+			'buildVersion': '300',
 		},
 		serviceMobile: '010-80339994',
   }

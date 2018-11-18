@@ -277,8 +277,8 @@ Page({
 
 			ctx.save();
 			ctx.beginPath();
-			ctx.arc(69 * r, 69 * r, 29 * r, 0, Math.PI * 2);
-			ctx.clip();
+			// ctx.arc(69 * r, 69 * r, 29 * r, 0, Math.PI * 2);
+			// ctx.clip();
 			ctx.drawImage(avatar, imgX, 40 * r, 58 * r, 58 * r);
 			ctx.closePath();
 			ctx.restore();
