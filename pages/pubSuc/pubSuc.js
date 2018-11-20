@@ -272,7 +272,7 @@ Page({
 			ctx.setFontSize(28 * r);
 			ctx.setTextAlign('center');
 			ctx.setFillStyle('#000000');
-			ctx.fillText('扫码参与拼团', w / 2, h - 60);
+			ctx.fillText('长按扫码，购买后，邀请好友拼团', w / 2, h - 60);
 			ctx.closePath();
 
 			ctx.save();

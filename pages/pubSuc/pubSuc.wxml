@@ -34,7 +34,7 @@
 			<view class='qr flex spc'>
 				<image src='{{info.shareCodeUrl}}'></image>
 			</view>
-			<view class='txt'>扫码参与拼团</view>
+			<view class='txt'>长按扫码，购买后，邀请好友拼团</view>
 			<view class='bottom flex fcen spb'>
 				<button class='btn green' open-type='openSetting' bindopensetting='openSetting' wx:if='{{canIUse && refuseAuth}}'>保存海报</button>
 				<button class='btn green' bindtap='makeShareImg' wx:else>保存海报</button>
