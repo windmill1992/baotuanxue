@@ -13,7 +13,7 @@ Page({
   onLoad: function (options) {
 		if (options.id) {
 			let user = wx.getStorageSync('user');
-			this.setData({ id: options.id, user: user });
+			this.setData({ id: options.id, user: user, r: wx.getSystemInfoSync().windowWidth / 375 });
 			this.getData();
 			wx.authorize({
 				scope: 'scope.writePhotosAlbum',
@@ -82,9 +82,13 @@ Page({
 		})
 	},
 	getProp: function (e) {
+		// this.setData({
+		// 	imgW: e.detail.width,
+		// 	imgH: e.detail.height
+		// });
 		this.setData({
-			imgW: e.detail.width,
-			imgH: e.detail.height
+			imgW: 690,
+			imgH: 388,
 		});
 	},
 	openSetting: function (e) {
@@ -209,12 +213,12 @@ Page({
 
 		function exec() {
 			let name = dd.info.proName;
-			let r = wx.getSystemInfoSync().windowWidth / 375;
+			let r = dd.r;
 			let w = 750 * r;
 			let h = 1190 * r;
 			let imgX = (w - dd.imgW * r) / 2;
-			imgX = imgX < 0 ? 0 : imgX;
 			let ctx = wx.createCanvasContext('cv', that);
+			let str = dd.info.merchantName + '发起了一个拼团';
 
 			ctx.beginPath();
 			ctx.setFillStyle('#ffffff');
@@ -222,9 +226,19 @@ Page({
 			ctx.closePath();
 
 			ctx.beginPath();
+			ctx.drawImage(avatar, imgX, 40 * r, 58 * r, 58 * r);
 			ctx.setFillStyle('#333333');
 			ctx.setFontSize(26 * r);
-			ctx.fillText(dd.info.merchantName + '发起了一个拼团', 118 * r, 75 * r, 600 * r);
+			if (ctx.measureText) {
+				util.changeLine(str, ctx, 118 * r, 75 * r, 36, 600 * r);
+			} else {
+				if (str.length > 20) {
+					ctx.fillText(str.substr(0, 20), 118 * r, 65 * r);
+					ctx.fillText(str.substr(20), 118 * r, 105 * r);
+				} else {
+					ctx.fillText(str, 118 * r, 75 * r);
+				}
+			}
 			ctx.closePath();
 
 			ctx.beginPath();
@@ -275,15 +289,7 @@ Page({
 			ctx.fillText('长按扫码，购买后，邀请好友拼团', w / 2, h - 60);
 			ctx.closePath();
 
-			ctx.save();
-			ctx.beginPath();
-			// ctx.arc(69 * r, 69 * r, 29 * r, 0, Math.PI * 2);
-			// ctx.clip();
-			ctx.drawImage(avatar, imgX, 40 * r, 58 * r, 58 * r);
-			ctx.closePath();
-			ctx.restore();
-
-			ctx.draw(true, setTimeout(() => {
+			ctx.draw(false, setTimeout(() => {
 				wx.canvasToTempFilePath({
 					canvasId: 'cv',
 					x: 0,
@@ -302,7 +308,7 @@ Page({
 						wx.hideLoading();
 					}
 				}, that)
-			}, 100));
+			}, 200));
 		}
 	},
 	toDetail: function () {
