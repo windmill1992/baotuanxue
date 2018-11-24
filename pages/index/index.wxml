@@ -21,7 +21,7 @@
   </view>
 	<view class='mid'>
 		<view class='ul flex fwrap'>
-			<navigator url='/pages/create/create' class='li fcol spc fcen'>
+			<navigator url='/pages/setRules/setRules' class='li fcol spc fcen'>
 				<image src='../../img/new_collage.png'></image>
 				<view class='txt'>新建拼团</view>
 			</navigator>

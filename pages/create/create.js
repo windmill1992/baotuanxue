@@ -1,8 +1,10 @@
 // pages/create/create.js
 const app = getApp().globalData;
 const api = {
-	upload: app.baseUrl + '/btx/btx-rest/upload',						//上传
-	orderInfo: app.baseUrl + '/btx/btx-rest/order-info', 		//拼团信息
+	upload: app.baseUrl + '/btx/btx-rest/upload',										//上传
+	orderInfo: app.baseUrl + '/btx/btx-rest/order-info', 						//拼团信息
+	saveOrder: app.baseUrl + '/btx/btx-rest/save-group-buying',			//保存拼团
+	delImg: app.baseUrl + '/btx/btx-rest/delete',										//删除图片
 };
 Page({
   data: {
@@ -182,32 +184,124 @@ Page({
 			}
 		})
 	},
-	next: function () {
+	submit: function () {
 		let dd = this.data;
 		if (!dd.cover || !dd.proName || !dd.proCount) {
 			this.showError('请填写完整信息！');
 			return;
 		}
-		let obj = {
+		let obj = wx.getStorageSync('saveObj');
+		
+		let data = Object.assign({
 			cover: dd.cover,
 			proName: dd.proName,
 			proCount: dd.proCount,
 			groupBuyingType: dd.groupBuyingType,
 			groupBuyingExtendInfoVOList: [
-				{ introType: 1, text: '', url: dd.imgs[0][0]},
-				{ introType: 1, text: '', url: dd.imgs[0][1]},
-				{ introType: 1, text: '', url: dd.imgs[0][2]},
-				{ introType: 2, text: '', url: dd.imgs[1][0]},
-				{ introType: 2, text: '', url: dd.imgs[1][1]},
-				{ introType: 2, text: '', url: dd.imgs[1][2]},
-				{ introType: 3, text: '', url: dd.imgs[2][0]},
-				{ introType: 3, text: '', url: dd.imgs[2][1]},
-				{ introType: 3, text: '', url: dd.imgs[2][2]},
-			]
-		}
-		wx.setStorageSync('saveObj', obj);
-		wx.navigateTo({
-			url: '/pages/setRules/setRules',
+				{ introType: 1, text: '', url: dd.imgs[0][0] },
+				{ introType: 1, text: '', url: dd.imgs[0][1] },
+				{ introType: 1, text: '', url: dd.imgs[0][2] },
+				{ introType: 2, text: '', url: dd.imgs[1][0] },
+				{ introType: 2, text: '', url: dd.imgs[1][1] },
+				{ introType: 2, text: '', url: dd.imgs[1][2] },
+				{ introType: 3, text: '', url: dd.imgs[2][0] },
+				{ introType: 3, text: '', url: dd.imgs[2][1] },
+				{ introType: 3, text: '', url: dd.imgs[2][2] },
+			],
+			groupBuyingId: 0,
+			groupBuyingStatus: 1,
+			userId: app.header.userId,
+		}, obj);
+		wx.showLoading({
+			title: '正在提交...',
+		});
+		wx.request({
+			url: api.saveOrder,
+			method: 'POST',
+			header: app.header,
+			data: data,
+			success: res => {
+				if (res.data.resultCode == 200 && res.data.resultData) {
+					wx.showToast({
+						title: '提交成功！',
+					});
+					wx.removeStorageSync('saveObj');
+					wx.setStorageSync('saveSuc', 1);
+					wx.redirectTo({
+						url: '/pages/pubSuc/pubSuc?id=' + res.data.resultData,
+					})
+				} else {
+					if (res.data.resultMsg) {
+						wx.showToast({
+							title: res.data.resultMsg,
+							icon: 'none',
+						})
+					} else {
+						wx.showToast({
+							title: '服务器开了小差，请稍后再试！',
+							icon: 'none',
+						})
+					}
+				}
+			},
+			fail: err => {
+				wx.showToast({
+					title: '未知异常！',
+					icon: 'none',
+				});
+				console.log(err);
+			},
+			complete: () => {
+				wx.hideLoading();
+			}
+		})
+	},
+	delImg: function (e) {
+		const dd = this.data;
+		wx.showModal({
+			title: '提示',
+			content: '确定删除该图片吗？',
+			success: result => {
+				if (result.confirm) {
+					let { it, its } = e.currentTarget.dataset;
+					wx.request({
+						url: api.delImg + '?picType=1&fileName=' + dd.imgs[it - 1][its],
+						method: 'POST',
+						header: app.header,
+						data: {},
+						success: res => {
+							if (res.data.resultCode == 200 && res.data.resultData) {
+								let arr = this.data.imgs;
+								arr[it - 1].splice(its, 1);
+								arr[it - 1].push('');
+								this.setData({ imgs: arr });
+								wx.showToast({
+									title: '删除成功',
+								})
+							} else {
+								if (res.data.resultMsg) {
+									wx.showToast({
+										title: res.data.resultMsg,
+										icon: 'none',
+									})
+								} else {
+									wx.showToast({
+										title: '服务器开了小差，请稍后再试！',
+										icon: 'none',
+									})
+								}
+							}
+						},
+						fail: err => {
+							wx.showToast({
+								title: '未知异常！',
+								icon: 'none',
+							});
+							console.log(err);
+						},
+					})
+				}
+			}
 		})
 	},
 	showError: function (txt) {

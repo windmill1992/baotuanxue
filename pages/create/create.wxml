@@ -35,6 +35,9 @@
 	<view class='upload up fcol fcen spc' bindtap='uploadImg' data-it='1' data-its='0' wx:else>
 		<image src='{{imgs[0][0]}}'></image>
 		<view class='txt0 fcol fcen spc'>重新上传课程介绍</view>
+		<view class='del' catchtap='delImg' data-it='1' data-its='0'>
+			<image src='../../img/del.png'></image>
+		</view>
 	</view>
 	<block wx:if='{{imgs[0][0]}}'>
 		<view class='upload up fcol fcen spc' bindtap='uploadImg' data-it='1' data-its='1' wx:if='{{!imgs[0][1]}}'>
@@ -43,6 +46,9 @@
 		<view class='upload up fcol fcen spc' bindtap='uploadImg' data-it='1' data-its='1' wx:else>
 			<image src='{{imgs[0][1]}}'></image>
 			<view class='txt0 fcol fcen spc'>重新上传课程介绍2</view>
+			<view class='del' catchtap='delImg' data-it='1' data-its='1'>
+				<image src='../../img/del.png'></image>
+			</view>
 		</view>
 	</block>
 	<block wx:if='{{imgs[0][1]}}'>
@@ -52,6 +58,9 @@
 		<view class='upload up fcol fcen spc' bindtap='uploadImg' data-it='1' data-its='2' wx:else>
 			<image src='{{imgs[0][2]}}'></image>
 			<view class='txt0 fcol fcen spc'>重新上传课程介绍3</view>
+			<view class='del' catchtap='delImg' data-it='1' data-its='2'>
+				<image src='../../img/del.png'></image>
+			</view>
 		</view>
 	</block>
 	<view class='upload fcol fcen spc' bindtap='uploadImg' data-it='2' data-its='0' wx:if='{{!imgs[1][0]}}'>
@@ -60,6 +69,9 @@
 	<view class='upload up fcol fcen spc' bindtap='uploadImg' data-it='2' data-its='0' wx:else>
 		<image src='{{imgs[1][0]}}'></image>
 		<view class='txt0 fcol fcen spc'>重新上传师资介绍</view>
+		<view class='del' catchtap='delImg' data-it='2' data-its='0'>
+			<image src='../../img/del.png'></image>
+		</view>
 	</view>
 	<block wx:if='{{imgs[1][0]}}'>
 		<view class='upload up fcol fcen spc' bindtap='uploadImg' data-it='2' data-its='1' wx:if='{{!imgs[1][1]}}'>
@@ -68,6 +80,9 @@
 		<view class='upload up fcol fcen spc' bindtap='uploadImg' data-it='2' data-its='1' wx:else>
 			<image src='{{imgs[1][1]}}'></image>
 			<view class='txt0 fcol fcen spc'>重新上传师资介绍2</view>
+			<view class='del' catchtap='delImg' data-it='2' data-its='1'>
+				<image src='../../img/del.png'></image>
+			</view>
 		</view>
 	</block>
 	<block wx:if='{{imgs[1][1]}}'>
@@ -77,6 +92,9 @@
 		<view class='upload up fcol fcen spc' bindtap='uploadImg' data-it='2' data-its='2' wx:else>
 			<image src='{{imgs[1][2]}}'></image>
 			<view class='txt0 fcol fcen spc'>重新上传师资介绍3</view>
+			<view class='del' catchtap='delImg' data-it='2' data-its='2'>
+				<image src='../../img/del.png'></image>
+			</view>
 		</view>
 	</block>
 	<view class='upload fcol fcen spc' bindtap='uploadImg' data-it='3' data-its='0' wx:if='{{!imgs[2][0]}}'>
@@ -85,6 +103,9 @@
 	<view class='upload up fcol fcen spc' bindtap='uploadImg' data-it='3' data-its='0' wx:else>
 		<image src='{{imgs[2][0]}}'></image>
 		<view class='txt0 fcol fcen spc'>重新上传学员风采</view>
+		<view class='del' catchtap='delImg' data-it='3' data-its='0'>
+			<image src='../../img/del.png'></image>
+		</view>
 	</view>
 	<block wx:if='{{imgs[2][0]}}'>
 		<view class='upload up fcol fcen spc' bindtap='uploadImg' data-it='3' data-its='1' wx:if='{{!imgs[2][1]}}'>
@@ -93,6 +114,9 @@
 		<view class='upload up fcol fcen spc' bindtap='uploadImg' data-it='3' data-its='1' wx:else>
 			<image src='{{imgs[2][1]}}'></image>
 			<view class='txt0 fcol fcen spc'>重新上传学员风采2</view>
+			<view class='del' catchtap='delImg' data-it='3' data-its='1'>
+				<image src='../../img/del.png'></image>
+			</view>
 		</view>
 	</block>
 	<block wx:if='{{imgs[2][1]}}'>
@@ -102,10 +126,13 @@
 		<view class='upload up fcol fcen spc' bindtap='uploadImg' data-it='3' data-its='2' wx:else>
 			<image src='{{imgs[2][2]}}'></image>
 			<view class='txt0 fcol fcen spc'>重新上传学员风采3</view>
+			<view class='del' catchtap='delImg' data-it='3' data-its='2'>
+				<image src='../../img/del.png'></image>
+			</view>
 		</view>
 	</block>
 	<view class='btns'>
-		<button class='btn green bold' bindtap='next'>下一步</button>
+		<button class='btn green bold' bindtap='submit'>立即提交</button>
 	</view>
 </view>
 <view class='error' wx:if='{{error.show}}'>{{error.title}}</view>
