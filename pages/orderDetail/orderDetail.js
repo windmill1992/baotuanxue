@@ -66,6 +66,12 @@ Page({
 			}
 		})
 	},
+	navtoUser: function (e) {
+		let uid = e.currentTarget.dataset.uid;
+		wx.navigateTo({
+			url: '/pages/userInfo/userInfo?id='+ uid,
+		})
+	},
 	countdown: function () {
 		let f = this.setTime();
 		this.timer = setInterval(() => {

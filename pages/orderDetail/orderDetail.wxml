@@ -49,7 +49,8 @@
 		<view class='bot'>
 			<view class='txt'>付款人员</view>
 			<view class='user-list flex'>
-				<image src='{{item.avatar}}' wx:for='{{info.buyerList}}' wx:key='userId'></image>
+				<image src='{{item.avatar}}' wx:for='{{info.buyerList}}' wx:key='userId'
+					bindtap='navtoUser' data-uid='{{item.userId}}'></image>
 			</view>
 		</view>
 	</view>
