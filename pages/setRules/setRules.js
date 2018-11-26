@@ -30,9 +30,15 @@ Page({
 			proPrice: dd.proPrice,
 			groupBuyingPrice: dd.groupBuyingPrice,
 		}
-		wx.setStorageSync('saveObj', obj);
-		wx.navigateTo({
-			url: '/pages/create/create',
+		// wx.setStorageSync('saveObj', obj);
+		wx.setStorage({
+			key: 'saveObj',
+			data: obj,
+			success: () => {
+				wx.navigateTo({
+					url: '/pages/create/create',
+				})
+			}
 		})
 	},
 	showError: function (txt) {
