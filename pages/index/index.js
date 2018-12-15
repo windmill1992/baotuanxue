@@ -115,8 +115,14 @@ Page({
 				if (res && typeof res.result == 'string') {
 					try {
 						let r = JSON.parse(res.result);
+            let url = "";
+            if (r.businessType == '1') {//拼团
+              url = `/pages/hexiaoSure/hexiaoSure?id=${r.groupBuyingId}&gid=${r.groupId}&uid=${r.userId}`;
+            } else {//砍价
+              url = `/pages/hexiaoBargainSure/hexiaoBargainSure?id=${r.bargainCourseId}&bid=${r.bargainId}&uid=${r.userId}`;
+            }
 						wx.navigateTo({
-							url: `/pages/hexiaoSure/hexiaoSure?id=${r.groupBuyingId}&gid=${r.groupId}&uid=${r.userId}`,
+							url: url,
 						})
 					} catch (err) {
 						console.log(err);

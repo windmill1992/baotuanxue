@@ -55,15 +55,19 @@ Page({
 			},
 			success: res => {
 				if (res.data.resultCode == 200 && res.data.resultData) {
-					let r = res.data.resultData;
-					let d = false;
-					for (let v of r.groupBuyingExtendInfoVOList) {
-						if (v.url) {
-							d = true;
-							break;
-						}
-					}
-					this.setData({ info: r, haspic: d });
+          let r = res.data.resultData;
+          let d = false;
+          let s = false;
+          for (let v of r.groupBuyingExtendInfoVOList) {
+            if (v.url) {
+              d = true;
+              break;
+            }
+          }
+          if (r.courseStartTime) {
+            s = true;
+          }
+          this.setData({ info: r, haspic: d, showContent: s });
 					if (r.groupBuyingStatus == 1) {
 						this.countdown();
 					}
@@ -286,7 +290,7 @@ Page({
 			ctx.closePath();
 
 			ctx.beginPath();
-			ctx.drawImage(code, (w - 280 * r) / 2, h / 2 + 220, 280 * r, 280 * r);
+			ctx.drawImage(code, (w - 280 * r) / 2, h / 2 + 150, 280 * r, 280 * r);
 			ctx.closePath();
 
 			ctx.beginPath();

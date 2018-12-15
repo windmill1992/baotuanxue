@@ -14,7 +14,7 @@ Page({
 	},
 	next: function () {
 		let dd = this.data;
-		if (!dd.groupBuyingNumber || !dd.time || !dd.proPrice || !dd.groupBuyingPrice){
+    if (!dd.proName || !dd.groupBuyingNumber || !dd.time || !dd.proPrice || !dd.groupBuyingPrice){
 			this.showError('请填写完整信息！');
 			return;
 		}
@@ -24,6 +24,7 @@ Page({
 		}
 		let t = util.formatTime(new Date(Date.now() + dd.time * 60 * 60 * 1000), '-');
 		let obj = {
+      proName: dd.proName,
 			groupBuyingNumber: dd.groupBuyingNumber,
 			groupBuyingEndTime: t,
 			groupBuyingEndTimeShow: new Date(t),

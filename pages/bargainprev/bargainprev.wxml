@@ -1,0 +1,122 @@
+<!--pages/bargainprev/bargainprev.wxml-->
+<view class='toptxt'>黄子豪了发布砍价课程</view>
+<view class='container'>  
+	<view class='cover'>
+		<image src='../../img/detail/bargain.jpg' mode='widthFix' bindload='getProp'></image>
+	</view>
+  <view class='box1'>
+    <view class='title'>天津NB舞蹈工作室年卡</view>
+    <view class='txt'>开课时间：2108年12月24日</view>
+    <view class='txt'>课时长度：24小时</view>
+  </view>
+	<view class='box'>
+		<navigator url='/pages/storeInfo/storeInfo' class='nav-a flex spb fcen'>
+			<view class='user flex fcen'>
+				<image src='../../img/detail/bargaintitle.png'></image>
+				<view class='name'>天津NB舞蹈工作室年卡</view>
+			</view>
+			<view class='more1'>
+				<image src='../../img/more.png'></image>
+			</view>
+		</navigator> 
+		<view class='content'>
+        <view class='group1'>
+          <view class='txt3'>
+            <image src='../../img/rmb.png'></image>
+            <text>商品总价</text>
+          </view>
+          <view class='txt4'>2224元</view>
+        </view><view class='group1'>
+          <view class='txt3'>
+            <image src='../../img/rule1.png'></image>
+            <text>砍价规则</text>
+          </view>
+          <view class='txt4'>砍价规则砍价规则砍价规则砍价规则</view>
+        </view>
+      	<view class='group1'>
+          <view class='txt3'>
+            <image src='../../img/calendar.png'></image>
+            <text>开课时间</text>
+          </view>
+          <view class='txt4'>2018-12-12</view>
+        </view>
+      	<view class='group1'>
+          <view class='txt3'>
+            <image src='../../img/people.png'></image>
+            <text>开课人数</text>
+          </view>
+          <view class='txt4'>54人</view>
+        </view>
+      	<view class='group1'>
+          <view class='txt3'>
+            <image src='../../img/time.png'></image>
+            <text>课时长度</text>
+          </view>
+          <view class='txt4'>54小时</view>
+        </view>
+        <view class='group1'>
+          <view class='txt3'>
+            <image src='../../img/file.png'></image>
+            <text>课程介绍</text>
+          </view>
+          <view class='txt4'>课程介绍课程介绍课程介绍课程介绍课程介绍课程介绍课程介绍课程介绍课程介绍</view>
+        </view>  
+      	<view class='group1'>
+          <view class='txt3'>
+            <image src='../../img/addblue.png'></image>
+            <text>详细地址</text>
+          </view>
+          <view class='txt4'>详细地址详细地址详细地址详细地址</view>
+        </view>
+        <view class='group1'>
+          <view class='txt3'>
+            <image src='../../img/bulb.png'></image>
+            <text>温馨提示</text>
+          </view>
+          <view class='txt4'>温馨提示温馨提示温馨提示</view>
+        </view>    
+	</view>
+  <view class='detail2'>
+    <view class='txt2'>课程详细</view>  
+		<view>
+			<image src='../../img/bargain/bargain.jpg'></image>
+      <image src='../../img/bargain/bargain.jpg'></image>
+      <image src='../../img/bargain/bargain.jpg'></image>			
+		</view>
+    <view class='no' wx:if='{{!haspic&&!showContent}}'>暂无详情信息哦~</view>
+  </view>	
+	</view>
+	<view class='bot flex'>
+		<button class='btn1 green bold' bindtap='share'>返回修改</button>
+    <button class='btn1 gray bold' bindtap='share'>发布分享</button>
+	</view>
+
+	<view class='dialog share-box {{showShare ? "show" : ""}}'>
+		<view class='mask'></view>
+		<view class='dialog_inner'>
+			<view class='top flex fcen'>				
+				<view class='nick'>黄子豪了发布砍价课程</view>
+			</view>
+			<view class='cover'>
+				<image src='../../img/bargain/bargain.jpg'></image>
+			</view>
+			<view class='name bold'>天津舞蹈工作室年卡</view>
+			
+			<view class='qr flex spc'>
+				<image src='{{info.shareCodeUrl}}'></image>
+			</view>
+			<view class='txt'>长按扫码，邀请好友拼团</view>
+			<view class='bottom flex fcen spb'>
+        <view>
+			  	<button class='btn black' open-type='openSetting' bindopensetting='openSetting' wx:if='{{canIUse && refuseAuth}}'>保存海报</button>
+			  	<button class='btn black' bindtap='makeShareImg' wx:else>保存海报</button>
+        </view>
+				<view class='close1' bindtap='closeShare'>
+					<image src='../../img/close.png'></image>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>
+<view class='tips' wx:if='{{toast.show}}'>{{toast.title}}</view>
+<canvas canvas-id='cv' class='canvas'></canvas>

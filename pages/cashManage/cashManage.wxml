@@ -19,17 +19,17 @@
 				</view>
 			</view>
 		</navigator>
-		<!-- <view class='nav' bindtap='noopen'>
+		<navigator url='/pages/cashRecord/cashRecord' class='nav'>
 			<view class='item flex spb fcen'>
-				<view class='txt1'>去提现</view>
+				<view class='txt1'>提现记录</view>
 				<view class='arr'>
 					<image src='../../img/more.png'></image>
 				</view>
 			</view>
-		</view> -->
-		<navigator url='/pages/cashRecord/cashRecord' class='nav'>
+		</navigator>
+		<navigator url='/pages/hexiaoRecord/hexiaoRecord' class='nav'>
 			<view class='item flex spb fcen'>
-				<view class='txt1'>提现记录</view>
+				<view class='txt1'>核销记录</view>
 				<view class='arr'>
 					<image src='../../img/more.png'></image>
 				</view>

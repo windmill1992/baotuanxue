@@ -1,0 +1,38 @@
+/* pages/hexiaoRecord/hexiaoRecord.wxss */
+@import '../orders/orders.wxss';
+
+.tabs {
+  padding: 0;
+}
+
+.tabs .line {
+  left: 25%;
+  margin-left: -35rpx;
+}
+
+.tabs .line.r1 {
+  left: 75%;
+}
+
+.item .user image {
+  width: 48rpx;
+  height: 48rpx;
+}
+
+.item .user .nick {
+  color: #282c32;
+  font-size: 28rpx;
+}
+
+.item .top .state {
+  color: #00d0ff;
+}
+
+.item .info .time {
+  color: #666;
+}
+
+.item .info .income {
+  font-size: 24rpx;
+  color: #f70;
+}

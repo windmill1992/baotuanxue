@@ -7,10 +7,11 @@ Page({
   data: {
 		info: {},
 		state: '',
+		isWriteoff: false,
   },
   onLoad: function (options) {
 		if (options.id) {
-			this.setData({ id: options.id });
+			this.setData({ id: options.id, isWriteoff: options.hexiao == 1 });
 			this.getData();
 		} else {
 			wx.redirectTo({
@@ -90,7 +91,7 @@ Page({
 			let hh = Number.parseInt(d / 1000 / 60 / 60);
 			let mm = Number.parseInt(d / 1000 / 60 % 60);
 			v.time = [hh, '小时', mm, '分'].join('');
-			v.groupBuyingEndTime -= 60000;
+			//v.groupBuyingEndTime -= 60000;
 		} else {
 			v.orderStatus = 3;
 		}

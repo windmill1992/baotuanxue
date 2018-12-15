@@ -2,7 +2,7 @@
 @import '../manage/manage.wxss';
 
 .container {
-  background: #fff;
+  background: #f0f0f0;
 }
 
 .tabs {
@@ -22,17 +22,17 @@
 }
 
 .item {
-  padding: 0 20rpx 20rpx;
+  padding: 0 20rpx 40rpx;
   box-shadow: 0 6rpx 24rpx #e5e5e5;
+  border-left: 8rpx solid #000;
 }
 
 .item .top {
-  border-bottom: 1px solid #f0f0f0;
   margin-bottom: 16rpx;
 }
 
 .item .top .state {
-	color: #666;
+	color: #333;
 }
 
 .item .user image {
@@ -47,24 +47,35 @@
 }
 
 .item .pic {
-  width: 102rpx;
-  height: 102rpx;
+  width: 166rpx;
+  height: 166rpx;
   border-radius: 4rpx;
   background-color: #f3f3f3;
 }
 
 .item .info {
-  height: 102rpx;
+  height: 160rpx;
 }
 
 .item .info .title {
   -webkit-line-clamp: 1;
 }
 
+.item .info .img image {
+  font-size: 24rpx;
+  color: #666;
+  height: 44rpx;
+  width: 44rpx;
+  margin: 16rpx 16rpx 0 0;
+}
+
 .item .info .time {
   font-size: 24rpx;
   color: #666;
-  margin-top: 20rpx;
+  margin-top: 16rpx;
+}
+.orange{
+  color: #f39800;
 }
 
 .item .bot {

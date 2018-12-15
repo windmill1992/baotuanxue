@@ -30,14 +30,14 @@
 }
 
 .tabs .tab.on {
-  color: #00bf4a;
+  color: #00d0ff;
 }
 
 .tabs .line {
   width: 70rpx;
   height: 1px;
   border-radius: 1px;
-  background-image: linear-gradient(to right, rgb(47, 255, 127) 0%, rgb(0, 191, 74) 100%);
+  background:#00d0ff;
   position: absolute;
   bottom: 10rpx;
   left: 12%;

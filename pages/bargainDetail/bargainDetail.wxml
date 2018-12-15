@@ -1,0 +1,116 @@
+<!--pages/bargainDetail/bargainDetail.wxml-->
+<view class='container'>  
+	<view class='cover'>
+		<image src='{{info.cover}}' mode='widthFix' bindload='getProp'></image>
+	</view>
+  <view class='box1'>
+    <view class='title'>{{info.proName}}</view>
+    <view class='txt'>已售：{{info.soldQuantity}}</view>
+    <view class='txt'>开课时间：{{info.courseStartTime}}</view>
+    <view class='txt'>课时长度：{{info.courseCount}}分钟</view>
+  </view>
+	<view class='box'>
+		<navigator url='/pages/storeInfo/storeInfo' class='nav-a flex spb fcen'>
+			<view class='user flex fcen'>
+				<image src='{{info.merchantAvatar}}'></image>
+				<view class='name'>{{info.merchantName}}</view>
+			</view>
+			<view class='more1'>
+				<image src='../../img/more.png'></image>
+			</view>
+		</navigator> 
+		<view class='content'>
+        <view class='group1'>
+          <view class='txt3'>
+            <image src='../../img/rmb.png'></image>
+            <text>商品总价</text>
+          </view>
+          <view class='txt4'>{{info.proPrice}}元</view>
+        </view>
+        <view class='group1'>
+          <view class='txt3'>
+            <image src='../../img/rule1.png'></image>
+            <text>最多砍价次数</text>
+          </view>
+          <view class='txt4'>{{info.maxBargainTime}}次</view>
+        </view>
+        <view class='group1'>
+          <view class='txt3'>
+            <image src='../../img/rule1.png'></image>
+            <text>最多砍价钱数</text>
+          </view>
+          <view class='txt4'>{{info.maxBargainPrice}}元</view>
+        </view>
+      	<view class='group1'>
+          <view class='txt3'>
+            <image src='../../img/people.png'></image>
+            <text>开课人数</text>
+          </view>
+          <view class='txt4'>{{info.courseMaxStudents}}人</view>
+        </view>
+        <view class='group1'>
+          <view class='txt3'>
+            <image src='../../img/file.png'></image>
+            <text>课程介绍</text>
+          </view>
+          <view class='txt4'>{{info.courseDesc}}</view>
+        </view>  
+      	<view class='group1'>
+          <view class='txt3'>
+            <image src='../../img/addblue.png'></image>
+            <text>详细地址</text>
+          </view>
+          <view class='txt4'>{{info.courseAddress}}</view>
+        </view>
+        <view class='group1' wx:if='{{info.courseInfo}}'>
+          <view class='txt3'>
+            <image src='../../img/bulb.png'></image>
+            <text>温馨提示</text>
+          </view>
+          <view class='txt4'>{{info.courseInfo}}</view>
+        </view>    
+	</view>
+  <view class='detail2'>
+    <view class='txt2'>课程信息</view>  
+    <view class='pic' wx:for='{{info.bargainCourseExtendInfoVOList}}' wx:key='url' wx:if='{{item.url}}'>
+				<image src='{{item.url}}' mode='widthFix'></image>
+				<view class='txt'>{{item.text}}</view>
+		</view>
+    <view class='no' wx:if='{{!hasPic}}'>暂无详情信息哦~</view>
+  </view>	
+	</view>
+	<view class='bot flex'>
+    <button class='btn green bold' bindtap='share'>分享砍价</button>
+	</view>
+
+	<view class='dialog share-box {{showShare ? "show" : ""}}'>
+		<view class='mask'></view>
+		<view class='dialog_inner'>
+			<view class='top flex fcen'>				
+				<view class='nick'>{{info.merchantName}}发布了砍价课程</view>
+			</view>
+			<view class='cover'>
+				<image src='{{info.cover}}'></image>
+			</view>
+			<view class='name bold'>{{info.proName}}</view>
+			<view class='infos flex spb'>
+				<view class='txtC'>原价：{{info.proPrice}}</view>
+			</view>
+			<view class='qr flex spc'>
+				<image src='{{info.shareCodeUrl}}'></image>
+			</view>
+			<view class='txt'>长按扫码，邀请好友砍价</view>
+			<view class='bottom flex fcen spb'>
+        <view>
+			  	<button class='btn green' open-type='openSetting' bindopensetting='openSetting' wx:if='{{canIUse && refuseAuth}}'>保存海报</button>
+			  	<button class='btn green' bindtap='makeShareImg' wx:else>保存海报</button>
+        </view>
+				<view class='close1' bindtap='closeShare'>
+					<image src='../../img/close.png'></image>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>
+<view class='tips' wx:if='{{toast.show}}'>{{toast.title}}</view>
+<canvas canvas-id='cv' class='canvas'></canvas>

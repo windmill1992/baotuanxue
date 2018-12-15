@@ -1,7 +1,7 @@
 // pages/cashManage/cashManage.js
 const app = getApp().globalData;
 const api = {
-	balance: app.baseUrl + '/btx/btx-rest/user-balance',			//用户余额
+	balance: app.baseUrl + '/btx/btx-rest/user-can-withdraw-balance',		//用户可提现余额
 };
 Page({
   data: {

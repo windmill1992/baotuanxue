@@ -1,0 +1,114 @@
+/* pages/bargain/bargain.wxss */
+
+.container {
+  background: #f0f0f0;
+}
+
+.tabs {
+  position: fixed;
+	top: 0;
+	left: 0;
+  background: #fff;
+  width: 100%;
+  height: 90rpx;
+  line-height: 90rpx;
+  padding: 0 120rpx;
+  box-shadow: 0 2rpx 4rpx rgba(0, 0, 0, 0.1);
+}
+
+.tabs .tab {
+  text-align: center;
+  color: #999;
+  font-size: 30rpx;
+  font-weight: bold;
+}
+
+.tabs .tab.on {
+  color: #333;
+}
+
+.tabs .line {
+  width: 70rpx;
+  height: 1px;
+  border-radius: 1px;
+  background:#333;
+  position: absolute;
+  bottom: 10rpx;
+  left: 28%;
+  transition: left 0.4s ease;
+}
+
+.tabs .line.r {
+  left: 62%;
+}
+
+.list {
+  padding: 120rpx 30rpx 30rpx;
+}
+
+.item {
+  border-radius: 6rpx;
+  background: #fbfbfb;
+  box-shadow: -4rpx 0 0 #333;
+  margin-bottom: 30rpx;
+}
+
+.item .shadow {
+  padding: 0 20rpx 30rpx;
+  box-shadow: 0 6rpx 24rpx #999;
+  border-radius: 6rpx;
+}
+
+.item .top {
+  line-height: 40rpx;
+  padding: 20rpx 0;
+}
+
+.item .state {
+  font-size: 28rpx;
+  color: #333;
+  font-weight: bold;
+}
+
+.item .time {
+  font-size: 24rpx;
+  color: #666;
+}
+
+.item .pic {
+  width: 180rpx;
+  height: 180rpx;
+  margin-right: 20rpx;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-image: #f0f0f0;
+}
+
+.item .info {
+  height: 202rpx;
+}
+
+.item .title {
+  font-size: 36rpx;
+  color: #333;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.item .price {
+  font-size: 32rpx;
+  color: #f00;
+  margin-top: 26rpx;
+}
+
+.item .price .rmb {
+  font-size: 24rpx;
+}
+
+.item .num {
+  font-size: 24rpx;
+  color: #666;
+}

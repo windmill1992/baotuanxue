@@ -1,0 +1,34 @@
+<!--pages/hexiaoDetail/hexiaoDetail.wxml-->
+<view class='container fcol'>
+	<view class='line-shadow'></view>
+	<view class='box flex1'>
+		<navigator url='/pages/userInfo/userInfo?id={{info.buyerList[0].userId}}' class='top flex fcen spb'>
+			<view class='txt'>购买用户</view>
+			<view class='user flex fcen'>
+				<image src='{{info.userBaseVO.avatar}}'></image>
+				<view class='txt1'>{{info.userBaseVO.userName}}</view>
+			</view>
+		</navigator>
+		<view class='mid'>
+			<view class='item flex spb'>
+				<view class='txt'>购买时间</view>
+				<view class='txt1'>{{info.createTime}}</view>
+			</view>
+			<view class='item flex spb'>
+				<view class='txt'>支付金额</view>
+				<view class='txt1'>{{info.proPrice}}元</view>
+			</view>
+			<view class='item flex spb'>
+				<view class='txt'>平台手续费</view>
+				<view class='txt1'>{{fee}}%</view>
+			</view>
+			<view class='item flex spb'>
+				<view class='txt'>商品标题</view>
+				<view class='txt1'>{{title}}</view>
+			</view>
+		</view>
+	</view>
+	<view class='btns'>
+		<navigator url='/pages/orderDetail/orderDetail?id={{gid}}&hexiao=1' class='btn green bold'>订单详情</navigator>
+	</view>
+</view>

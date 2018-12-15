@@ -198,7 +198,7 @@ Page({
 			logo: dd.logoUrl,
 			merchantName: dd.name,
 			merchantIndustry: dd.industry,
-			city: dd.region[0] + dd.region[1],
+      city: dd.region[0] + dd.region[1] + dd.region[2],
 			address: dd.detailAddr,
 			linkMan: dd.linkman,
 			linkMobile: dd.mobile,

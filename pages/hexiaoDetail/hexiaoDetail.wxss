@@ -1,0 +1,3 @@
+/* pages/hexiaoDetail/hexiaoDetail.wxss */
+@import '../orderDetail/orderDetail.wxss';
+

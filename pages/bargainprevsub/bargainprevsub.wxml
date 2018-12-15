@@ -1,0 +1,51 @@
+<!--pages/bargainprev/bargainprev.wxml-->
+<view class='container'>  
+	<view class='cover'>
+		<image src='{{info.cover}}' mode='widthFix' bindload='getProp'></image>
+	</view>
+  <view class='box1'>
+    <view class='title'>{{info.proName}}</view>
+    <view class='txt'>开课时间：{{info.courseStartTime}}</view>
+  </view>
+
+	<view class='bot1'>
+    <button class='btn green bold' bindtap='share'>分享砍价</button>
+		<button class='btn green bold' bindtap='toDetail'>查看详情</button>
+    <button class='btn green bold' bindtap='toIndex'>返回首页</button>
+    <!--
+    <button class='btn green bold' bindtap='share'>砍价管理</button>
+    
+    -->
+	</view>
+
+	<view class='dialog share-box {{showShare ? "show" : ""}}'>
+		<view class='mask'></view>
+		<view class='dialog_inner'>
+			<view class='top flex fcen'>				
+				<view class='nick'>{{info.merchantName}}发布了砍价课程</view>
+			</view>
+			<view class='cover'>
+				<image src='{{info.cover}}'></image>
+			</view>
+			<view class='name bold'>{{info.proName}}</view>
+			<view class='infos flex spb'>
+				<view class='txtC'>原价：{{info.proPrice}}</view>
+			</view>
+			<view class='qr flex spc'>
+				<image src='{{info.shareCodeUrl}}'></image>
+			</view>
+			<view class='txt'>长按扫码，邀请好友砍价</view>
+			<view class='bottom flex fcen spb'>
+        <view>
+			  	<button class='btn green' open-type='openSetting' bindopensetting='openSetting' wx:if='{{canIUse && refuseAuth}}'>保存海报</button>
+			  	<button class='btn green' bindtap='makeShareImg' wx:else>保存海报</button>
+        </view>
+				<view class='close1' bindtap='closeShare'>
+					<image src='../../img/close.png'></image>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>
+<view class='tips' wx:if='{{toast.show}}'>{{toast.title}}</view>
+<canvas canvas-id='cv' class='canvas'></canvas>

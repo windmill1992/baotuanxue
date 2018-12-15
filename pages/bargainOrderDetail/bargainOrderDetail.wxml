@@ -1,0 +1,58 @@
+<!--pages/bargainOrderDetail/bargainOrderDetail.wxml-->
+<view class='container fcol'>
+	<view class='line-shadow'></view>
+	<view class='box flex1'>
+		<navigator class='top flex fcen spb' url='/pages/userInfo/userInfo?id={{info.originatorId}}' >
+        <view class='txt'>砍价发起人</view>
+        <view class='user flex fcen'>
+          <image src='{{info.originatorAvatar}}'></image>
+          <view class='txt1'>{{info.originatorName}}</view>
+        </view>
+		  </navigator>
+		<view class='mid'>
+			<view class='item flex spb'>
+				<view class='txt'>发起时间</view>
+				<view class='txt1'>{{info.createTime}}</view>
+			</view>
+			<view class='item flex spb'>
+				<view class='txt'>直接购买</view>
+				<view class='txt1'>{{info.proPrice}}元</view>
+			</view>
+			<view class='item flex spb'>
+				<view class='txt'>砍价价格</view>
+				<view class='txt1'>{{info.bargainCoursePrice}}元</view>
+			</view>
+      <view class='item flex spb'>
+				<view class='txt'>砍掉价格</view>
+				<view class='txt1'>{{info.totalBargainPrice}}元</view>
+			</view>
+			<view class='item flex spb'>
+				<view class='txt'>参与砍价人数</view>
+				<view class='txt1'>{{info.bargainedCount}}人</view>
+			</view>	
+			<view class='item flex spb'>
+				<view class='txt'>订单状态</view>
+				<view class='txt1' wx:if='{{info.orderStatus == 1}}'>砍价进行中</view>
+				<view class='txt1' wx:elif='{{info.orderStatus == 2}}'>已完成支付</view>
+				<view class='txt1' wx:elif='{{info.orderStatus == 3}}'>已失败</view>
+			</view>
+			<view class='item flex spb'>
+				<view class='txt'>合计收入</view>
+				<view class='txt1'>{{info.totalBargainPrice}}元</view>
+			</view>
+		</view>
+		<view class='bot'>
+			<view class='txt'>参与砍价人员</view>
+			<view class='user-list flex'>
+				<image src='{{item.avatar}}' wx:for='{{info.bargainRecordVoList}}' wx:key='userId'
+				 data-uid='{{item.userId}}'></image>
+			</view>
+      <view class='txt2' bindtap='toBargainDetail' >点击查看商品详情>></view>
+		</view>
+	</view>
+	<view class='btns'>
+		<button class='btn green bold' wx:if='{{info.orderStatus == 1}}'>距结束还有{{info.time}}</button>
+		<button class='btn green bold' wx:elif='{{info.orderStatus == 2}}'>已完成</button>
+		<button class='btn green bold' wx:elif='{{info.orderStatus == 3}}'>超时未支付</button>
+	</view>
+</view>

@@ -4,11 +4,12 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
-		"newFeature": true
+		"newFeature": true,
+		"autoAudits": false
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.1.3",
@@ -33,7 +34,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 6,
+			"current": 39,
 			"list": [
 				{
 					"id": -1,
@@ -76,18 +77,6 @@
 					"name": "pubSuc",
 					"pathName": "pages/pubSuc/pubSuc",
 					"query": "id=22"
-				},
-				{
-					"id": 7,
-					"name": "detail",
-					"pathName": "pages/detail/detail",
-					"query": "id=5"
-				},
-				{
-					"id": -1,
-					"name": "manage",
-					"pathName": "pages/manage/manage",
-					"query": ""
 				},
 				{
 					"id": -1,
@@ -156,10 +145,10 @@
 					"query": "id=1&gid=8&uid=1"
 				},
 				{
-					"id": 21,
+					"id": 18,
 					"name": "userInfo",
 					"pathName": "pages/userInfo/userInfo",
-					"query": "id=1"
+					"query": "id=114"
 				},
 				{
 					"id": -1,
@@ -184,6 +173,108 @@
 					"name": "share",
 					"pathName": "pages/share/share",
 					"query": "id=4"
+				},
+				{
+					"id": 23,
+					"name": "detail",
+					"pathName": "pages/detail/detail",
+					"query": "id=59"
+				},
+				{
+					"id": -1,
+					"name": "about",
+					"pathName": "pages/about/about",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "cashManage",
+					"pathName": "pages/cashManage/cashManage",
+					"query": "id=1"
+				},
+				{
+					"id": -1,
+					"name": "manage",
+					"pathName": "pages/manage/manage",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "about",
+					"pathName": "pages/about/about",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "cashDetail",
+					"pathName": "pages/orderDetail/orderDetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "logs",
+					"pathName": "pages/logs/logs",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "newbargain",
+					"pathName": "pages/newbargain/newbargain",
+					"query": ""
+				},
+				{
+					"id": 31,
+					"name": "bargainprevsub",
+					"pathName": "pages/bargainprevsub/bargainprevsub",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "bargainOrderDetail",
+					"pathName": "pages/bargainOrderDetail/bargainOrderDetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "bargainprev",
+					"pathName": "pages/bargainprev/bargainprev",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "bargain",
+					"pathName": "pages/bargain/bargain",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "bargainprev",
+					"pathName": "pages/bargainprev/bargainprev",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "bargainDetail",
+					"pathName": "pages/bargainDetail/bargainDetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "bargainOrderList",
+					"pathName": "pages/bargainOrderList/bargainOrderList",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "hexiaoRecord",
+					"pathName": "pages/hexiaoRecord/hexiaoRecord",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "hexiaoDetail",
+					"pathName": "pages/hexiaoDetail/hexiaoDetail",
+					"query": "id=1&gid=1&uid=1"
 				}
 			]
 		}

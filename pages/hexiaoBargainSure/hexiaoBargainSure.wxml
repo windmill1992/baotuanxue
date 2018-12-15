@@ -1,0 +1,39 @@
+<!--pages/hexiaoSure/hexiaoSure.wxml-->
+<view class='container fcol'>
+	<view class='line-shadow'></view>
+	<view class='box flex1'>
+		<view class='top flex fcen spb'>
+			<view class='txt'>购买用户</view>
+			<view class='user flex fcen'>
+				<image src='{{info.userBaseVO.avatar}}'></image>
+				<view class='txt1'>{{info.userBaseVO.userName}}</view>
+			</view>
+		</view>
+		<view class='mid'>
+			<view class='item flex spb'>
+				<view class='txt'>成交时间</view>
+				<view class='txt1'>{{info.createTime}}</view>
+			</view>
+			<view class='item flex spb'>
+				<view class='txt'>原价</view>
+				<view class='txt1'>{{info.proPrice}}元</view>
+			</view>
+			<view class='item flex spb'>
+				<view class='txt'>砍价后价格</view>
+				<view class='txt1'>{{info.bargainCourseFinalPrice}}元</view>
+			</view>
+			<view class='item flex spb'>
+				<view class='txt'>订单号</view>
+				<view class='txt1'>{{info.orderNo}}</view>
+			</view>
+			<view class='item flex spb'>
+				<view class='txt'>订单状态</view>
+				<view class='txt1'>已完成</view>
+			</view>
+		</view>
+	</view>
+	<view class='btns'>
+		<button class='btn green bold' bindtap='submit'>确认到店</button>
+	</view>
+</view>
+

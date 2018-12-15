@@ -1,0 +1,93 @@
+/* pages/bargainOrderList/bargainOrderList.wxss */
+@import '../manage/manage.wxss';
+
+.container {
+  background: #f0f0f0;
+}
+
+.tabs {
+  padding: 0 30rpx;
+}
+
+.tabs .line {
+  left: 14%;
+}
+
+.tabs .line.r1 {
+  left: 45%;
+}
+
+.tabs .line.r2 {
+  left: 76%;
+}
+
+.item {
+  padding: 0 20rpx 40rpx;
+  box-shadow: 0 6rpx 24rpx #e5e5e5;
+  border-left: 8rpx solid #000;
+}
+
+.item .top {
+  margin-bottom: 16rpx;
+}
+
+.item .top .state {
+	color: #333;
+}
+
+.item .user image {
+  width: 44rpx;
+  height: 44rpx;
+  margin-right: 10rpx;
+}
+
+.item .user .nick {
+  font-size: 24rpx;
+  color: #666;
+}
+
+.item .pic {
+  width: 166rpx;
+  height: 166rpx;
+  border-radius: 4rpx;
+  background-color: #f3f3f3;
+}
+
+.item .info {
+  height: 160rpx;
+}
+
+.item .info .title {
+  -webkit-line-clamp: 1;
+}
+
+.item .info .img image {
+  font-size: 24rpx;
+  color: #666;
+  height: 44rpx;
+  width: 44rpx;
+  margin: 16rpx 16rpx 0 0;
+}
+
+.item .info .time {
+  font-size: 24rpx;
+  color: #666;
+  margin-top: 90rpx;
+}
+.orange{
+  color: #f39800;
+}
+
+.item .bot {
+  padding: 20rpx 0 0;
+  border-top: 1px solid #f0f0f0;
+  margin-top: 20rpx;
+  color: #666;
+}
+
+.no-data .btn {
+  width: 232rpx;
+  margin-top: 30rpx;
+  height: 68rpx;
+  line-height: 68rpx;
+}

@@ -1,0 +1,185 @@
+<!--pages/newbargain/newbargain.wxml-->
+<view class='container'>
+	<view class='upload fcol fcen spc' bindtap='uploadImg' data-name='cover' wx:if='{{!cover}}'>
+		<view class='txt'>点击上传封面图</view>
+	</view>
+	<view class='upload fcol fcen spc' bindtap='uploadImg' data-name='cover' wx:else>
+		<image src='{{cover}}'></image>
+		<view class='txt0 fcol fcen spc'>重新上传封面图</view>
+	</view>
+  <view class='txt1'>商品标题</view>
+	<view class='inp-box flex spb fcen'>
+		<input type='text' value='{{proName}}' class='inp' maxlength='20' bindinput='getName'
+        placeholder='请填写商品名称' ></input>
+        <view class='txt2'>{{nameLen}}/20</view>
+	</view>
+  <view class='txt1'>商品总价</view>
+	<view class='inp-box flex spb fcen'>
+		<input type='text' value='{{proPrice}}' class='inp' maxlength='10' data-prop='proPrice'
+        placeholder='请输入商品总价' bindinput='getValue' ></input>
+        <view class='txt2'>元</view>
+	</view>
+  <view class='txt1'>砍价规则</view>
+	<view class='inp-box flex spb fcen'>
+		<input type='text' value='{{maxBargainTime}}' class='inp' maxlength='10'  data-prop='maxBargainTime'
+        placeholder='最多砍价次数' bindinput='getValue' ></input>
+        <view class='txt2'>次</view>
+	</view>
+  <view class='inp-box flex spb fcen'>
+		<input type='text' value='{{maxBargainPrice}}' class='inp' maxlength='10' data-prop='maxBargainPrice'
+        placeholder='最多砍价钱数' bindinput='getValue' ></input>
+        <view class='txt2'>元</view>
+	</view>
+  <view class='txt1'>温馨提示（选填）</view>
+	<view class='inp-box flex spb fcen'>
+		<input type='text' value='{{courseInfo}}' bindinput='getValue' class='inp' maxlength='100' data-prop='courseInfo'
+        placeholder='例：请提前带好在教室使用的运动鞋' ></input>
+	</view>
+  <view class='txt1'>课程信息</view>
+  <view class='inp-item inp-box flex spb fcen'>
+			<view class='label'>开课时间</view>
+			<view class=' flex fcen'>
+				<picker mode='date' class='pick' bindchange='getValue' start="{{startTime}}" data-prop='courseStartTime' end="2030-01-01">
+				<text class='def' wx:if='{{!courseStartTime}}'>点击选择开课时间</text>
+				<text wx:else>{{courseStartTime}}</text>
+			</picker>
+			</view>
+	</view>	
+	<view class='inp-item flex inp-box spb fcen'>
+    <view class='label'>开课人数</view>
+		<view class=' flex fcen '>
+      <input type='number' style='color:black' value='{{courseMaxStudents}}' class='def' placeholder='请填写开课人数' data-prop='courseMaxStudents' 
+        bindinput='getValue' ></input>
+    </view>
+	</view>
+  <view class='inp-item flex inp-box spb fcen'>
+    <view class='label'>课时长度</view>
+		<view class=' flex fcen '>
+      <input type='number' style='color:black' value='{{courseCount}}' maxlength='10' class='def' data-prop='courseCount' 
+        placeholder='请填写课时长度' bindinput='getValue' ></input>分钟
+    </view>
+	</view>
+  
+
+    <view class='label'>课程介绍</view>
+    <view class='inp-box1 flex spb fcen'>
+          <textarea placeholder='请输入课程介绍，最多输入1000字' data-prop='courseDesc' bindconfirm='getValue' 
+          bindinput='getValue' maxlength='1000'></textarea>
+    </view>
+
+	<view class='txt5'>课程照片</view>
+	<view class='upload up fcol fcen spc' bindtap='uploadImg' data-it='1' data-its='0' wx:if='{{!imgs[0][0]}}'>
+		<view class='txt'>点击上传课程图片</view>
+	</view>
+	<view class='upload up fcol fcen spc' bindtap='uploadImg' data-it='1' data-its='0' wx:else>
+		<image src='{{imgs[0][0]}}'></image>
+		<view class='txt0 fcol fcen spc'>重新上传课程图片</view>
+		<view class='del' catchtap='delImg' data-it='1' data-its='0'>
+			<image src='../../img/del.png'></image>
+		</view>
+	</view>
+	<block wx:if='{{imgs[0][0]}}'>
+		<view class='upload up fcol fcen spc' bindtap='uploadImg' data-it='1' data-its='1' wx:if='{{!imgs[0][1]}}'>
+			<view class='txt'>点击上传课程图片2</view>
+		</view>
+		<view class='upload up fcol fcen spc' bindtap='uploadImg' data-it='1' data-its='1' wx:else>
+			<image src='{{imgs[0][1]}}'></image>
+			<view class='txt0 fcol fcen spc'>重新上传课程图片2</view>
+			<view class='del' catchtap='delImg' data-it='1' data-its='1'>
+				<image src='../../img/del.png'></image>
+			</view>
+		</view>
+	</block>
+	<block wx:if='{{imgs[0][1]}}'>
+		<view class='upload up fcol fcen spc' bindtap='uploadImg' data-it='1' data-its='2' wx:if='{{!imgs[0][2]}}'>
+			<view class='txt'>点击上传课程图片3</view>
+		</view>
+		<view class='upload up fcol fcen spc' bindtap='uploadImg' data-it='1' data-its='2' wx:else>
+			<image src='{{imgs[0][2]}}'></image>
+			<view class='txt0 fcol fcen spc'>重新上传课程图片3</view>
+			<view class='del' catchtap='delImg' data-it='1' data-its='2'>
+				<image src='../../img/del.png'></image>
+			</view>
+		</view>
+	</block>
+	<view class='upload fcol fcen spc' bindtap='uploadImg' data-it='2' data-its='0' wx:if='{{!imgs[1][0]}}'>
+		<view class='txt'>点击上传师资介绍</view>
+	</view>
+	<view class='upload up fcol fcen spc' bindtap='uploadImg' data-it='2' data-its='0' wx:else>
+		<image src='{{imgs[1][0]}}'></image>
+		<view class='txt0 fcol fcen spc'>重新上传师资介绍</view>
+		<view class='del' catchtap='delImg' data-it='2' data-its='0'>
+			<image src='../../img/del.png'></image>
+		</view>
+	</view>
+	<block wx:if='{{imgs[1][0]}}'>
+		<view class='upload up fcol fcen spc' bindtap='uploadImg' data-it='2' data-its='1' wx:if='{{!imgs[1][1]}}'>
+			<view class='txt'>点击上传师资介绍2</view>
+		</view>
+		<view class='upload up fcol fcen spc' bindtap='uploadImg' data-it='2' data-its='1' wx:else>
+			<image src='{{imgs[1][1]}}'></image>
+			<view class='txt0 fcol fcen spc'>重新上传师资介绍2</view>
+			<view class='del' catchtap='delImg' data-it='2' data-its='1'>
+				<image src='../../img/del.png'></image>
+			</view>
+		</view>
+	</block>
+	<block wx:if='{{imgs[1][1]}}'>
+		<view class='upload up fcol fcen spc' bindtap='uploadImg' data-it='2' data-its='2' wx:if='{{!imgs[1][2]}}'>
+			<view class='txt'>点击上传师资介绍3</view>
+		</view>
+		<view class='upload up fcol fcen spc' bindtap='uploadImg' data-it='2' data-its='2' wx:else>
+			<image src='{{imgs[1][2]}}'></image>
+			<view class='txt0 fcol fcen spc'>重新上传师资介绍3</view>
+			<view class='del' catchtap='delImg' data-it='2' data-its='2'>
+				<image src='../../img/del.png'></image>
+			</view>
+		</view>
+	</block>
+	<view class='upload fcol fcen spc' bindtap='uploadImg' data-it='3' data-its='0' wx:if='{{!imgs[2][0]}}'>
+		<view class='txt'>点击上传学员风采</view>
+	</view>
+	<view class='upload up fcol fcen spc' bindtap='uploadImg' data-it='3' data-its='0' wx:else>
+		<image src='{{imgs[2][0]}}'></image>
+		<view class='txt0 fcol fcen spc'>重新上传学员风采</view>
+		<view class='del' catchtap='delImg' data-it='3' data-its='0'>
+			<image src='../../img/del.png'></image>
+		</view>
+	</view>
+	<block wx:if='{{imgs[2][0]}}'>
+		<view class='upload up fcol fcen spc' bindtap='uploadImg' data-it='3' data-its='1' wx:if='{{!imgs[2][1]}}'>
+			<view class='txt'>点击上传学员风采2</view>
+		</view>
+		<view class='upload up fcol fcen spc' bindtap='uploadImg' data-it='3' data-its='1' wx:else>
+			<image src='{{imgs[2][1]}}'></image>
+			<view class='txt0 fcol fcen spc'>重新上传学员风采2</view>
+			<view class='del' catchtap='delImg' data-it='3' data-its='1'>
+				<image src='../../img/del.png'></image>
+			</view>
+		</view>
+	</block>
+	<block wx:if='{{imgs[2][1]}}'>
+		<view class='upload up fcol fcen spc' bindtap='uploadImg' data-it='3' data-its='2' wx:if='{{!imgs[2][2]}}'>
+			<view class='txt'>点击上传学员风采3</view>
+		</view>
+		<view class='upload up fcol fcen spc' bindtap='uploadImg' data-it='3' data-its='2' wx:else>
+			<image src='{{imgs[2][2]}}'></image>
+			<view class='txt0 fcol fcen spc'>重新上传学员风采3</view>
+			<view class='del' catchtap='delImg' data-it='3' data-its='2'>
+				<image src='../../img/del.png'></image>
+			</view>
+		</view>
+	</block>
+  <view class='centertxt'>
+    <view>每笔成交单数，趣抢课将扣除佣金</view>
+    <view>现阶段佣金价格为每笔订单成交价的3%</view>
+  </view>
+  <view class='bot flex'>
+    <button class='btn green bold' bindtap='submit'>发布</button>
+  <!--
+		
+    <button class='btn1 gray bold' bindtap='preview'>预览</button>
+  -->
+	</view>
+</view>
+<view class='error' wx:if='{{error.show}}'>{{error.title}}</view>

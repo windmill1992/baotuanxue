@@ -7,28 +7,42 @@
 		<image src='{{cover}}'></image>
 		<view class='txt0 fcol fcen spc'>重新上传封面图</view>
 	</view>
-	<view class='txt1'>商品标题</view>
+ 
+	<view class='txt1'>拼团总数</view>
 	<view class='inp-box flex spb fcen'>
-		<input class='inp' value='{{proName}}' placeholder='请填写商品名称' bindinput='getName' maxlength='20'></input>
-		<view class='txt2'>{{nameLen}}/20</view>
+		<input type='number' value='{{proCount}}' class='inp' placeholder='请填写本团最多招生数量' bindinput='getNum'></input>
+		<view class='txt2'>人</view>
 	</view>
-	<view class='txt1'>拼团类型</view>
-	<radio-group class='inp-box flex' bindchange='getType'>
-		<view class='flex fcen flex1'>
-			<radio value='1' checked='{{groupBuyingType == 1}}' class='rad' id='rad0'></radio>
-			<label for='rad0' class='txt'>组团优惠</label>
-		</view>
-		<view class='rad-box flex fcen flex1'>
-			<radio value='1' class='rad' id='rad1' disabled></radio>
-			<label for='rad1' class='txt3'>转介绍（即将开放）</label>
-		</view>
-	</radio-group>
-	<view class='txt1'>商品库存</view>
+  <view class='txt5'>课程信息</view>  
+	<view class='txt1'>开课时间</view>
+  <view class='inp-box flex spb fcen'>
+			<picker mode='date' class='pick' bindchange='getDateValue'  start="{{startTime}}" data-prop='courseStartTime' end="2030-01-01">
+				<text class='def' wx:if='{{!courseStartTime}}'>点击选择时间</text>
+				<text wx:else>{{courseStartTime}}</text>
+			</picker>
+  </view>
+  <view class='txt1'>开课人数</view>
 	<view class='inp-box flex spb fcen'>
-		<input type='number' value='{{proCount}}' class='inp' placeholder='请填写数量' bindinput='getNum'></input>
-		<view class='txt2'>个</view>
+		<input type='number' value='{{courseMaxStudents}}' class='inp' bindinput='getCourseStudentsNum'></input>
+		<view class='txt2'>人</view>
 	</view>
-	<view class='txt1'>更多信息（选填）</view>
+	<view class='txt1'>课时长度</view>
+	<view class='inp-box flex spb fcen'>
+		<input type='number' value='{{courseCount}}' class='inp' bindinput='getCourseCount'></input>
+		<view class='txt2'>分钟</view>
+	</view>
+
+  <view class='txt1'>温馨提示（选填）</view>
+	<view class='inp-box flex spb fcen'>
+		<input type='text' value='{{courseInfo}}' class='inp' maxlength='30' 
+        placeholder='例：请提前带好在教室使用的运动鞋' bindinput='getCourseInfo'></input>
+	</view>
+    <view class='txt5'>课程介绍</view>
+    <view class='inp-box1 flex spb fcen'>
+          <textarea placeholder='请输入课程介绍，最多输入1000字' bindinput='getCourseDesc' bindconfirm='getCourseDesc' ></textarea>
+    </view>
+
+	<view class='txt5'>上传相关图片</view>
 	<view class='upload up fcol fcen spc' bindtap='uploadImg' data-it='1' data-its='0' wx:if='{{!imgs[0][0]}}'>
 		<view class='txt'>点击上传课程介绍</view>
 	</view>

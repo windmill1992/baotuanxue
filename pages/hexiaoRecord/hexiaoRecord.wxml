@@ -1,0 +1,56 @@
+<!--pages/hexiaoRecord/hexiaoRecord.wxml-->
+<view class='container fcol'>
+	<view class='tabs flex spb bold'>
+		<view class='tab flex1 {{tab == 0 ? "on" : ""}}' bindtap='changeTab' data-tab='0'>已核销订单</view>
+		<view class='tab flex1 {{tab == 1 ? "on" : ""}}' bindtap='changeTab' data-tab='1'>未核销订单</view>
+		<view class='line r{{tab}}'></view>
+	</view>
+	<view class='list' wx:if='{{hasmore != 0}}'>
+		<block wx:if='{{tab == 0}}'>
+			<navigator url='/pages/hexiaoDetail/hexiaoDetail?id={{item.groupBuyingId}}&gid={{item.groupId}}&uid={{item.userId}}&name={{item.groupBuyingName}}' 
+				class='item' wx:for='{{list}}' wx:key='id'>
+				<view class='top flex fcen spb'>
+					<view class='user flex fcen'>
+						<image src='{{item.userAvatar}}'></image>
+						<view class='nick'>{{item.userName + item.payType == 1 ? '拼团购买' : '直接购买'}}</view>
+					</view>
+					<view class='state' wx:if='{{tab == 0}}'>已核销</view>
+					<view class='state' wx:elif='{{tab == 1}}'>待核销</view>
+				</view>
+				<view class='con flex fcen'>
+					<view class='pic fshrink0' style='background-image: url({{item.groupBuyingCover}})'></view>
+					<view class='info flex1 fcol spb'>
+						<view class='title bold'>{{item.groupBuyingName}}</view>
+						<view class='time'>下单时间：{{item.orderTime}}</view>
+						<view class='income'>收入：{{item.orderPrice}}元</view>
+					</view>
+				</view>				
+			</navigator>
+		</block>
+		<block wx:else>
+			<navigator url='/pages/orderDetail/orderDetail?id={{item.groupId}}' class='item' wx:for='{{list}}' wx:key='id'>
+				<view class='top flex fcen spb'>
+					<view class='user flex fcen'>
+						<image src='{{item.userAvatar}}'></image>
+						<view class='nick'>{{item.userName + item.payType == 1 ? '拼团购买' : '直接购买'}}</view>
+					</view>
+					<view class='state' wx:if='{{tab == 0}}'>已核销</view>
+					<view class='state' wx:elif='{{tab == 1}}'>待核销</view>
+				</view>
+				<view class='con flex fcen'>
+					<view class='pic fshrink0' style='background-image: url({{item.groupBuyingCover}})'></view>
+					<view class='info flex1 fcol spb'>
+						<view class='title bold'>{{item.groupBuyingName}}</view>
+						<view class='time'>下单时间：{{item.orderTime}}</view>
+						<view class='income'>收入：{{item.orderPrice}}元</view>
+					</view>
+				</view>				
+			</navigator>
+		</block>
+	</view>
+	<view class='no-data flex1 fcol fcen spc' wx:else>
+		<image src='../../img/no_collage.png' mode='widthFix'></image>
+		<view class='txt'>暂无订单数据哦~</view>
+	</view>
+	<view class='loadmore no' wx:if='{{hasmore == 1}}'>没有更多数据了</view>
+</view>

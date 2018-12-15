@@ -1,10 +1,17 @@
 <!--pages/setRules/setRules.wxml-->
 <view class='container'>
 	<view class='box'>
+  <view class='inp-item flex spb fcen'>
+			<view class='label'>拼团标题</view>
+			<view class='inp-box flex fcen'>
+				<input type='text' class='inp' bindinput='getValue' data-prop='proName' 
+        placeholder='填写标题转发时显示'></input>
+			</view>
+		</view>
 		<view class='inp-item flex spb fcen'>
 			<view class='label'>组团人数</view>
 			<view class='inp-box flex fcen'>
-				<input type='number' class='inp' bindinput='getValue' data-prop='groupBuyingNumber' placeholder='请输入人数'></input>
+				<input type='number' class='inp' bindinput='getValue' style='width:400rpx;'    data-prop='groupBuyingNumber' placeholder='例2人团即发起者拉1人成团'></input>
 				<view class='suffix'>人</view>
 			</view>
 		</view>
@@ -18,14 +25,14 @@
 		<view class='inp-item flex spb fcen'>
 			<view class='label'>商品原价</view>
 			<view class='inp-box flex fcen'>
-				<input type='digit' class='inp' bindinput='getValue' data-prop='proPrice' placeholder='请填写价格'></input>
+				<input type='digit' class='inp' bindinput='getValue' data-prop='proPrice' placeholder='实际课时费*拼团课节数'></input>
 				<view class='suffix'>元</view>
 			</view>
 		</view>
 		<view class='inp-item flex spb fcen'>
 			<view class='label'>拼团价格</view>
 			<view class='inp-box flex fcen'>
-				<input type='digit' class='inp' bindinput='getValue' data-prop='groupBuyingPrice' placeholder='请填写价格'></input>
+				<input type='digit' class='inp' bindinput='getValue' data-prop='groupBuyingPrice' placeholder='参团者每人支付的价格'></input>
 				<view class='suffix'>元</view>
 			</view>
 		</view>

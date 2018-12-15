@@ -13,8 +13,9 @@ Page({
 		nameLen: 0,
   },
   onLoad: function (options) {
+    this.setData({startTime: this.getCurrentDate() });
 		if (options.id) {
-			this.setData({ id: options.id });
+      this.setData({ id: options.id });
 			wx.setNavigationBarTitle({
 				title: '编辑拼团',
 			});
@@ -102,6 +103,27 @@ Page({
 	getNum: function (e) {
 		this.setData({ proCount: e.detail.value });
 	},
+  getDateValue: function (e) {
+    this.setData({ courseStartTime: e.detail.value });
+  },
+  getCourseStudentsNum: function (e) {
+    this.setData({ courseMaxStudents: e.detail.value });
+  },
+  getCourseCount: function (e) {
+    this.setData({ courseCount: e.detail.value });
+  },
+  getCourseCity: function (e) {
+    this.setData({ courseCity: e.detail.value });
+  },
+  getCourseAddress: function (e) {
+    this.setData({ courseAddress: e.detail.value });
+  },
+  getCourseDesc: function (e) {
+    this.setData({ courseDesc: e.detail.value });
+  },
+  getCourseInfo: function (e) {
+    this.setData({ courseInfo: e.detail.value });
+  },
 	uploadImg: function (e) {
 		if (this.data.tempImg && this.data.tempImg != null) {
 			this.showError('请等待图片上传...');
@@ -186,7 +208,7 @@ Page({
 	},
 	submit: function () {
 		let dd = this.data;
-		if (!dd.cover || !dd.proName || !dd.proCount) {
+    if (!dd.cover || !dd.proCount || !dd.courseStartTime || !dd.courseMaxStudents || !dd.courseCount || !dd.courseDesc) {
 			this.showError('请填写完整信息！');
 			return;
 		}
@@ -194,9 +216,12 @@ Page({
 		
 		let data = Object.assign({
 			cover: dd.cover,
-			proName: dd.proName,
 			proCount: dd.proCount,
-			groupBuyingType: dd.groupBuyingType,
+      courseStartTime: dd.courseStartTime,
+      courseMaxStudents: dd.courseMaxStudents,
+      courseCount: dd.courseCount,
+      courseDesc: dd.courseDesc,
+      courseInfo: dd.courseInfo,
 			groupBuyingExtendInfoVOList: [
 				{ introType: 1, text: '', url: dd.imgs[0][0] },
 				{ introType: 1, text: '', url: dd.imgs[0][1] },
@@ -315,5 +340,12 @@ Page({
 			obj.title = '';
 			that.setData({ error: obj });
 		}, 2000);
-	}
+	},
+  getCurrentDate:function(){
+    const date = new Date();
+    const year = date.getFullYear()
+    const month = date.getMonth() + 1
+    const day = date.getDate()
+    return [year, month, day].join("-");
+  }
 })

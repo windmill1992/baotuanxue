@@ -1,8 +1,13 @@
 /* pages/detail/detail.wxss */
 @import '../../utils/dialog.wxss';
 
+.toptxt{
+  border-top: 4rpx #f3f3f3 solid;
+  padding: 30rpx;
+}
 .container {
-  background: #fbfbfb;
+  background: #fff;
+  font-family: "方正兰亭黑简体";
 }
 
 .cover {
@@ -22,36 +27,36 @@
   left: 0;
   padding: 0 30rpx;
   line-height: 58rpx;
-  color: #fff;
+  color: #0ab5dd;
   font-size: 30rpx;
-  background: rgba(0, 191, 74, 0.6);
+  background:#282c32;
   border-top-right-radius: 10rpx;
   border-bottom-right-radius: 10rpx;
 }
-
-.info {
-  padding: 40rpx 30rpx;
-  border-bottom: 1px solid #f3f3f3;
+.box1{
+  padding:10rpx 20rpx;
+  border-bottom: 2px solid #f3f3f3;
 }
-
-.info .title {
+.title {  
   font-size: 36rpx;
+  font-weight: bold;
   color: #333;
+  background: #fff;
+  margin: 20rpx 0;
 }
-
-.info .txt {
+.box1 .txt {
   font-size: 24rpx;
-  color: #666;
-  margin-top: 20rpx;
+  color: #999;
+  margin: 0 0 20rpx;
 }
-
 .box {
-  padding: 0 30rpx 100rpx;
+  padding: 0 0 100rpx;
+  background: #fff;
 }
 
 .box .nav-a {
-  padding: 30rpx 0;
-  border-bottom: 1px solid #ccc;
+  padding: 20rpx;
+  border-bottom: 2px solid #f2f2f2;
 }
 
 .box .user image {
@@ -72,30 +77,46 @@
 }
 
 .box .txt1 {
-  font-size: 30rpx;
-  color: #333;
-  padding: 30rpx 0;
-  border-bottom: 1px solid #ccc;
-}
-
-.content image {
-  width: 100%;
-  height: 400rpx;
-  margin: 30rpx 0;
-}
-
-.content .txt {
-  text-align: center;
   font-size: 28rpx;
+  color: #333;
+  padding:20rpx;
+  border-bottom: 1px solid #f2f2f2;
 }
-
-.content .no {
-  text-align: center;
+.content {
+	padding:30rpx;
+  border-bottom: 30rpx solid #f3f3f3;
+}
+.group1{
+  border-bottom: 2rpx solid #f3f3f3;
+  padding: 30rpx 0 10rpx;
+}
+.txt3{
+  font-size: 24rpx;
   color: #999;
-  font-size: 26rpx;
-  margin: 40rpx 0;
+}
+.group1 image{ 
+  width: 28rpx;
+  height: 28rpx;
+  margin-right: 10rpx;
+}
+.txt4{
+  font-size: 28rpx;
+  color:#333;
+  line-height: 40rpx;
+  margin: 20rpx 0 10rpx;
 }
 
+.txt2{
+  font-size: 34rpx;
+  font-weight: bold;
+  color: #333;
+  padding:30rpx 20rpx;
+}
+.detail2 image{
+  width: 100%;
+  height: 500rpx;
+  vertical-align: top;
+}
 .bot {
   position: fixed;
   bottom: 0;
@@ -135,3 +156,20 @@
   top: 0;
   left: -10000px;
 }
+/*
+.syllabuss{
+  color: #333;
+  margin: 6rpx;
+}
+.syllabussright{
+  width:78%;
+  text-align: left;
+}
+.txtcyan{
+  color: #00b2a6;
+}
+.syllabussleft{
+  color:#999;
+  width:22%;
+}
+*/

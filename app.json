@@ -27,7 +27,16 @@
 		"pages/upload/upload",
 		"pages/rules/rules",
 		"pages/funds/funds",
-		"pages/share/share"
+		"pages/share/share",
+		"pages/newbargain/newbargain",
+		"pages/bargain/bargain",
+		"pages/bargainOrderList/bargainOrderList",
+		"pages/bargainprev/bargainprev",
+		"pages/bargainprevsub/bargainprevsub",
+		"pages/bargainOrderDetail/bargainOrderDetail",
+		"pages/bargainDetail/bargainDetail",
+		"pages/hexiaoRecord/hexiaoRecord",
+		"pages/hexiaoDetail/hexiaoDetail"
 	],
 	"window": {
 		"backgroundTextStyle": "dark",
@@ -37,7 +46,7 @@
 	},
 	"tabBar": {
 		"color": "#a9a9a9",
-		"selectedColor": "#13ac4e",
+		"selectedColor": "#282c32",
 		"backgroundColor": "#f2f2f2",
 		"borderStyle": "white",
 		"list": [

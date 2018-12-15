@@ -71,7 +71,7 @@
 }
 
 .box .txt2 {
-  color: #00ab41;
+  color: #000;
 }
 
 .btns {

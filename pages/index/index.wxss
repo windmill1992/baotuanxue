@@ -81,3 +81,13 @@
   margin-top: 30rpx;
   line-height: 1;
 }
+.cover {
+  position: relative;
+}
+.cover .new image{
+  position: absolute;
+  width:26rpx;
+  height: 26rpx;
+  top:2rpx;
+  left:110rpx; 
+}

@@ -36,6 +36,7 @@ App({
   },
   globalData: {
 		baseUrl: 'https://api.baotuanxue.com',
+    // baseUrl: 'http://localhost:8890',
 		header: {
 			// 'content-type': 'application/x-www-form-urlencoded',
 			'content-type': 'application/json',

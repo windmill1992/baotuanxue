@@ -1,0 +1,169 @@
+/* pages/bargainprev/bargainprev.wxss */
+@import '../../utils/dialog.wxss';
+.toptxt{
+  border-top: 4rpx #f3f3f3 solid;
+  padding: 30rpx;
+}
+.container {
+  background: #fff;
+  font-family: "方正兰亭黑简体";
+}
+
+.cover {
+  width: 100%;
+  position: relative;
+}
+
+.cover image {
+  width: 100%;
+  height: 500rpx;
+  vertical-align: top;
+}
+
+.cover .time {
+  position: absolute;
+  top: 20rpx;
+  left: 0;
+  padding: 0 30rpx;
+  line-height: 58rpx;
+  color: #fff;
+  font-size: 30rpx;
+  background: rgba(0, 191, 74, 0.6);
+  border-top-right-radius: 10rpx;
+  border-bottom-right-radius: 10rpx;
+}
+.box1{
+  padding:10rpx 20rpx;
+  border-bottom: 4px solid #f3f3f3;
+}
+.title {  
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333;
+  background: #fff;
+  margin: 20rpx 0;
+}
+.box1 .txt {
+  font-size: 24rpx;
+  color: #999;
+  border-left: 6rpx #00d2ff solid;
+  margin: 20rpx;
+  padding-left: 20rpx;
+}
+.box {
+  padding: 0 0 100rpx;
+  background: #fff;
+}
+
+.box .nav-a {
+  padding: 20rpx;
+  border-bottom: 4px solid #f2f2f2;
+}
+
+.box .user image {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 100%;
+  margin-right: 20rpx;
+}
+
+.box .user .name {
+  font-size: 30rpx;
+  color: #333;
+}
+
+.box .more1 image {
+  width: 20rpx;
+  height: 40rpx;
+}
+
+.box .txt1 {
+  font-size: 28rpx;
+  color: #333;
+  padding:20rpx;
+  border-bottom: 1px solid #f2f2f2;
+}
+.content {
+	padding:30rpx;
+  border-bottom: 30rpx solid #f3f3f3;
+}
+.group1{
+  border-bottom: 2rpx solid #f3f3f3;
+  padding: 30rpx 0 10rpx;
+}
+.txt3{
+  font-size: 24rpx;
+  color: #999;
+}
+.group1 image{ 
+  width: 28rpx;
+  height: 28rpx;
+  margin-right: 10rpx;
+}
+.txt4{
+  font-size: 28rpx;
+  color:#333;
+  line-height: 50rpx;
+  margin: 20rpx 0 10rpx;
+}
+
+.detail2 {
+  
+}
+.txt2{
+  font-size: 34rpx;
+  font-weight: bold;
+  color: #333;
+  padding:30rpx 20rpx;
+}
+.detail2 image{
+  width: 100%;
+  height: 500rpx;
+  vertical-align: top;
+}
+.bot {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 88rpx;
+}
+
+.share-box .bottom {
+  position: absolute;
+  bottom: -120rpx;
+  left: 0;
+  padding: 30rpx 0;
+  width: 100%;
+}
+
+.share-box .bottom .btn {
+  width: 200rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+
+.share-box .close1 {
+  width: 70rpx;
+  height: 70rpx;
+}
+
+.share-box .close1 image {
+  width: 100%;
+  height: 100%;
+}
+
+.canvas {
+  width: 1500rpx;
+  height: 2668rpx;
+  position: fixed;
+  top: 0;
+  left: -10000px;
+}
+
+.bot1{
+  padding: 40rpx;
+}
+.bot1 .btn{
+  margin: 40rpx 0;
+}

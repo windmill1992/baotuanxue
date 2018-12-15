@@ -1,8 +1,8 @@
 // pages/withdrawCash/withdrawCash.js
 const app = getApp().globalData;
 const api = {
-	balance: app.baseUrl + '/btx/btx-rest/user-balance',			//用户信息
-	withdraw: app.baseUrl + '/btx/btx-rest/withdraw',					//提现申请
+	balance: app.baseUrl + '/btx/btx-rest/user-can-withdraw-balance',	//用户可提现余额
+	withdraw: app.baseUrl + '/btx/btx-rest/withdraw',									//提现申请
 };
 Page({
   data: {

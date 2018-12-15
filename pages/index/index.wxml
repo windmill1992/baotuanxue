@@ -21,35 +21,56 @@
   </view>
 	<view class='mid'>
 		<view class='ul flex fwrap'>
-			<navigator url='/pages/setRules/setRules' class='li fcol spc fcen'>
+			<navigator url='/pages/setRules/setRules' class='li cover fcol spc fcen'>
 				<image src='../../img/new_collage.png'></image>
 				<view class='txt'>新建拼团</view>
 			</navigator>
-			<navigator url='/pages/manage/manage' class='li fcol spc fcen'>
+			<navigator url='/pages/manage/manage' class='li fcol cover spc fcen'>
 				<image src='../../img/collage_mng.png'></image>
 				<view class='txt'>拼团管理</view>
 			</navigator>
-			<navigator url='/pages/orders/orders' class='li fcol spc fcen'>
-				<image src='../../img/order_mng.png'></image>
-				<view class='txt'>订单管理</view>
+      <navigator url='/pages/newbargain/newbargain' class='li fcol cover spc fcen'>
+				<image src='../../img/newbargain.png'></image>
+				<view class='txt'>新建砍价</view>
+        <view class='new'>
+          <image src='../../img/new.png'></image>
+        </view>
 			</navigator>
-			<navigator url='/pages/cashManage/cashManage' class='li fcol spc fcen'>
+			<navigator url='/pages/bargain/bargain' class='li fcol cover spc fcen'>
+				<image src='../../img/bargain.png'></image>
+				<view class='txt'>砍价管理</view>
+        <view class='new'>
+          <image src='../../img/new.png'></image>
+        </view>
+			</navigator>
+			<navigator url='/pages/orders/orders' class='li fcol cover spc fcen'>
+				<image src='../../img/order_mng.png'></image>
+				<view class='txt'>拼团订单</view>
+			</navigator>
+      <navigator url='/pages/bargainOrderList/bargainOrderList' class='li fcol cover spc fcen'>
+				<image src='../../img/order_mng.png'></image>
+				<view class='txt'>砍价订单</view>
+        <view class='new'>
+          <image src='../../img/new.png'></image>
+        </view>
+			</navigator>
+			<navigator url='/pages/cashManage/cashManage' class='li cover fcol spc fcen'>
 				<image src='../../img/tixian_mng.png'></image>
 				<view class='txt'>提现管理</view>
 			</navigator>
-			<navigator url='/pages/perfectInfo/perfectInfo?edit=1' class='li fcol spc fcen'>
+			<navigator url='/pages/perfectInfo/perfectInfo?edit=1' class='li fcol spc cover fcen'>
 				<image src='../../img/setting.png'></image>
 				<view class='txt'>门店设置</view>
 			</navigator>
-			<view class='li fcol spc fcen v' bindtap='scan'>
+			<view class='li fcol spc cover fcen v' bindtap='scan'>
 				<image src='../../img/order_hx.png'></image>
 				<view class='txt'>订单核销</view>
 			</view>
-			<navigator url='/pages/funds/funds' class='li fcol spc fcen'>
+			<navigator url='/pages/funds/funds' class='li fcol cover spc fcen'>
 				<image src='../../img/funds.png'></image>
 				<view class='txt'>资金流水</view>
 			</navigator>
-			<navigator url='/pages/rules/rules' class='li fcol spc fcen'>
+			<navigator url='/pages/rules/rules' class='li fcol cover spc fcen'>
 				<image src='../../img/rule.png'></image>
 				<view class='txt'>使用规则</view>
 			</navigator>

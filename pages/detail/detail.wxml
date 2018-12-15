@@ -6,7 +6,7 @@
 		<view class='time' wx:elif='{{info.groupBuyingStatus == 2}}'>已完成</view>
 		<view class='time' wx:elif='{{info.groupBuyingStatus == 3}}'>超时未成团</view>
 	</view>
-	<view class='info'>
+	<view class='box1'>
 		<view class='title bold'>{{info.proName}}</view>
 		<view class='txt'>已售：{{info.soldQuantity}}件</view>
 	</view>
@@ -20,14 +20,37 @@
 				<image src='../../img/more.png'></image>
 			</view>
 		</navigator>
-		<view class='txt1'>拼团详情</view>
+		<view class='txt1'>课程信息</view>
 		<view class='content'>
-			<view class='pic' wx:for='{{info.groupBuyingExtendInfoVOList}}' wx:key='introType' wx:if='{{item.url}}'>
+      	<view class='group1' wx:if='{{showContent}}'>
+          <view class='txt3'>
+            <text>开课时间</text>
+          </view>
+          <view class='txt4'>{{info.courseStartTime}}</view>
+        </view>
+        <view class='group1'  wx:if='{{showContent}}'>
+          <view class='txt3'>开课人数</view>
+          <view class='txt4'>{{info.courseMaxStudents}}人</view>
+        </view>
+        <view class='group1'  wx:if='{{showContent}}'>
+          <view class='txt3'>课时</view>
+          <view class='txt4'>{{info.courseCount}}个</view>
+        </view>
+        <view class='group1'  wx:if='{{showContent}}'>
+          <view class='txt3'>课程介绍</view> 
+          <view class='txt4'>{{info.courseDesc}}</view>
+        </view>
+        <view class='group1'  wx:if='{{showContent}}'>
+          <view class='txt3'>详细地址</view>
+          <view class='txt4'>{{info.courseAddress}}</view>
+        </view>
+        
+			<view class='pic' wx:for='{{info.groupBuyingExtendInfoVOList}}' wx:key='url' wx:if='{{item.url}}'>
 				<image src='{{item.url}}' mode='widthFix'></image>
 				<view class='txt'>{{item.text}}</view>
 			</view>
-			<view class='no' wx:if='{{!haspic}}'>暂无详情信息哦~</view>
-		</view>
+      <view class='no' wx:if='{{!haspic&&!showContent}}'>暂无详情信息哦~</view>
+		</view>	
 	</view>
 	<view class='bot flex'>
 		<button class='btn green bold' bindtap='share'>分享购买</button>
